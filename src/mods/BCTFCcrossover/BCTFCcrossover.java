@@ -1,4 +1,4 @@
-/*
+/**
  *  Copyright (C) 2013  emris
  *  https://github.com/emris/BCTFCcrossover
  *
@@ -15,27 +15,34 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-
 package mods.BCTFCcrossover;
 
 import java.util.logging.Logger;
 
-import mods.BCTFCcrossover.Items.Items;
-import mods.BCTFCcrossover.Utils.Localization;
-import mods.BCTFCcrossover.Utils.Version;
+import mods.BCTFCcrossover.core.PipeIconProvider;
+import mods.BCTFCcrossover.core.Recipes;
+import mods.BCTFCcrossover.utils.Version;
+import mods.BCTFCcrossover.worldGen.WorldGenOil;
+import buildcraft.api.core.IIconProvider;
+import buildcraft.core.utils.Localization;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.Mod.PreInit;
+import cpw.mods.fml.common.Mod.ServerStarting;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(name = "BCTFCcrossover", version = Version.VERSION, useMetadata = false, modid = "BCTFCcrossover", dependencies = "required-after:BuildCraft|Core;required-after:BuildCraft|Builders;required-after:BuildCraft|Energy;required-after:BuildCraft|Factory;required-after:BuildCraft|Silicon;required-after:BuildCraft|Transport;required-after:TerraFirmaCraft")
 @NetworkMod(clientSideRequired = true, serverSideRequired = true, versionBounds = "[" + Version.VERSION + "]")
 public class BCTFCcrossover {
+	
+	public IIconProvider pipeIconProvider = new PipeIconProvider();
 	
 	public static Logger tfcbcLog = Logger.getLogger("BCTFCcrossover");
 	
@@ -49,16 +56,22 @@ public class BCTFCcrossover {
 	public void loadConfiguration(FMLPreInitializationEvent evt) {
 
 		tfcbcLog.setParent(FMLLog.getLogger());
-		tfcbcLog.info("Starting TFCBuildCraft " + Version.getVersion());
-		tfcbcLog.info("Copyright (c) Emris_Morath, 2013");
+		tfcbcLog.info("Starting BCTFCcrossover " + Version.getVersion());
+		tfcbcLog.info("Copyright (c) emris, 2013");
 		
 		Items.LoadItems();
 		
-		Localization.addLocalization("/mods/BCTFCcrossover/lang/", "en_US");
+		GameRegistry.registerWorldGenerator(new WorldGenOil(90, 200));
 	}
 
 	@Init
 	public void load(FMLInitializationEvent evt) {
 		Recipes.loadRecipes();
+		Localization.addLocalization("/lang/BCTFCcrossover/", "en_US");
+	}
+	
+	@ServerStarting
+	public void serverStarting(FMLServerStartingEvent event) {
+		
 	}
 }

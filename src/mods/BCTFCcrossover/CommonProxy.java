@@ -1,4 +1,4 @@
-/*
+/**
  *  Copyright (C) 2013  emris
  *  https://github.com/emris/BCTFCcrossover
  *
@@ -23,10 +23,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.src.ModLoader;
 import net.minecraft.world.World;
-import net.minecraftforge.oredict.ShapedOreRecipe;
 import cpw.mods.fml.common.network.IGuiHandler;
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -89,12 +87,16 @@ public class CommonProxy implements IGuiHandler
 	}
 	
 	public void addCraftingRecipe(ItemStack result, Object[] recipe) {
-		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(result, recipe));
-		//GameRegistry.addRecipe(result, recipe);
+//		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(result, recipe));
+		GameRegistry.addRecipe(result, recipe);
 	}
 
 	public void addShapelessRecipe(ItemStack result, Object[] recipe) {
 		GameRegistry.addShapelessRecipe(result, recipe);
+	}
+
+	public void registerPipe(int itemID) {
+		
 	}
 	
 }

@@ -1,4 +1,4 @@
-/*
+/**
  *  Copyright (C) 2013  emris
  *  https://github.com/emris/BCTFCcrossover
  *
@@ -19,11 +19,14 @@ package mods.BCTFCcrossover;
 
 import java.io.File;
 
+import buildcraft.transport.TransportProxyClient;
+
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.src.ModLoader;
 import net.minecraft.util.StringTranslate;
 import net.minecraft.world.World;
+import net.minecraftforge.client.MinecraftForgeClient;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class ClientProxy extends CommonProxy 
@@ -65,6 +68,12 @@ public class ClientProxy extends CommonProxy
 			return "";
 
 		return Item.itemsList[stack.itemID].getItemDisplayName(stack);
+	}
+	
+	@Override
+	public void registerPipe(int itemID) {
+		super.registerPipe(itemID);
+		MinecraftForgeClient.registerItemRenderer(itemID, TransportProxyClient.pipeItemRenderer);
 	}
 	
 	@Override
