@@ -27,7 +27,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class TinPipePowerItem extends PipePowerWood {
 
-	protected int standardIconIndex = PipeIconProvider.PipePowerTin_Standard;
+	protected int standardIconIndex = PipeIconProvider.PipePowerTin;
 	protected int solidIconIndex = PipeIconProvider.PipeTin_Solid;
 	
 	public TinPipePowerItem(int itemID) {

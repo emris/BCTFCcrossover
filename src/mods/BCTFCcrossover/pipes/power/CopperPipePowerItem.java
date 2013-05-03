@@ -38,13 +38,11 @@ public class CopperPipePowerItem extends Pipe {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public IIconProvider getIconProvider() {
-		// TODO Auto-generated method stub
 		return BCTFCcrossover.instance.pipeIconProvider;
 	}
 
 	@Override
 	public int getIconIndex(ForgeDirection direction) {
-		// TODO Auto-generated method stub
 		return PipeIconProvider.PipePowerCopper;
 	}
 

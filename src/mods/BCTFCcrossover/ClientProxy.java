@@ -19,14 +19,13 @@ package mods.BCTFCcrossover;
 
 import java.io.File;
 
-import buildcraft.transport.TransportProxyClient;
-
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.src.ModLoader;
 import net.minecraft.util.StringTranslate;
 import net.minecraft.world.World;
 import net.minecraftforge.client.MinecraftForgeClient;
+import buildcraft.transport.TransportProxyClient;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class ClientProxy extends CommonProxy 

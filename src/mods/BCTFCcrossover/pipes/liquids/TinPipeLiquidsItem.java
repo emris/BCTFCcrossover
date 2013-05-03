@@ -21,33 +21,23 @@ import mods.BCTFCcrossover.BCTFCcrossover;
 import mods.BCTFCcrossover.core.PipeIconProvider;
 import net.minecraftforge.common.ForgeDirection;
 import buildcraft.api.core.IIconProvider;
-import buildcraft.api.power.IPowerProvider;
-import buildcraft.api.power.PowerFramework;
 import buildcraft.transport.pipes.PipeLiquidsWood;
 import buildcraft.transport.pipes.PipeLogic;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-
 public class TinPipeLiquidsItem extends PipeLiquidsWood {
 	
-	private IPowerProvider powerProvider;
-
-	protected int standardIconIndex = PipeIconProvider.PipeLiquidsTin_Standard;
+	protected int standardIconIndex = PipeIconProvider.PipeLiquidsTin;
 	protected int solidIconIndex = PipeIconProvider.PipeTin_Solid;
 	
 	protected TinPipeLiquidsItem(PipeLogic logic, int itemID) {
 		super(logic, itemID);
-
-		powerProvider = PowerFramework.currentFramework.createPowerProvider();
-		powerProvider.configure(50, 1, 100, 1, 250);
-		powerProvider.configurePowerPerdition(1, 1);
 	}
 
 	public TinPipeLiquidsItem(int itemID) {
 		super(itemID);
 	}
-	
 	
 	@Override
 	@SideOnly(Side.CLIENT)

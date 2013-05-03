@@ -29,20 +29,13 @@ import buildcraft.transport.pipes.PipeLogic;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-
 public class TinPipeItem extends PipeItemsWood {
 	
-	private IPowerProvider powerProvider;
-
-	protected int standardIconIndex = PipeIconProvider.PipeTin_Standard;
+	protected int standardIconIndex = PipeIconProvider.PipeTin;
 	protected int solidIconIndex = PipeIconProvider.PipeTin_Solid;
 	
 	protected TinPipeItem(PipeTransportItems transport, PipeLogic logic, int itemID) {
 		super(transport, logic, itemID);
-
-		powerProvider = PowerFramework.currentFramework.createPowerProvider();
-		powerProvider.configure(50, 1, 64, 1, 64);
-		powerProvider.configurePowerPerdition(64, 1);
 	}
 
 	protected TinPipeItem(int itemID, PipeTransportItems transport) {
