@@ -28,21 +28,12 @@ import net.minecraft.world.World;
 import cpw.mods.fml.common.network.IGuiHandler;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class CommonProxy implements IGuiHandler
-{
-
-	public void registerRenderInformation() {
-		// NOOP on server
-	}
+public class CommonProxy {
 
 	public File getMinecraftDir() {
 		return ModLoader.getMinecraftServerInstance().getFile("");/*new File(".");*/
 	}
 	
-	public void takenFromCrafting(EntityPlayer entityplayer, ItemStack itemstack, IInventory iinventory){
-		GameRegistry.onItemCrafted(entityplayer, itemstack, iinventory);  
-	}
-
 	public boolean isRemote() {
 		return false;
 	}
@@ -58,20 +49,6 @@ public class CommonProxy implements IGuiHandler
 		GameRegistry.registerItem(item, item.getUnlocalizedName().replace("item.", ""));
 	}
 	
-	@Override
-	public Object getServerGuiElement(int ID, EntityPlayer player, World world,
-			int x, int y, int z) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Object getClientGuiElement(int ID, EntityPlayer player, World world,
-			int x, int y, int z) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	public String getCurrentLanguage() {
 		return null;
 	}
@@ -95,8 +72,7 @@ public class CommonProxy implements IGuiHandler
 		GameRegistry.addShapelessRecipe(result, recipe);
 	}
 
-	public void registerPipe(int itemID) {
-		
+	public void registerPipeRenderer() {
 	}
-	
+
 }

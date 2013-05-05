@@ -23,6 +23,9 @@ import mods.BCTFCcrossover.core.PipeIconProvider;
 import mods.BCTFCcrossover.core.Recipes;
 import mods.BCTFCcrossover.utils.Version;
 import mods.BCTFCcrossover.worldGen.WorldGenOil;
+import net.minecraft.block.Block;
+import net.minecraftforge.liquids.LiquidDictionary;
+import net.minecraftforge.liquids.LiquidStack;
 import buildcraft.api.core.IIconProvider;
 import buildcraft.core.utils.Localization;
 import cpw.mods.fml.common.FMLLog;
@@ -67,6 +70,7 @@ public class BCTFCcrossover {
 	@Init
 	public void load(FMLInitializationEvent evt) {
 		Recipes.loadRecipes();
+		proxy.registerPipeRenderer();
 		Localization.addLocalization("/lang/BCTFCcrossover/", "en_US");
 	}
 	

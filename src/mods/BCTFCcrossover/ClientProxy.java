@@ -70,14 +70,34 @@ public class ClientProxy extends CommonProxy
 	}
 	
 	@Override
-	public void registerPipe(int itemID) {
-		super.registerPipe(itemID);
-		MinecraftForgeClient.registerItemRenderer(itemID, TransportProxyClient.pipeItemRenderer);
-	}
-	
-	@Override
-	public void registerRenderInformation() {
-		// TODO Auto-generated method stub
-		super.registerRenderInformation();
+	public void registerPipeRenderer() {
+		super.registerPipeRenderer();
+		// Transport Pipes
+		MinecraftForgeClient.registerItemRenderer(Items.TinPipeItem.itemID, TransportProxyClient.pipeItemRenderer);
+		MinecraftForgeClient.registerItemRenderer(Items.LeadPipeItem.itemID, TransportProxyClient.pipeItemRenderer);
+		MinecraftForgeClient.registerItemRenderer(Items.BronzePipeItem.itemID, TransportProxyClient.pipeItemRenderer);
+		MinecraftForgeClient.registerItemRenderer(Items.WroughtIronPipeItem.itemID, TransportProxyClient.pipeItemRenderer);
+		MinecraftForgeClient.registerItemRenderer(Items.SteelPipeItem.itemID, TransportProxyClient.pipeItemRenderer);
+		MinecraftForgeClient.registerItemRenderer(Items.BlueSteelPipeItem.itemID, TransportProxyClient.pipeItemRenderer);
+		MinecraftForgeClient.registerItemRenderer(Items.RedSteelPipeItem.itemID, TransportProxyClient.pipeItemRenderer);
+		MinecraftForgeClient.registerItemRenderer(Items.BlackBronzePipeItem.itemID, TransportProxyClient.pipeItemRenderer);
+		MinecraftForgeClient.registerItemRenderer(Items.RoseGoldPipeItem.itemID, TransportProxyClient.pipeItemRenderer);
+		MinecraftForgeClient.registerItemRenderer(Items.BlackSteelPipeItem.itemID, TransportProxyClient.pipeItemRenderer);
+		// Structure Pipes
+		MinecraftForgeClient.registerItemRenderer(Items.LeadPipeStructureItem.itemID, TransportProxyClient.pipeItemRenderer);
+		// Liquid Pipes
+		MinecraftForgeClient.registerItemRenderer(Items.TinPipeLiquidsItem.itemID, TransportProxyClient.pipeItemRenderer);
+		MinecraftForgeClient.registerItemRenderer(Items.LeadPipeLiquidsItem.itemID, TransportProxyClient.pipeItemRenderer);
+		MinecraftForgeClient.registerItemRenderer(Items.BronzePipeLiquidsItem.itemID, TransportProxyClient.pipeItemRenderer);
+		MinecraftForgeClient.registerItemRenderer(Items.WroughtIronPipeLiquidsItem.itemID, TransportProxyClient.pipeItemRenderer);
+		MinecraftForgeClient.registerItemRenderer(Items.SteelPipeLiquidsItem.itemID, TransportProxyClient.pipeItemRenderer);
+		MinecraftForgeClient.registerItemRenderer(Items.RedSteelPipeLiquidsItem.itemID, TransportProxyClient.pipeItemRenderer);
+		MinecraftForgeClient.registerItemRenderer(Items.BlackBronzePipeLiquidsItem.itemID, TransportProxyClient.pipeItemRenderer);
+		MinecraftForgeClient.registerItemRenderer(Items.RoseGoldPipeLiquidsItem.itemID, TransportProxyClient.pipeItemRenderer);
+		// Conductive Pipes
+		MinecraftForgeClient.registerItemRenderer(Items.TinPipePowerItem.itemID, TransportProxyClient.pipeItemRenderer);
+		MinecraftForgeClient.registerItemRenderer(Items.ZincPipePowerItem.itemID, TransportProxyClient.pipeItemRenderer);
+		MinecraftForgeClient.registerItemRenderer(Items.CopperPipePowerItem.itemID, TransportProxyClient.pipeItemRenderer);
+		MinecraftForgeClient.registerItemRenderer(Items.SilverPipePowerItem.itemID, TransportProxyClient.pipeItemRenderer);
 	}
 }

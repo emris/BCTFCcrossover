@@ -191,163 +191,140 @@ public class Items {
 		
 		// ===============Pipe Frames===============
 		TinPipeFrameItem = new ItemGeneral(getItemID(config,"pipe frames","TinPipeFrameItem",ItemIDProvider.TinPipeFrameItem)).setUnlocalizedName("TinPipeFrameItem");
-			LanguageRegistry.addName(TinPipeFrameItem, "Tin Pipe Frame");
+			LanguageRegistry.addName(TinPipeFrameItem, "Frame: Tin Pipe");
 			BCTFCcrossover.proxy.registerItem(TinPipeFrameItem);
 		LeadPipeFrameItem = new ItemGeneral(getItemID(config,"pipe frames","LeadPipeFrameItem",ItemIDProvider.LeadPipeFrameItem)).setUnlocalizedName("LeadPipeFrameItem");
-			LanguageRegistry.addName(LeadPipeFrameItem, "Lead Pipe Frame");
+			LanguageRegistry.addName(LeadPipeFrameItem, "Frame: Lead Pipe");
 			BCTFCcrossover.proxy.registerItem(LeadPipeFrameItem);
 		BronzePipeFrameItem = new ItemGeneral(getItemID(config,"pipe frames","BronzePipeFrameItem",ItemIDProvider.BronzePipeFrameItem)).setUnlocalizedName("BronzePipeFrameItem");
-			LanguageRegistry.addName(BronzePipeFrameItem, "Bronze Pipe Frame");
+			LanguageRegistry.addName(BronzePipeFrameItem, "Frame: Bronze Pipe");
 			BCTFCcrossover.proxy.registerItem(BronzePipeFrameItem);
 		WroughtIronPipeFrameItem = new ItemGeneral(getItemID(config,"pipe frames","WroughtIronPipeFrameItem",ItemIDProvider.WroughtIronPipeFrameItem)).setUnlocalizedName("WroughtIronPipeFrameItem");
-			LanguageRegistry.addName(WroughtIronPipeFrameItem, "Wrought Iron Pipe Frame");
+			LanguageRegistry.addName(WroughtIronPipeFrameItem, "Frame: Wrought Iron Pipe");
 			BCTFCcrossover.proxy.registerItem(WroughtIronPipeFrameItem);
 		SteelPipeFrameItem = new ItemGeneral(getItemID(config,"pipe frames","SteelPipeFrameItem",ItemIDProvider.SteelPipeFrameItem)).setUnlocalizedName("SteelPipeFrameItem");
-			LanguageRegistry.addName(SteelPipeFrameItem, "Steel Pipe Frame");
+			LanguageRegistry.addName(SteelPipeFrameItem, "Frame: Steel Pipe");
 			BCTFCcrossover.proxy.registerItem(SteelPipeFrameItem);
 		BlueSteelPipeFrameItem = new ItemGeneral(getItemID(config,"pipe frames","BlueSteelPipeFrameItem",ItemIDProvider.BlueSteelPipeFrameItem)).setUnlocalizedName("BlueSteelPipeFrameItem");
-			LanguageRegistry.addName(BlueSteelPipeFrameItem, "Blue Steel Pipe Frame");
+			LanguageRegistry.addName(BlueSteelPipeFrameItem, "Frame: Blue Steel Pipe");
 			BCTFCcrossover.proxy.registerItem(BlueSteelPipeFrameItem);
 		RedSteelPipeFrameItem = new ItemGeneral(getItemID(config,"pipe frames","RedSteelPipeFrameItem",ItemIDProvider.RedSteelPipeFrameItem)).setUnlocalizedName("RedSteelPipeFrameItem");
-			LanguageRegistry.addName(RedSteelPipeFrameItem, "Red Steel Pipe Frame");
+			LanguageRegistry.addName(RedSteelPipeFrameItem, "Frame: Red Steel Pipe");
 			BCTFCcrossover.proxy.registerItem(RedSteelPipeFrameItem);
 		BlackBronzePipeFrameItem = new ItemGeneral(getItemID(config,"pipe frames","BlackBronzePipeFrameItem",ItemIDProvider.BlackBronzePipeFrameItem)).setUnlocalizedName("BlackBronzePipeFrameItem");
-			LanguageRegistry.addName(BlackBronzePipeFrameItem, "Black Bronze Pipe Frame");
+			LanguageRegistry.addName(BlackBronzePipeFrameItem, "Frame: Black Bronze Pipe");
 			BCTFCcrossover.proxy.registerItem(BlackBronzePipeFrameItem);
 		RoseGoldPipeFrameItem = new ItemGeneral(getItemID(config,"pipe frames","RoseGoldPipeFrameItem",ItemIDProvider.RoseGoldPipeFrameItem)).setUnlocalizedName("RoseGoldPipeFrameItem");
-			LanguageRegistry.addName(RoseGoldPipeFrameItem, "Rose Gold Pipe Frame");
+			LanguageRegistry.addName(RoseGoldPipeFrameItem, "Frame: Rose Gold Pipe");
 			BCTFCcrossover.proxy.registerItem(RoseGoldPipeFrameItem);
 		BlackSteelPipeFrameItem = new ItemGeneral(getItemID(config,"pipe frames","BlackSteelPipeFrameItem",ItemIDProvider.BlackSteelPipeFrameItem)).setUnlocalizedName("BlackSteelPipeFrameItem");
-			LanguageRegistry.addName(BlackSteelPipeFrameItem, "Black Steel Pipe Frame");
+			LanguageRegistry.addName(BlackSteelPipeFrameItem, "Frame: Black Steel Pipe");
 			BCTFCcrossover.proxy.registerItem(BlackSteelPipeFrameItem);
 		ZincPipeFrameItem = new ItemGeneral(getItemID(config,"pipe frames","ZincPipeFrameItem",ItemIDProvider.ZincPipeFrameItem)).setUnlocalizedName("ZincPipeFrameItem");
-			LanguageRegistry.addName(ZincPipeFrameItem, "Zinc Pipe Frame");
+			LanguageRegistry.addName(ZincPipeFrameItem, "Frame: Zinc Pipe");
 			BCTFCcrossover.proxy.registerItem(ZincPipeFrameItem);
 		CopperPipeFrameItem = new ItemGeneral(getItemID(config,"pipe frames","CopperPipeFrameItem",ItemIDProvider.CopperPipeFrameItem)).setUnlocalizedName("CopperPipeFrameItem");
-			LanguageRegistry.addName(CopperPipeFrameItem, "Copper Pipe Frame");
+			LanguageRegistry.addName(CopperPipeFrameItem, "Frame: Copper Pipe");
 			BCTFCcrossover.proxy.registerItem(CopperPipeFrameItem);
 		SilverPipeFrameItem = new ItemGeneral(getItemID(config,"pipe frames","SilverPipeFrameItem",ItemIDProvider.SilverPipeFrameItem)).setUnlocalizedName("SilverPipeFrameItem");
-			LanguageRegistry.addName(SilverPipeFrameItem, "Silver Pipe Frame");
+			LanguageRegistry.addName(SilverPipeFrameItem, "Frame: Silver Pipe");
 			BCTFCcrossover.proxy.registerItem(SilverPipeFrameItem);
 
 		// ===============Transport Pipes===============
 		Item.itemsList[ItemIDProvider.WoodPipe] = null;
-		TinPipeItem = createPipe(getItemID(config,"pipes","TinPipeItem",ItemIDProvider.TinPipeItem), TinPipeItem.class, "Tin Transport Pipe");
+		TinPipeItem = createPipe(getItemID(config,"pipes","TinPipeItem",ItemIDProvider.TinPipeItem), TinPipeItem.class, "Extraction Pipe");
 		BCTFCcrossover.proxy.registerItem(TinPipeItem);
-		BCTFCcrossover.proxy.registerPipe(TinPipeItem.itemID);
 
 		Item.itemsList[ItemIDProvider.CobblestonePipe] = null;
-		LeadPipeItem = createPipe(getItemID(config,"pipes","LeadPipeItem",ItemIDProvider.LeadPipeItem), LeadPipeItem.class, "Lead Transport Pipe");
+		LeadPipeItem = createPipe(getItemID(config,"pipes","LeadPipeItem",ItemIDProvider.LeadPipeItem), LeadPipeItem.class, "Transport Pipe 01");
 		BCTFCcrossover.proxy.registerItem(LeadPipeItem);
-		BCTFCcrossover.proxy.registerPipe(LeadPipeItem.itemID);
 
 		Item.itemsList[ItemIDProvider.StonePipe] = null;
-		BronzePipeItem = createPipe(getItemID(config,"pipes","BronzePipeItem",ItemIDProvider.BronzePipeItem), BronzePipeItem.class, "Bronze Transport Pipe");
+		BronzePipeItem = createPipe(getItemID(config,"pipes","BronzePipeItem",ItemIDProvider.BronzePipeItem), BronzePipeItem.class, "Transport Pipe 02");
 		BCTFCcrossover.proxy.registerItem(BronzePipeItem);
-		BCTFCcrossover.proxy.registerPipe(BronzePipeItem.itemID);
 		
 		Item.itemsList[ItemIDProvider.IronPipe] = null;
-		WroughtIronPipeItem = createPipe(getItemID(config,"pipes","WroughtIronPipeItem",ItemIDProvider.WroughtIronPipeItem), WroughtIronPipeItem.class, "Wrought Iron Transport Pipe");
+		WroughtIronPipeItem = createPipe(getItemID(config,"pipes","WroughtIronPipeItem",ItemIDProvider.WroughtIronPipeItem), WroughtIronPipeItem.class, "Junction Collector Pipe");
 		BCTFCcrossover.proxy.registerItem(WroughtIronPipeItem);
-		BCTFCcrossover.proxy.registerPipe(WroughtIronPipeItem.itemID);
 
 		Item.itemsList[ItemIDProvider.GoldPipe] = null;
-		SteelPipeItem = createPipe(getItemID(config,"pipes","SteelPipeItem",ItemIDProvider.SteelPipeItem), SteelPipeItem.class, "Steel Transport Pipe");
+		SteelPipeItem = createPipe(getItemID(config,"pipes","SteelPipeItem",ItemIDProvider.SteelPipeItem), SteelPipeItem.class, "Advanced Transport Pipe");
 		BCTFCcrossover.proxy.registerItem(SteelPipeItem);
-		BCTFCcrossover.proxy.registerPipe(SteelPipeItem.itemID);
 		
 		Item.itemsList[ItemIDProvider.DiamondPipe] = null;
-		BlueSteelPipeItem = createPipe(getItemID(config,"pipes","BlueSteelPipeItem",ItemIDProvider.BlueSteelPipeItem), BlueSteelPipeItem.class, "Blue Steel Transport Pipe");
+		BlueSteelPipeItem = createPipe(getItemID(config,"pipes","BlueSteelPipeItem",ItemIDProvider.BlueSteelPipeItem), BlueSteelPipeItem.class, "Router Pipe");
 		BCTFCcrossover.proxy.registerItem(BlueSteelPipeItem);
-		BCTFCcrossover.proxy.registerPipe(BlueSteelPipeItem.itemID);
 		
 		Item.itemsList[ItemIDProvider.EmeraldPipe] = null;
-		RedSteelPipeItem = createPipe(getItemID(config,"pipes","RedSteelPipeItem",ItemIDProvider.RedSteelPipeItem), RedSteelPipeItem.class, "Red Steel Transport Pipe");
+		RedSteelPipeItem = createPipe(getItemID(config,"pipes","RedSteelPipeItem",ItemIDProvider.RedSteelPipeItem), RedSteelPipeItem.class, "Filter Extraction Pipe");
 		BCTFCcrossover.proxy.registerItem(RedSteelPipeItem);
-		BCTFCcrossover.proxy.registerPipe(RedSteelPipeItem.itemID);
 		
 		Item.itemsList[ItemIDProvider.VoidPipe] = null;
-		BlackBronzePipeItem = createPipe(getItemID(config,"pipes","BlackBronzePipeItem",ItemIDProvider.BlackBronzePipeItem), BlackBronzePipeItem.class, "Black Bronze Transport Void Pipe");
+		BlackBronzePipeItem = createPipe(getItemID(config,"pipes","BlackBronzePipeItem",ItemIDProvider.BlackBronzePipeItem), BlackBronzePipeItem.class, "Void Pipe");
 		BCTFCcrossover.proxy.registerItem(BlackBronzePipeItem);
-		BCTFCcrossover.proxy.registerPipe(BlackBronzePipeItem.itemID);
 		
 		Item.itemsList[ItemIDProvider.SandstonePipe] = null;
-		RoseGoldPipeItem = createPipe(getItemID(config,"pipes","RoseGoldPipeItem",ItemIDProvider.RoseGoldPipeItem), RoseGoldPipeItem.class, "Rose Gold Transport Pipe");
+		RoseGoldPipeItem = createPipe(getItemID(config,"pipes","RoseGoldPipeItem",ItemIDProvider.RoseGoldPipeItem), RoseGoldPipeItem.class, "Transport Pipe Connector");
 		BCTFCcrossover.proxy.registerItem(RoseGoldPipeItem);
-		BCTFCcrossover.proxy.registerPipe(RoseGoldPipeItem.itemID);
 		
 		Item.itemsList[ItemIDProvider.ObsidianPipe] = null;
-		BlackSteelPipeItem = createPipe(getItemID(config,"pipes","BlackSteelPipeItem",ItemIDProvider.BlackSteelPipeItem), BlackSteelPipeItem.class, "Black Steel Transport Pipe");
+		BlackSteelPipeItem = createPipe(getItemID(config,"pipes","BlackSteelPipeItem",ItemIDProvider.BlackSteelPipeItem), BlackSteelPipeItem.class, "Suction Pipe");
 		BCTFCcrossover.proxy.registerItem(BlackSteelPipeItem);
-		BCTFCcrossover.proxy.registerPipe(BlackSteelPipeItem.itemID);
 
 		// ===============Liquid Pipes===============
 		Item.itemsList[ItemIDProvider.WoodPipeLiquids] = null;
-		TinPipeLiquidsItem = createPipe(getItemID(config,"pipes","TinPipeLiquidsItem",ItemIDProvider.TinPipeLiquidsItem), TinPipeLiquidsItem.class, "Tin Waterproof Pipe");
+		TinPipeLiquidsItem = createPipe(getItemID(config,"pipes","TinPipeLiquidsItem",ItemIDProvider.TinPipeLiquidsItem), TinPipeLiquidsItem.class, "Liquids Extraction Pipe");
 		BCTFCcrossover.proxy.registerItem(TinPipeLiquidsItem);
-		BCTFCcrossover.proxy.registerPipe(TinPipeLiquidsItem.itemID);
 		
 		Item.itemsList[ItemIDProvider.CobblestonePipeLiquids] = null;
-		LeadPipeLiquidsItem = createPipe(getItemID(config,"pipes","LeadPipeLiquidsItem",ItemIDProvider.LeadPipeLiquidsItem), LeadPipeLiquidsItem.class, "Lead Waterproof Pipe");
+		LeadPipeLiquidsItem = createPipe(getItemID(config,"pipes","LeadPipeLiquidsItem",ItemIDProvider.LeadPipeLiquidsItem), LeadPipeLiquidsItem.class, "Liquids Transport Pipe 01");
 		BCTFCcrossover.proxy.registerItem(LeadPipeLiquidsItem);
-		BCTFCcrossover.proxy.registerPipe(LeadPipeLiquidsItem.itemID);
 		
 		Item.itemsList[ItemIDProvider.StonePipeLiquids] = null;
-		BronzePipeLiquidsItem = createPipe(getItemID(config,"pipes","BronzePipeLiquidsItem",ItemIDProvider.BronzePipeLiquidsItem), BronzePipeLiquidsItem.class, "Bronze Waterproof Pipe");
+		BronzePipeLiquidsItem = createPipe(getItemID(config,"pipes","BronzePipeLiquidsItem",ItemIDProvider.BronzePipeLiquidsItem), BronzePipeLiquidsItem.class, "Liquids Transport Pipe 02");
 		BCTFCcrossover.proxy.registerItem(BronzePipeLiquidsItem);
-		BCTFCcrossover.proxy.registerPipe(BronzePipeLiquidsItem.itemID);
 		
 		Item.itemsList[ItemIDProvider.IronPipeLiquids] = null;
-		WroughtIronPipeLiquidsItem = createPipe(getItemID(config,"pipes","WroughtIronPipeLiquidsItem",ItemIDProvider.WroughtIronPipeLiquidsItem), WroughtIronPipeLiquidsItem.class, "Wrought Iron Waterproof Pipe");
+		WroughtIronPipeLiquidsItem = createPipe(getItemID(config,"pipes","WroughtIronPipeLiquidsItem",ItemIDProvider.WroughtIronPipeLiquidsItem), WroughtIronPipeLiquidsItem.class, "Liquids Junction Collector Pipe");
 		BCTFCcrossover.proxy.registerItem(WroughtIronPipeLiquidsItem);
-		BCTFCcrossover.proxy.registerPipe(WroughtIronPipeLiquidsItem.itemID);
 		
 		Item.itemsList[ItemIDProvider.GoldPipeLiquids] = null;
-		SteelPipeLiquidsItem = createPipe(getItemID(config,"pipes","SteelPipeLiquidsItem",ItemIDProvider.SteelPipeLiquidsItem), SteelPipeLiquidsItem.class, "Steel Waterproof Pipe");
+		SteelPipeLiquidsItem = createPipe(getItemID(config,"pipes","SteelPipeLiquidsItem",ItemIDProvider.SteelPipeLiquidsItem), SteelPipeLiquidsItem.class, "Advanced Liquids Transport Pipe");
 		BCTFCcrossover.proxy.registerItem(SteelPipeLiquidsItem);
-		BCTFCcrossover.proxy.registerPipe(SteelPipeLiquidsItem.itemID);
 		
 		Item.itemsList[ItemIDProvider.EmeraldPipeLiquids] = null;
-		RedSteelPipeLiquidsItem = createPipe(getItemID(config,"pipes","RedSteelPipeLiquidsItem",ItemIDProvider.RedSteelPipeLiquidsItem), RedSteelPipeLiquidsItem.class, "Red Steel Waterproof Pipe");
+		RedSteelPipeLiquidsItem = createPipe(getItemID(config,"pipes","RedSteelPipeLiquidsItem",ItemIDProvider.RedSteelPipeLiquidsItem), RedSteelPipeLiquidsItem.class, "Advanced Liquids Extraction Pipe");
 		BCTFCcrossover.proxy.registerItem(RedSteelPipeLiquidsItem);
-		BCTFCcrossover.proxy.registerPipe(RedSteelPipeLiquidsItem.itemID);
 		
 		Item.itemsList[ItemIDProvider.VoidPipeLiquids] = null;
-		BlackBronzePipeLiquidsItem = createPipe(getItemID(config,"pipes","BlackBronzePipeLiquidsItem",ItemIDProvider.BlackBronzePipeLiquidsItem), BlackBronzePipeLiquidsItem.class, "Black Bronze Waterproof Void Pipe");
+		BlackBronzePipeLiquidsItem = createPipe(getItemID(config,"pipes","BlackBronzePipeLiquidsItem",ItemIDProvider.BlackBronzePipeLiquidsItem), BlackBronzePipeLiquidsItem.class, "Liquids Void Pipe");
 		BCTFCcrossover.proxy.registerItem(BlackBronzePipeLiquidsItem);
-		BCTFCcrossover.proxy.registerPipe(BlackBronzePipeLiquidsItem.itemID);
 		
 		Item.itemsList[ItemIDProvider.SandstoneLiquids] = null;
-		RoseGoldPipeLiquidsItem = createPipe(getItemID(config,"pipes","RoseGoldPipeLiquidsItem",ItemIDProvider.RoseGoldPipeLiquidsItem), RoseGoldPipeLiquidsItem.class, "Rose Gold Waterproof Pipe");
+		RoseGoldPipeLiquidsItem = createPipe(getItemID(config,"pipes","RoseGoldPipeLiquidsItem",ItemIDProvider.RoseGoldPipeLiquidsItem), RoseGoldPipeLiquidsItem.class, "Liquids Pipe Connector");
 		BCTFCcrossover.proxy.registerItem(RoseGoldPipeLiquidsItem);
-		BCTFCcrossover.proxy.registerPipe(RoseGoldPipeLiquidsItem.itemID);
 
 		// ===============Power Pipes===============
 		Item.itemsList[ItemIDProvider.WoodPipePower] = null;
 		TinPipePowerItem = createPipe(getItemID(config,"pipes","TinPipePowerItem",ItemIDProvider.TinPipePowerItem), TinPipePowerItem.class, "Tin Conductive Pipe");
 		BCTFCcrossover.proxy.registerItem(TinPipePowerItem);
-		BCTFCcrossover.proxy.registerPipe(TinPipePowerItem.itemID);
 		
 		Item.itemsList[ItemIDProvider.StonePipePower] = null;
 		ZincPipePowerItem = createPipe(getItemID(config,"pipes","ZincPipePowerItem",ItemIDProvider.ZincPipePowerItem), ZincPipePowerItem.class, "Zinc Condictive Pipe");
 		BCTFCcrossover.proxy.registerItem(ZincPipePowerItem);
-		BCTFCcrossover.proxy.registerPipe(ZincPipePowerItem.itemID);
 		
 		Item.itemsList[ItemIDProvider.GoldPipePower] = null;
 		CopperPipePowerItem = createPipe(getItemID(config,"pipes","CopperPipePowerItem",ItemIDProvider.CopperPipePowerItem), CopperPipePowerItem.class, "Copper Condictive Pipe");
 		BCTFCcrossover.proxy.registerItem(CopperPipePowerItem);
-		BCTFCcrossover.proxy.registerPipe(CopperPipePowerItem.itemID);
 		
 		//NEW
 		SilverPipePowerItem = createPipe(getItemID(config,"pipes","SilverPipePowerItem",ItemIDProvider.SilverPipePowerItem), SilverPipePowerItem.class, "Silver Condictive Pipe");
 		BCTFCcrossover.proxy.registerItem(SilverPipePowerItem);
-		BCTFCcrossover.proxy.registerPipe(SilverPipePowerItem.itemID);
 		
 		// ===============Structure Pipes===============
 		Item.itemsList[ItemIDProvider.StructurePipeCobblestone] = null;
-		LeadPipeStructureItem = createPipe(getItemID(config,"pipes","LeadPipeStructureItem",ItemIDProvider.LeadPipeStructureItem), LeadPipeStructureItem.class, "Lead Structure Pipe");
+		LeadPipeStructureItem = createPipe(getItemID(config,"pipes","LeadPipeStructureItem",ItemIDProvider.LeadPipeStructureItem), LeadPipeStructureItem.class, "Structure Pipe");
 		BCTFCcrossover.proxy.registerItem(LeadPipeStructureItem);
-		BCTFCcrossover.proxy.registerPipe(LeadPipeStructureItem.itemID);
 		
 		if (config != null) {
 			config.save();
