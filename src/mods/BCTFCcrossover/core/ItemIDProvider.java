@@ -17,6 +17,7 @@
  */
 package mods.BCTFCcrossover.core;
 
+import buildcraft.BuildCraftCore;
 import buildcraft.BuildCraftTransport;
 
 public class ItemIDProvider {
@@ -81,6 +82,20 @@ public class ItemIDProvider {
 	
 	public static final int LeadPipeStructureItem			= 25452;
 	
+	public static final int BismuthWrenchItem				= 25453;
+	public static final int TinWrenchItem					= 25454;
+	public static final int ZincWrenchItem					= 25455;
+	public static final int CopperWrenchItem				= 25456;
+	public static final int BismuthBronzeWrenchItem			= 25457;
+	public static final int BlackBronzeWrenchItem			= 25458;
+	public static final int BronzeWrenchItem				= 25459;
+	public static final int RoseGoldWrenchItem				= 25460;
+	public static final int WroughtIronWrenchItem			= 25461;
+	public static final int SteelWrenchItem					= 25462;
+	public static final int BlackSteelWrenchItem			= 25463;
+	public static final int BlueSteelWrenchItem				= 25464;
+	public static final int RedSteelWrenchItem				= 25465;
+	
 	// BC IDs
 	public static final int WoodPipe						= BuildCraftTransport.pipeItemsWood.itemID;
 	public static final int WoodPipeLiquids					= BuildCraftTransport.pipeLiquidsWood.itemID;
@@ -104,5 +119,7 @@ public class ItemIDProvider {
 	public static final int SandstonePipe					= BuildCraftTransport.pipeItemsSandstone.itemID;
 	public static final int SandstoneLiquids				= BuildCraftTransport.pipeLiquidsSandstone.itemID;
 	public static final int ObsidianPipe					= BuildCraftTransport.pipeItemsObsidian.itemID;
+	
+	public static final int Wrench							= BuildCraftCore.wrenchItem.itemID;
 
 }
