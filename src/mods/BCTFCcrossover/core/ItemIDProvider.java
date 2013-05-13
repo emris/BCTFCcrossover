@@ -121,5 +121,5 @@ public class ItemIDProvider {
 	public static final int ObsidianPipe					= BuildCraftTransport.pipeItemsObsidian.itemID;
 	
 	public static final int Wrench							= BuildCraftCore.wrenchItem.itemID;
-
+	
 }

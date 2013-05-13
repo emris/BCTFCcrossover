@@ -27,7 +27,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 import buildcraft.core.CreativeTabBuildCraft;
 import buildcraft.core.ItemWrench;
-import buildcraft.core.utils.StringUtil;
+import buildcraft.core.utils.StringUtils;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -62,13 +62,13 @@ public class ItemWrenchGeneral extends ItemWrench {
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void updateIcons(IconRegister registerer) {
-		this.iconIndex = registerer.registerIcon("BCTFCcrossover:" + iconName);
+	public void registerIcons(IconRegister registerer) {
+		this.itemIcon = registerer.registerIcon("BCTFCcrossover:" + iconName);
 	}
 	
 	@Override
 	public String getItemDisplayName(ItemStack itemstack) {
-		return StringUtil.localize(getUnlocalizedName(itemstack));
+		return StringUtils.localize(getUnlocalizedName(itemstack));
 	}
 	
 	private void setMaxDmg(String s) {

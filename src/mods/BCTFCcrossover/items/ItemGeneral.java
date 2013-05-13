@@ -24,7 +24,7 @@ import TFC.Enums.EnumSize;
 import TFC.Enums.EnumWeight;
 import TFC.Items.ItemTerra;
 import buildcraft.core.CreativeTabBuildCraft;
-import buildcraft.core.utils.StringUtil;
+import buildcraft.core.utils.StringUtils;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -48,13 +48,13 @@ public class ItemGeneral extends ItemTerra {
 	
 	@Override
 	public String getItemDisplayName(ItemStack itemstack) {
-		return StringUtil.localize(getUnlocalizedName(itemstack));
+		return StringUtils.localize(getUnlocalizedName(itemstack));
 	}
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void updateIcons(IconRegister registerer) {
-		this.iconIndex = registerer.registerIcon("BCTFCcrossover:" + iconName);
+	public void registerIcons(IconRegister registerer) {
+		this.itemIcon = registerer.registerIcon("BCTFCcrossover:" + iconName);
 	}
 	
 	@Override

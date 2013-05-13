@@ -33,7 +33,7 @@ import TFC.Items.ISize;
 import buildcraft.BuildCraftEnergy;
 import buildcraft.BuildCraftFactory;
 import buildcraft.core.CreativeTabBuildCraft;
-import buildcraft.core.utils.StringUtil;
+import buildcraft.core.utils.StringUtils;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -61,13 +61,13 @@ public class ItemWoodBucketOil extends ItemBucket implements ISize {
 
 	@Override
 	public String getItemDisplayName(ItemStack itemstack) {
-		return StringUtil.localize(getUnlocalizedName(itemstack));
+		return StringUtils.localize(getUnlocalizedName(itemstack));
 	}
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void updateIcons(IconRegister par1IconRegister) {
-		this.iconIndex = par1IconRegister.registerIcon("BCTFCcrossover:" + getUnlocalizedName().replace("item.", ""));
+	public void registerIcons(IconRegister par1IconRegister) {
+		this.itemIcon = par1IconRegister.registerIcon("BCTFCcrossover:" + getUnlocalizedName().replace("item.", ""));
 	}
 	
 	public static void addSizeInformation(ISize object, List arraylist) {

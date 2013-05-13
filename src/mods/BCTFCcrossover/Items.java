@@ -171,6 +171,7 @@ public class Items {
 //		CopperGearItem = new ItemGeneral(getItemID(config,"gears","CopperGearItem",ItemIDProvider.)).setUnlocalizedName("CopperGearItem");
 //			LanguageRegistry.addName(CopperGearItem, "Gear: Copper");
 //			BCTFCcrossover.proxy.registerItem(CopperGearItem);
+		
 		BismuthBronzeGearItem = new ItemGeneral(getItemID(config,"gears","BismuthBronzeGearItem",ItemIDProvider.BismuthBronzeGearItem)).setUnlocalizedName("BismuthBronzeGearItem");
 			LanguageRegistry.addName(BismuthBronzeGearItem, "Gear: Bismuth Bronze");
 			BCTFCcrossover.proxy.registerItem(BismuthBronzeGearItem);
