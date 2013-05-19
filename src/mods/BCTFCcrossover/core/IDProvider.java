@@ -20,40 +20,13 @@ package mods.BCTFCcrossover.core;
 import buildcraft.BuildCraftCore;
 import buildcraft.BuildCraftTransport;
 
-public class ItemIDProvider {
-	public static final int GearPlanItem					= 25400;
-	public static final int WrenchPlanItem					= 25401;
-	public static final int PipeFramePlanItem				= 25402;
-
-	public static final int BismuthGearItem					= 25403;
-	public static final int BismuthBronzeGearItem			= 25404;
-	public static final int BlackBronzeGearItem				= 25405;
-	public static final int BlackSteelGearItem				= 25406;
-	public static final int BlueSteelGearItem				= 25407;
-	public static final int BronzeGearItem					= 25408;
-	public static final int CopperGearItem					= 25409;
-	public static final int WroughtIronGearItem				= 25410;
-	public static final int RedSteelGearItem				= 25411;
-	public static final int RoseGoldGearItem				= 25412;
-	public static final int SteelGearItem					= 25413;
-	public static final int TinGearItem						= 25414;
-	public static final int ZincGearItem					= 25415;
-	
-	public static final int WoodBucketOil					= 25416;
-	
-	public static final int TinPipeFrameItem				= 25417;
-	public static final int ZincPipeFrameItem				= 25418;
-	public static final int CopperPipeFrameItem				= 25419;
-	public static final int BlackBronzePipeFrameItem		= 25420;
-	public static final int BronzePipeFrameItem				= 25421;
-	public static final int LeadPipeFrameItem				= 25422;
-	public static final int RoseGoldPipeFrameItem			= 25423;
-	public static final int SilverPipeFrameItem				= 25424;
-	public static final int WroughtIronPipeFrameItem		= 25425;
-	public static final int SteelPipeFrameItem				= 25426;
-	public static final int BlackSteelPipeFrameItem			= 25427;
-	public static final int BlueSteelPipeFrameItem			= 25428;
-	public static final int RedSteelPipeFrameItem			= 25429;
+public class IDProvider {
+	public static final int Plans							= 25400;
+	public static final int Gears							= 25401;
+	public static final int WoodBuckets						= 25402;
+	public static final int Rubber							= 25403;
+	public static final int PipeFrames						= 25404;
+	public static final int Latex							= 25405;
 	
 	public static final int TinPipeItem						= 25430;
 	public static final int LeadPipeItem					= 25431;
@@ -95,6 +68,9 @@ public class ItemIDProvider {
 	public static final int BlackSteelWrenchItem			= 25463;
 	public static final int BlueSteelWrenchItem				= 25464;
 	public static final int RedSteelWrenchItem				= 25465;
+	
+	// Blocks
+	public static final int Hevea							= 25500;
 	
 	// BC IDs
 	public static final int WoodPipe						= BuildCraftTransport.pipeItemsWood.itemID;

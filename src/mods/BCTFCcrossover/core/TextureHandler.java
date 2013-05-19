@@ -15,13 +15,22 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package mods.BCTFCcrossover.utils;
+package mods.BCTFCcrossover.core;
 
-public class Version {
+import mods.BCTFCcrossover.Items;
+import net.minecraft.client.Minecraft;
+import net.minecraftforge.client.event.TextureStitchEvent;
+import net.minecraftforge.event.ForgeSubscribe;
+import net.minecraftforge.liquids.LiquidDictionary;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
-	public static final String VERSION = "0.5.B76HF18";
-
-	public static String getVersion() {
-		return VERSION;
+public class TextureHandler {
+	@ForgeSubscribe
+	@SideOnly(Side.CLIENT)
+	public void textureHook(TextureStitchEvent.Post event) {
+		if (event.map == Minecraft.getMinecraft().renderEngine.textureMapItems) {
+			LiquidDictionary.getCanonicalLiquid("Latex").setRenderingIcon(Items.Latex.getIconFromDamage(0)).setTextureSheet("/gui/items.png");
+		}
 	}
 }

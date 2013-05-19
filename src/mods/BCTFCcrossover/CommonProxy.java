@@ -21,8 +21,11 @@ import java.io.File;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.src.ModLoader;
 import net.minecraft.world.World;
+import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class CommonProxy {
@@ -46,6 +49,26 @@ public class CommonProxy {
 		GameRegistry.registerItem(item, item.getUnlocalizedName().replace("item.", ""));
 	}
 	
+	public void registerOreDict() {
+		// Register Rubber to OreDictionery
+		String[] rubberNames = new String[]{"rubberBlack", "rubberRed", "rubberGreen", "rubberBrown", "rubberBlue", "rubberPurple", "rubberCyan", "rubberLightGray", "rubberGray", "rubberPink", "rubberLimeGreen", "rubberYellow", "rubberLightBlue", "rubberMagenta", "rubberOrange", "rubberWhite"};
+		for (int i = 0; i < rubberNames.length; ++i) {
+			OreDictionary.registerOre(rubberNames[i], new ItemStack(Items.Rubber.itemID, 1, i));
+		}
+		String[] woodBucketNames = new String[]{"woodBucketOil", "woodBucketFuel", "woodBucketLatex"};
+		for (int i = 0; i < woodBucketNames.length; ++i) {
+			OreDictionary.registerOre(woodBucketNames[i], new ItemStack(Items.WoodBuckets.itemID, 1, i));
+		}
+		String[] pipeFrameNames = new String[]{"pipeFrameTin", "pipeFrameLead", "pipeFrameBronze", "pipeFrameWroughtIron", "pipeFrameSteel", "pipeFrameBlueSteel", "pipeFrameRedSteel", "pipeFrameBlackBronze", "pipeFrameRoseGold", "pipeFrameBlackSteel", "pipeFrameZinc", "pipeFrameCopper", "pipeFrameSilver"};
+		for (int i = 0; i < pipeFrameNames.length; ++i) {
+			OreDictionary.registerOre(pipeFrameNames[i], new ItemStack(Items.PipeFrames.itemID, 1, i));
+		}
+		String[] gearNames= new String[]{"gearBismuthBronze", "gearBlackBronze", "gearBronze", "gearRoseGold", "gearWroughtIron", "gearSteel", "gearBlackSteel", "gearBlueSteel", "gearRedSteel"};
+		for (int i = 0; i < gearNames.length; ++i) {
+			OreDictionary.registerOre(gearNames[i], new ItemStack(Items.Gears.itemID, 1, i));
+		}
+	}
+	
 	public String getCurrentLanguage() {
 		return null;
 	}
@@ -61,8 +84,8 @@ public class CommonProxy {
 	}
 	
 	public void addCraftingRecipe(ItemStack result, Object[] recipe) {
-//		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(result, recipe));
-		GameRegistry.addRecipe(result, recipe);
+		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(result, recipe));
+//		GameRegistry.addRecipe(result, recipe);
 	}
 
 	public void addShapelessRecipe(ItemStack result, Object[] recipe) {

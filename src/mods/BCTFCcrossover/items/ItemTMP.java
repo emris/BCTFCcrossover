@@ -28,12 +28,12 @@ import buildcraft.core.utils.StringUtils;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemGeneral extends ItemTerra {
+public class ItemTMP extends ItemTerra {
 	public String iconName;
 	private EnumSize itemSize;
 	private EnumWeight itemWeight;
 
-	public ItemGeneral(int i) {
+	public ItemTMP(int i) {
 		super(i);
 		setCreativeTab(CreativeTabBuildCraft.tabBuildCraft);
 		setSize(EnumSize.MEDIUM);
