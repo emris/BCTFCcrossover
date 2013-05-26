@@ -29,11 +29,11 @@ import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
 import TFC.TFCBlocks;
 import TFC.TFCItems;
+import TFC.API.Enums.CraftingRuleEnum;
 import TFC.Core.AnvilCraftingManagerTFC;
 import TFC.Core.AnvilRecipe;
 import TFC.Core.AnvilReq;
 import TFC.Core.CraftingManagerTFC;
-import TFC.Enums.CraftingRuleEnum;
 import buildcraft.BuildCraftBuilders;
 import buildcraft.BuildCraftCore;
 import buildcraft.BuildCraftEnergy;
@@ -47,7 +47,6 @@ import buildcraft.builders.FillerFillPyramid;
 import buildcraft.builders.FillerFillStairs;
 import buildcraft.builders.FillerFillWalls;
 import buildcraft.builders.FillerFlattener;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Recipes {
 
@@ -115,6 +114,11 @@ public class Recipes {
 			anvil.addRecipe(new MultiItemAnvilRecipe(new ItemStack(TFCItems.CopperSheet), new ItemStack(Items.Plans, 1, 2),40 + R.nextInt(35),CraftingRuleEnum.HITLAST, CraftingRuleEnum.BENDSECONDFROMLAST, CraftingRuleEnum.BENDTHIRDFROMLAST, false, AnvilReq.STONE, new ItemStack(Items.PipeFrames, 8, 11)));
 			anvil.addRecipe(new MultiItemAnvilRecipe(new ItemStack(TFCItems.SilverSheet), new ItemStack(Items.Plans, 1, 2),40 + R.nextInt(35),CraftingRuleEnum.HITLAST, CraftingRuleEnum.BENDSECONDFROMLAST, CraftingRuleEnum.BENDTHIRDFROMLAST, false, AnvilReq.COPPER, new ItemStack(Items.PipeFrames, 8, 12)));
 		}
+		//Buckets
+		Random R = new Random (192865717);
+		anvil.addRecipe(new AnvilRecipe(new ItemStack(TFCItems.ZincSheet), new ItemStack(TFCItems.BucketPlan),20 + R.nextInt(55),CraftingRuleEnum.BENDLAST, CraftingRuleEnum.BENDSECONDFROMLAST, CraftingRuleEnum.BENDTHIRDFROMLAST, false, AnvilReq.STONE, new ItemStack(Items.Buckets, 1, 1)));
+		anvil.addRecipe(new AnvilRecipe(new ItemStack(TFCItems.SteelSheet), new ItemStack(TFCItems.BucketPlan),20 + R.nextInt(55),CraftingRuleEnum.BENDLAST, CraftingRuleEnum.BENDSECONDFROMLAST, CraftingRuleEnum.BENDTHIRDFROMLAST, false, AnvilReq.WROUGHTIRON, new ItemStack(Items.Buckets, 1, 3)));
+
 
 		// =================Transport Pipes========================
 		// Tin replaces Wood
@@ -543,19 +547,29 @@ public class Recipes {
 		AssemblyRecipe.assemblyRecipes.add(new AssemblyRecipe(new ItemStack[] { new ItemStack(Item.dyePowder, 1, 11), new ItemStack(Item.redstone, 1), new ItemStack(TFCItems.CopperIngot, 1) }, 500, new ItemStack(BuildCraftTransport.yellowPipeWire, 8)));
 
 		// ==========Latex==========
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.WoodBuckets, 1, 2), new Object[] { "fff", "fff", " b ",
+		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.LatexBowl, 1), new Object[] { "fff", "fff", " b ",
 			Character.valueOf('f'), Block.blocksList[37],
+			Character.valueOf('b'), Item.bowlEmpty });
+		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.Buckets, 1, 0), new Object[] { " f ", "fff", " b ",
+			Character.valueOf('f'), "bowlLatex",
 			Character.valueOf('b'), TFCItems.WoodenBucketEmpty });
 		
 		// ==========Rubber==========
+		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.Rubber, 1, 15), new Object[] { "s", "b",
+			Character.valueOf('s'), TFCItems.SulfurPowder,
+			Character.valueOf('b'), "bowlLatex" });
 		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.Rubber, 4, 15), new Object[] { "s", "b",
 			Character.valueOf('s'), TFCItems.SulfurPowder,
-			Character.valueOf('b'), "woodBucketLatex" });
+			Character.valueOf('b'), "bucketLatex" });
 		for(int i = 0; i < 16; i++) {
+			BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.Rubber, 1, i), new Object[] { "g", "s", "b",
+				Character.valueOf('g'), new ItemStack(Item.dyePowder, 1 , i),
+				Character.valueOf('s'), TFCItems.SulfurPowder,
+				Character.valueOf('b'), "bowlLatex" });
 			BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.Rubber, 4, i), new Object[] { "g", "s", "b",
 				Character.valueOf('g'), new ItemStack(Item.dyePowder, 1 , i),
 				Character.valueOf('s'), TFCItems.SulfurPowder,
-				Character.valueOf('b'), "woodBucketLatex" });
+				Character.valueOf('b'), "bucketLatex" });
 		}
 		
 		// ==========Things That make no sense...yet=============
@@ -596,10 +610,6 @@ public class Recipes {
 				Character.valueOf('p'), new ItemStack(TFCItems.SinglePlank,1,i),
 				Character.valueOf('b'), Item.book });
 		}
-
-		// Vanilla Bucket
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Item.bucketEmpty), new Object[] { "I I", " I ",
-				Character.valueOf('I'), TFCItems.WroughtIronIngot });
 	}
 	
 	public static void RemoveRecipe(ItemStack resultItem) {
@@ -610,7 +620,6 @@ public class Recipes {
 			if (tmpRecipe instanceof IRecipe) {
 				IRecipe recipe = tmpRecipe;
 				ItemStack recipeResult = recipe.getRecipeOutput();
-
 				if (ItemStack.areItemStacksEqual(resultItem, recipeResult)) {
 					recipes.remove(i--);
 				}

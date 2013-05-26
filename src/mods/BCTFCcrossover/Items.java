@@ -20,12 +20,13 @@ package mods.BCTFCcrossover;
 import java.io.File;
 
 import mods.BCTFCcrossover.core.IDProvider;
+import mods.BCTFCcrossover.items.ItemBuckets;
 import mods.BCTFCcrossover.items.ItemGears;
 import mods.BCTFCcrossover.items.ItemGeneric;
+import mods.BCTFCcrossover.items.ItemLatexBowl;
 import mods.BCTFCcrossover.items.ItemPipeFrames;
 import mods.BCTFCcrossover.items.ItemPlans;
 import mods.BCTFCcrossover.items.ItemRubber;
-import mods.BCTFCcrossover.items.ItemWoodBuckets;
 import mods.BCTFCcrossover.items.ItemWrenchGeneral;
 import mods.BCTFCcrossover.pipes.liquids.BlackBronzePipeLiquidsItem;
 import mods.BCTFCcrossover.pipes.liquids.BronzePipeLiquidsItem;
@@ -63,8 +64,9 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 public class Items {
 	public static LiquidStack LatexLiquid;
 	public static Item Latex;
+	public static Item LatexBowl;
 	
-	public static Item WoodBuckets;
+	public static Item Buckets;
 	public static Item Rubber;
 	public static Item Gears;
 	public static Item Plans;
@@ -135,15 +137,19 @@ public class Items {
 			BCTFCcrossover.proxy.registerItem(Gears);
 		
 		// ===============Buckets=============
-		WoodBuckets = new ItemWoodBuckets(getItemID(config, "items", "WoodBuckets", IDProvider.WoodBuckets));
-			LanguageRegistry.addName(WoodBuckets, "Wooden Bucket");
-			BCTFCcrossover.proxy.registerItem(WoodBuckets);
+		Buckets = new ItemBuckets(getItemID(config, "items", "Buckets", IDProvider.Buckets));
+			LanguageRegistry.addName(Buckets, "Bucket");
+			BCTFCcrossover.proxy.registerItem(Buckets);
 			
 		// ===============Latex=============
 		Latex = new ItemGeneric(getItemID(config, "items", "Latex", IDProvider.Latex)).setUnlocalizedName("Latex");
 			LanguageRegistry.addName(Latex, "Latex");
 			BCTFCcrossover.proxy.registerItem(Latex);
-			LatexLiquid = LiquidDictionary.getOrCreateLiquid("Latex", new LiquidStack(Latex, 1));
+		LatexBowl = new ItemLatexBowl(getItemID(config, "items", "LatexBowl", IDProvider.LatexBowl));
+			LanguageRegistry.addName(LatexBowl, "LatexBowl");
+			BCTFCcrossover.proxy.registerItem(LatexBowl);
+		// Register Latex liquid
+		LatexLiquid = LiquidDictionary.getOrCreateLiquid("Latex", new LiquidStack(Latex, 1));
 
 		// ===============Rubber==============
 		Rubber = new ItemRubber(getItemID(config, "items", "Rubber", IDProvider.Rubber));
@@ -306,7 +312,6 @@ public class Items {
 		BCTFCcrossover.proxy.registerItem(RedSteelWrenchItem);
 
 		
-		
 		if (config != null) {
 			config.save();
 		}
@@ -316,24 +321,20 @@ public class Items {
 		if (config == null)	{
 			return value;
 		}
-		
 		try	{
 			Property prop = config.get(heading, item, value);
 			return prop.getInt(value);
 		} catch (Exception e) {
 			System.out.println(new StringBuilder().append("[BCTFCcrossover] ERROR adding Integer, config NOT loaded properly!").toString());
 		}
-		
 		return value;
 	}
 	
 	public static Item createPipe(int defaultID, Class<? extends Pipe> clas, String descr) {
 		String name = Character.toLowerCase(clas.getSimpleName().charAt(0)) + clas.getSimpleName().substring(1);
-
 		ItemPipe res = BlockGenericPipe.registerPipe(defaultID, clas);
 		res.setUnlocalizedName(clas.getSimpleName());
 		LanguageRegistry.addName(res, descr);
-
 		return res;
 	}
 }

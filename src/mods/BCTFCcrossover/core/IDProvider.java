@@ -23,10 +23,11 @@ import buildcraft.BuildCraftTransport;
 public class IDProvider {
 	public static final int Plans							= 25400;
 	public static final int Gears							= 25401;
-	public static final int WoodBuckets						= 25402;
+	public static final int Buckets							= 25402;
 	public static final int Rubber							= 25403;
 	public static final int PipeFrames						= 25404;
 	public static final int Latex							= 25405;
+	public static final int LatexBowl						= 25406;
 	
 	public static final int TinPipeItem						= 25430;
 	public static final int LeadPipeItem					= 25431;

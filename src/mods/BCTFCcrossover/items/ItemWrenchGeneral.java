@@ -17,14 +17,10 @@
  */
 package mods.BCTFCcrossover.items;
 
-import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
-import net.minecraftforge.common.ForgeDirection;
 import buildcraft.core.CreativeTabBuildCraft;
 import buildcraft.core.ItemWrench;
 import buildcraft.core.utils.StringUtils;
@@ -37,7 +33,7 @@ public class ItemWrenchGeneral extends ItemWrench {
 	public ItemWrenchGeneral(int i) {
 		super(i);
 		setCreativeTab(CreativeTabBuildCraft.tabBuildCraft);
-		this.maxStackSize = 1;
+		maxStackSize = 1;
 	}
 	
 	@Override

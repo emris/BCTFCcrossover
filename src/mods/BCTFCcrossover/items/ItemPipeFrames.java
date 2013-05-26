@@ -24,9 +24,9 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
-import TFC.Enums.EnumSize;
-import TFC.Enums.EnumWeight;
-import TFC.Items.ISize;
+import TFC.API.ISize;
+import TFC.API.Enums.EnumSize;
+import TFC.API.Enums.EnumWeight;
 import TFC.Items.ItemTerra;
 import buildcraft.core.CreativeTabBuildCraft;
 import buildcraft.core.utils.StringUtils;
@@ -42,8 +42,8 @@ public class ItemPipeFrames extends ItemTerra implements ISize {
 		super(id);
 		setMaxDamage(0);
 		setHasSubtypes(true);
-		this.setCreativeTab(CreativeTabBuildCraft.tabBuildCraft);
-		this.setUnlocalizedName("PipeFrame");
+		setCreativeTab(CreativeTabBuildCraft.tabBuildCraft);
+		setUnlocalizedName("PipeFrame");
 		MetaNames = new String[]{"Tin", "Lead", "Bronze", "WroughtIron", "Steel", "BlueSteel", "RedSteel", "BlackBronze", "RoseGold", "BlackSteel", "Zinc", "Copper", "Silver"};
 	}
 	

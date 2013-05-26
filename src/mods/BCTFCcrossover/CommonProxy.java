@@ -55,9 +55,9 @@ public class CommonProxy {
 		for (int i = 0; i < rubberNames.length; ++i) {
 			OreDictionary.registerOre(rubberNames[i], new ItemStack(Items.Rubber.itemID, 1, i));
 		}
-		String[] woodBucketNames = new String[]{"woodBucketOil", "woodBucketFuel", "woodBucketLatex"};
+		String[] woodBucketNames = new String[]{"bucketLatex","bucketZinc","bucketZincWater","bucketSteel","bucketSteelOil","bucketSteelFuel"};
 		for (int i = 0; i < woodBucketNames.length; ++i) {
-			OreDictionary.registerOre(woodBucketNames[i], new ItemStack(Items.WoodBuckets.itemID, 1, i));
+			OreDictionary.registerOre(woodBucketNames[i], new ItemStack(Items.Buckets.itemID, 1, i));
 		}
 		String[] pipeFrameNames = new String[]{"pipeFrameTin", "pipeFrameLead", "pipeFrameBronze", "pipeFrameWroughtIron", "pipeFrameSteel", "pipeFrameBlueSteel", "pipeFrameRedSteel", "pipeFrameBlackBronze", "pipeFrameRoseGold", "pipeFrameBlackSteel", "pipeFrameZinc", "pipeFrameCopper", "pipeFrameSilver"};
 		for (int i = 0; i < pipeFrameNames.length; ++i) {
@@ -67,6 +67,7 @@ public class CommonProxy {
 		for (int i = 0; i < gearNames.length; ++i) {
 			OreDictionary.registerOre(gearNames[i], new ItemStack(Items.Gears.itemID, 1, i));
 		}
+		OreDictionary.registerOre("bowlLatex", new ItemStack(Items.LatexBowl.itemID, 1, 0));
 	}
 	
 	public String getCurrentLanguage() {

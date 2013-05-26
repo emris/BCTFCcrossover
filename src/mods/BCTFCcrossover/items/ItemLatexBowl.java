@@ -19,73 +19,55 @@ package mods.BCTFCcrossover.items;
 
 import java.util.List;
 
-import mods.BCTFCcrossover.utils.PlayerUtils;
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumMovingObjectType;
-import net.minecraft.util.Icon;
-import net.minecraft.util.MovingObjectPosition;
-import net.minecraft.world.World;
-import TFC.TFCItems;
-import TFC.Enums.EnumSize;
-import TFC.Enums.EnumWeight;
-import TFC.Items.ISize;
+import TFC.API.ISize;
+import TFC.API.Enums.EnumSize;
+import TFC.API.Enums.EnumWeight;
 import TFC.Items.ItemTerra;
-import buildcraft.BuildCraftFactory;
+import buildcraft.core.CreativeTabBuildCraft;
 import buildcraft.core.utils.StringUtils;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemWoodBuckets extends ItemTerra implements ISize {
+public class ItemLatexBowl extends ItemTerra implements ISize {
 
-	private int metaSize = 3;
-	private Icon[] icons = new Icon[metaSize];
-	
-	public ItemWoodBuckets(int id) {
-		super(id);
-		setMaxDamage(0);
-		setHasSubtypes(true);
-		setCreativeTab(CreativeTabs.tabMisc);
-		setUnlocalizedName("WoodBucket");
-		setContainerItem(TFCItems.WoodenBucketEmpty);
-		MetaNames = new String[]{"Oil","Fuel","Latex"};
+	private String iconName;
+	public ItemLatexBowl(int par1) {
+		super(par1);
+		setUnlocalizedName("LatexBowl");
+		setContainerItem(Item.bowlEmpty);
+		setCreativeTab(CreativeTabBuildCraft.tabBuildCraft);
 	}
-
+	
 	@Override
 	public EnumSize getSize() {
-		return EnumSize.MEDIUM;
-	}
-	
-	@Override
-	public EnumWeight getWeight() {
-		return EnumWeight.MEDIUM;
+		return EnumSize.SMALL;
 	}
 
+	@Override
+	public EnumWeight getWeight() {
+		return EnumWeight.LIGHT;
+	}
+	
 	@Override
 	public boolean canStack() {
 		return false;
 	}
 
 	@Override
-	public Icon getIconFromDamage(int meta) {
-		return icons[meta];
+	public Item setUnlocalizedName(String par1Str) {
+		iconName = par1Str;
+		return super.setUnlocalizedName(par1Str);
 	}
-	
+
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister registerer) {
-		for(int i = 0; i < metaSize; i++)
-			icons[i] = registerer.registerIcon("BCTFCcrossover:" + this.getUnlocalizedName().replace("item.", "") + MetaNames[i]);
-	}
-	
-	@Override
-	@SideOnly(Side.CLIENT)
-	public void getSubItems(int par1, CreativeTabs par2CreativeTabs, List list) {
-		for(int i = 0; i < metaSize; i++) {
-			list.add(new ItemStack(this,1,i));
-		}
+	public void registerIcons(IconRegister par1IconRegister)
+	{
+		this.itemIcon = par1IconRegister.registerIcon("BCTFCcrossover:" + iconName);
 	}
 	
 	@Override
@@ -103,22 +85,4 @@ public class ItemWoodBuckets extends ItemTerra implements ISize {
 	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
 		this.addSizeInformation(this, par3List);
 	}
-
-	@Override
-	public ItemStack onItemRightClick(ItemStack par1ItemStack, World world, EntityPlayer par3EntityPlayer) {
-		MovingObjectPosition mop = PlayerUtils.getTargetBlock(par3EntityPlayer);
-		
-		if (mop != null) {
-			if (mop.typeOfHit == EnumMovingObjectType.TILE) {
-				int bID = world.getBlockId(mop.blockX, mop.blockY, mop.blockZ);
-				if (bID == BuildCraftFactory.tankBlock.blockID) {
-					System.out.println("" + bID);
-				}
-			}
-		}
-		
-		return par1ItemStack;
-	}
-
-
 }

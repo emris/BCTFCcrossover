@@ -36,8 +36,15 @@ public class CraftingHandler implements ICraftingHandler {
 					if(craftMatrix.getStackInSlot(i) == null) {
 						continue;
 					}
-					if(craftMatrix.getStackInSlot(i).itemID == Items.WoodBuckets.itemID) {
+					if(craftMatrix.getStackInSlot(i).itemID == Items.Buckets.itemID && craftMatrix.getStackInSlot(i).getItemDamage() == 0) {
 						ItemStack b = new ItemStack(TFCItems.WoodenBucketEmpty);
+						if(b != null) {
+							craftMatrix.setInventorySlotContents(i, b);
+							craftMatrix.getStackInSlot(i).stackSize = 2;
+						}
+					}
+					if(craftMatrix.getStackInSlot(i).itemID == Items.LatexBowl.itemID) {
+						ItemStack b = new ItemStack(Item.bowlEmpty);
 						if(b != null) {
 							craftMatrix.setInventorySlotContents(i, b);
 							craftMatrix.getStackInSlot(i).stackSize = 2;
@@ -72,7 +79,5 @@ public class CraftingHandler implements ICraftingHandler {
 
 	@Override
 	public void onSmelting(EntityPlayer player, ItemStack item) {
-		// TODO Auto-generated method stub
 	}
-
 }

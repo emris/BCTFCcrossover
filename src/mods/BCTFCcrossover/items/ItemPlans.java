@@ -28,11 +28,12 @@ import net.minecraft.util.EnumMovingObjectType;
 import net.minecraft.util.Icon;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
-import TFC.Enums.EnumSize;
-import TFC.Enums.EnumWeight;
-import TFC.Items.ISize;
+import TFC.API.ISize;
+import TFC.API.Enums.EnumSize;
+import TFC.API.Enums.EnumWeight;
 import TFC.Items.ItemTerra;
 import buildcraft.BuildCraftFactory;
+import buildcraft.core.CreativeTabBuildCraft;
 import buildcraft.core.utils.StringUtils;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -46,8 +47,8 @@ public class ItemPlans extends ItemTerra implements ISize {
 		super(id);
 		setMaxDamage(0);
 		setHasSubtypes(true);
-		this.setCreativeTab(CreativeTabs.tabMisc);
-		this.setUnlocalizedName("Plan");
+		setCreativeTab(CreativeTabBuildCraft.tabBuildCraft);
+		setUnlocalizedName("Plan");
 		MetaNames = new String[]{"Gear","Wrench","PipeFrame"};
 	}
 

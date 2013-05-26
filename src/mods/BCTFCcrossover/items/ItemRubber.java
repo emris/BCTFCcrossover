@@ -24,10 +24,11 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
-import TFC.Enums.EnumSize;
-import TFC.Enums.EnumWeight;
-import TFC.Items.ISize;
+import TFC.API.ISize;
+import TFC.API.Enums.EnumSize;
+import TFC.API.Enums.EnumWeight;
 import TFC.Items.ItemTerra;
+import buildcraft.core.CreativeTabBuildCraft;
 import buildcraft.core.utils.StringUtils;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -41,14 +42,14 @@ public class ItemRubber extends ItemTerra implements ISize {
 		super(id);
 		setMaxDamage(0);
 		setHasSubtypes(true);
-		this.setCreativeTab(CreativeTabs.tabMaterials);
-		this.setUnlocalizedName("Rubber");
+		setCreativeTab(CreativeTabBuildCraft.tabBuildCraft);
+		setUnlocalizedName("Rubber");
 		MetaNames = new String[]{"Black", "Red", "Green", "Brown", "Blue", "Purple", "Cyan", "LightGray", "Gray", "Pink", "LimeGreen", "Yellow", "LightBlue", "Magenta", "Orange", "White"};
 	}
 	
 	@Override
 	public EnumSize getSize() {
-		return EnumSize.MEDIUM;
+		return EnumSize.SMALL;
 	}
 	
 	@Override

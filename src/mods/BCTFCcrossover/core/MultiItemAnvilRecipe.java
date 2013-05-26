@@ -1,9 +1,9 @@
 package mods.BCTFCcrossover.core;
 
 import net.minecraft.item.ItemStack;
+import TFC.API.Enums.CraftingRuleEnum;
 import TFC.Core.AnvilRecipe;
 import TFC.Core.AnvilReq;
-import TFC.Enums.CraftingRuleEnum;
 
 public class MultiItemAnvilRecipe extends AnvilRecipe {
 
