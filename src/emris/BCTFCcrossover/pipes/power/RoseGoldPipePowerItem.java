@@ -12,6 +12,7 @@ public class RoseGoldPipePowerItem extends PipePowerStone
 {
 	public RoseGoldPipePowerItem(int itemID) {
 		super(itemID);
+		transport.initFromPipe(getClass());
 	}
 
 	@Override

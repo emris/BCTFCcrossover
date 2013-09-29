@@ -25,10 +25,11 @@ import cpw.mods.fml.relauncher.SideOnly;
 import emris.BCTFCcrossover.BCTFCcrossover;
 import emris.BCTFCcrossover.core.PipeIconProvider;
 
-public class WroughtIronPipePowerItem extends PipePowerQuartz {
-
+public class WroughtIronPipePowerItem extends PipePowerQuartz
+{
 	public WroughtIronPipePowerItem(int itemID) {
 		super(itemID);
+		transport.initFromPipe(getClass());
 	}
 
 	@Override

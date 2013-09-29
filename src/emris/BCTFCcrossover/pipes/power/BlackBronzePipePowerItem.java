@@ -32,6 +32,7 @@ public class BlackBronzePipePowerItem extends PipePowerWood {
 	
 	public BlackBronzePipePowerItem(int itemID) {
 		super(itemID);
+		transport.initFromPipe(getClass());
 	}
 
 	@Override

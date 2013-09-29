@@ -25,10 +25,11 @@ import cpw.mods.fml.relauncher.SideOnly;
 import emris.BCTFCcrossover.BCTFCcrossover;
 import emris.BCTFCcrossover.core.PipeIconProvider;
 
-public class SteelPipePowerItem extends PipePowerGold {
-
+public class SteelPipePowerItem extends PipePowerGold
+{
 	public SteelPipePowerItem(int itemID) {
 		super(itemID);
+		transport.initFromPipe(getClass());
 	}
 
 	@Override

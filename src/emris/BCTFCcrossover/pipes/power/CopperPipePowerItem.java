@@ -25,10 +25,11 @@ import cpw.mods.fml.relauncher.SideOnly;
 import emris.BCTFCcrossover.BCTFCcrossover;
 import emris.BCTFCcrossover.core.PipeIconProvider;
 
-public class CopperPipePowerItem extends PipePowerCobblestone {
-
+public class CopperPipePowerItem extends PipePowerCobblestone
+{
 	public CopperPipePowerItem(int itemID) {
 		super(itemID);
+		transport.initFromPipe(getClass());
 	}
 
 	@Override

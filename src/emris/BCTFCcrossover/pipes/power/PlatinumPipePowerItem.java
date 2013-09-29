@@ -8,10 +8,11 @@ import cpw.mods.fml.relauncher.SideOnly;
 import emris.BCTFCcrossover.BCTFCcrossover;
 import emris.BCTFCcrossover.core.PipeIconProvider;
 
-public class PlatinumPipePowerItem extends PipePowerDiamond {
-
+public class PlatinumPipePowerItem extends PipePowerDiamond
+{
 	public PlatinumPipePowerItem(int itemID) {
 		super(itemID);
+		transport.initFromPipe(getClass());
 	}
 
 	@Override

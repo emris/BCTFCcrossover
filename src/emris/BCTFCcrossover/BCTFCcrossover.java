@@ -61,6 +61,7 @@ public class BCTFCcrossover {
 		IDProvider.setup();
 		Blocks.LoadBlocks();
 		Blocks.RegisterBlocks();
+		proxy.registerPowerPipeCapacities();
 		Items.LoadItems();
 		RegisterFluids.register();
 		

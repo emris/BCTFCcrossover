@@ -27,7 +27,14 @@ import net.minecraft.src.ModLoader;
 import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
+import buildcraft.transport.PipeTransportPower;
 import cpw.mods.fml.common.registry.GameRegistry;
+import emris.BCTFCcrossover.pipes.power.BlackBronzePipePowerItem;
+import emris.BCTFCcrossover.pipes.power.CopperPipePowerItem;
+import emris.BCTFCcrossover.pipes.power.PlatinumPipePowerItem;
+import emris.BCTFCcrossover.pipes.power.RoseGoldPipePowerItem;
+import emris.BCTFCcrossover.pipes.power.SteelPipePowerItem;
+import emris.BCTFCcrossover.pipes.power.WroughtIronPipePowerItem;
 
 public class CommonProxy {
 
@@ -103,6 +110,16 @@ public class CommonProxy {
 	}
 
 	public void registerPipeRenderer() {
+	}
+	
+	public void registerPowerPipeCapacities() {
+		PipeTransportPower.powerCapacities.put(CopperPipePowerItem.class, 8);
+		PipeTransportPower.powerCapacities.put(RoseGoldPipePowerItem.class, 16);
+		PipeTransportPower.powerCapacities.put(BlackBronzePipePowerItem.class, 32);
+		PipeTransportPower.powerCapacities.put(WroughtIronPipePowerItem.class, 64);
+//		PipeTransportPower.powerCapacities.put(CopperPipePowerItem.class, 128);
+		PipeTransportPower.powerCapacities.put(SteelPipePowerItem.class, 256);
+		PipeTransportPower.powerCapacities.put(PlatinumPipePowerItem.class, 1024);
 	}
 
 }
