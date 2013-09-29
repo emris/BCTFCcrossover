@@ -40,7 +40,7 @@ public class CommonProxy {
 	}
 	
 	public World getCurrentWorld() {
-		return MinecraftServer.getServer().func_130014_f_();
+		return MinecraftServer.getServer().getEntityWorld();
 	}
 	
 	public void registerTranslations() {

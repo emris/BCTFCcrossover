@@ -425,7 +425,7 @@ public class Recipes {
 			Character.valueOf('R'), Block.torchRedstoneActive });
 		
 		// Hopper
-		if (!BuildCraftFactory.hopperDisabled) {
+		if (BuildCraftFactory.hopperBlock != null) {
 			RemoveRecipe(new ItemStack(BuildCraftFactory.hopperBlock));
 			BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.hopperBlock), new Object[] { "ICI", "IGI", " I ",
 				Character.valueOf('I'), TFCItems.WroughtIronIngot,

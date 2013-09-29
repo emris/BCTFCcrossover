@@ -19,9 +19,8 @@ package emris.BCTFCcrossover;
 
 import java.util.logging.Logger;
 
-import net.minecraftforge.common.MinecraftForge;
-import buildcraft.core.utils.Localization;
 import buildcraft.api.core.IIconProvider;
+import buildcraft.core.utils.Localization;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
