@@ -52,7 +52,7 @@ public class CraftingHandler implements ICraftingHandler {
 					}
 				}
 			}
-			
+
 			if(item.itemID == Item.dyePowder.itemID && item.getItemDamage() == 2) {
 				Item[] tfcHammers = Recipes.Hammers;
 				for(int i = 0; i < craftMatrix.getSizeInventory(); i++) {
@@ -73,7 +73,7 @@ public class CraftingHandler implements ICraftingHandler {
 					}
 				}
 			}
-			
+
 		}
 	}
 

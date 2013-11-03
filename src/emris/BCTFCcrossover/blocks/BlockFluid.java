@@ -37,10 +37,10 @@ public class BlockFluid extends BlockFluidClassic {
 	protected float particleRed;
 	protected float particleGreen;
 	protected float particleBlue;
-	
+
 	@SideOnly(Side.CLIENT)
 	protected Icon[] theIcon;
-	
+
 	public BlockFluid(int id, Fluid fluid, Material material) {
 		super(id, fluid, material);
 	}

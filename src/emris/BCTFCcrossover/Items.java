@@ -111,8 +111,8 @@ public class Items {
 	public static Item BlueSteelWrenchItem;
 	public static Item RedSteelWrenchItem;
 	
-	public static void LoadItems() {
-		System.out.println(new StringBuilder().append("[BCTFCcrossover] Loading Items").toString());
+	public static void setup() {
+		System.out.println(new StringBuilder().append("[BCTFCcrossover] Setup Items").toString());
 		
 		// ===============Plans===============
 		Plans = new ItemPlans(IDProvider.Plans);
@@ -287,7 +287,7 @@ public class Items {
 		BCTFCcrossover.proxy.registerItem(RedSteelWrenchItem);
 	}
 	
-	public static Item createPipe(int defaultID, Class<? extends Pipe> clas, String descr) {
+	private static Item createPipe(int defaultID, Class<? extends Pipe> clas, String descr) {
 		String name = Character.toLowerCase(clas.getSimpleName().charAt(0)) + clas.getSimpleName().substring(1);
 		ItemPipe res = BlockGenericPipe.registerPipe(defaultID, clas);
 		res.setUnlocalizedName(clas.getSimpleName());

@@ -31,9 +31,9 @@ public class IDProvider {
 	public static int Buckets						= 25402;
 	public static int Rubber						= 25403;
 	public static int PipeFrames					= 25404;
-//	public static int ???							= 25405;
+	//public static int ???							= 25405;
 	public static int LatexBowl						= 25406;
-	
+
 	public static int TinPipeItem					= 25430;
 	public static int LeadPipeItem					= 25431;
 	public static int BronzePipeItem				= 25432;
@@ -62,9 +62,9 @@ public class IDProvider {
 	public static int WroughtIronPipePowerItem		= 25473;
 	public static int SteelPipePowerItem			= 25474;
 	public static int PlatinumPipePowerItem			= 25475;
-	
+
 	public static int LeadPipeStructureItem			= 25490;
-	
+
 	public static int BismuthWrenchItem				= 25500;
 	public static int TinWrenchItem					= 25501;
 	public static int ZincWrenchItem				= 25502;
@@ -78,11 +78,11 @@ public class IDProvider {
 	public static int BlackSteelWrenchItem			= 25510;
 	public static int BlueSteelWrenchItem			= 25511;
 	public static int RedSteelWrenchItem			= 25512;
-	
+
 	// Blocks
 	public static int Hevea							= 4050;
 	public static int Latex							= 4051;
-	
+
 	// BC IDs
 	// Item Pipes
 	public static final int bcWoodPipe					= BuildCraftTransport.pipeItemsWood.itemID;
@@ -118,9 +118,9 @@ public class IDProvider {
 	public static final int bcDiamondPipePower			= BuildCraftTransport.pipePowerDiamond.itemID;
 	// Wrench Tool
 	public static final int Wrench						= BuildCraftCore.wrenchItem.itemID;
-	
+
 	static Configuration config;
-	
+
 	public static void setup() {
 		try {
 			config = new Configuration(new File(BCTFCcrossover.proxy.getMinecraftDir(), "/config/BCTFCcrossover.cfg"));
@@ -129,7 +129,7 @@ public class IDProvider {
 			System.out.println(new StringBuilder().append("[BCTFCcrossover] Config file ERROR!").toString());
 			config = null;
 		}
-	
+
 		// Items
 		Plans = getItemID(config, "items", "Plans", Plans);
 		Gears = getItemID(config, "items", "Gears", Gears);
@@ -166,7 +166,7 @@ public class IDProvider {
 		WroughtIronPipePowerItem = getItemID(config, "items", "WroughtIronPipePowerItem", WroughtIronPipePowerItem);
 		SteelPipePowerItem = getItemID(config, "items", "SteelPipePowerItem", SteelPipePowerItem);
 		PlatinumPipePowerItem = getItemID(config, "items", "PlatinumPipePowerItem", PlatinumPipePowerItem);
-		
+
 		LeadPipeStructureItem = getItemID(config, "items", "LeadPipeStructureItem", LeadPipeStructureItem);
 
 		BismuthWrenchItem = getItemID(config, "items", "BismuthWrenchItem", BismuthWrenchItem);
@@ -186,16 +186,16 @@ public class IDProvider {
 		// Blocks
 		Hevea = getItemID(config, "blocks", "Hevea", Hevea);
 		Latex = getItemID(config, "blocks", "Latex", Latex);
-		
-		
+
+
 		if (config.hasChanged()) { config.save(); }
 	}
-	
+
 	private static int getItemID(Configuration config, String heading, String item, int value) {
-		if (config == null)	{
+		if (config == null) {
 			return value;
 		}
-		try	{
+		try {
 			Property prop = config.get(heading, item, value);
 			return prop.getInt(value);
 		} catch (Exception e) {

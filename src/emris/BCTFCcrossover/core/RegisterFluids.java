@@ -23,6 +23,7 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidRegistry;
 import TFC.TFCItems;
+import emris.BCTFCcrossover.Blocks;
 import emris.BCTFCcrossover.Items;
 
 public class RegisterFluids {
@@ -39,5 +40,9 @@ public class RegisterFluids {
 		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("water", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(Items.Buckets, 1, 2), new ItemStack(Items.Buckets, 1, 1));
 		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("oil", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(Items.Buckets, 1, 4), new ItemStack(Items.Buckets, 1, 3));
 		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("fuel", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(Items.Buckets, 1, 5), new ItemStack(Items.Buckets, 1, 3));
+	}
+
+	public static void registerFluidIcons() {
+		LATEX.setIcons(Blocks.blockLatex.getIcon(0, 0), Blocks.blockLatex.getIcon(1, 0));
 	}
 }

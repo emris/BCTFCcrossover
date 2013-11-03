@@ -40,43 +40,45 @@ import emris.BCTFCcrossover.worldGen.WorldGenOil;
 @Mod(name = Reference.ModName, version = Reference.ModVersion, useMetadata = false, modid = Reference.ModID, dependencies = Reference.ModDependencies)
 @NetworkMod(clientSideRequired = true, serverSideRequired = true, versionBounds = "[" + Reference.ModVersion + "]")
 public class BCTFCcrossover {
-	
+
 	public IIconProvider pipeIconProvider = new PipeIconProvider();
 	public static Logger tfcbcLog = Logger.getLogger(Reference.ModName);
-	
+
 	@Instance(Reference.ModName)
 	public static BCTFCcrossover instance;
-	
+
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
 	public static CommonProxy proxy;
-	
+
 	@EventHandler
 	public void loadConfiguration(FMLPreInitializationEvent evt) {
 		instance = this;
-		
+
 		tfcbcLog.setParent(FMLLog.getLogger());
 		tfcbcLog.info("Starting "+Reference.ModName+" "+Reference.ModVersion);
 		tfcbcLog.info("Copyright (c) emris, 2013");
-		
+
 		IDProvider.setup();
-		
+
 		RegisterFluids.register();
-		Blocks.LoadBlocks();
-		Blocks.RegisterBlocks();
+		Blocks.setup();
 		proxy.registerPowerPipeCapacities();
-		Items.LoadItems();
-		RegisterFluids.registerFluidContainers();
-		
+		Items.setup();
+
 		GameRegistry.registerWorldGenerator(new WorldGenOil(90, 200));
 	}
-	
+
 	@EventHandler
 	public void load(FMLInitializationEvent evt) {
 		proxy.registerOreDict();
 		Recipes.loadRecipes();
 		proxy.registerPipeRenderer();
+
+		RegisterFluids.registerFluidContainers();
+		RegisterFluids.registerFluidIcons();
+
 		Localization.addLocalization("/assets/"+Reference.ModID+"/lang/", "en_US");
-		
+
 		GameRegistry.registerCraftingHandler(new CraftingHandler());
 	}
 

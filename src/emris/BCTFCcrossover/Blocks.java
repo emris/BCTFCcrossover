@@ -29,16 +29,11 @@ public class Blocks {
 
 	public static Block blockLatex;
 
-	public static void RegisterBlocks() {
-		System.out.println(new StringBuilder().append("[BCTFCcrossover] Registering Blocks").toString());
-
-		BCTFCcrossover.proxy.addName(blockLatex, "Latex");
-		GameRegistry.registerBlock(blockLatex, ItemBlocks.class, "Latex");
-	}
-
-	public static void LoadBlocks() {
-		System.out.println(new StringBuilder().append("[BCTFCcrossover] Loading Blocks").toString());
+	public static void setup() {
+		System.out.println(new StringBuilder().append("[BCTFCcrossover] Setup Blocks").toString());
 
 		blockLatex = new BlockFluid(IDProvider.Latex, RegisterFluids.LATEX, Material.water).setParticleColor(1F, 1F, 1F).setQuantaPerBlock(3).setUnlocalizedName("Latex");
+		BCTFCcrossover.proxy.addName(blockLatex, "Latex");
+		GameRegistry.registerBlock(blockLatex, ItemBlocks.class, "Latex");
 	}
 }
