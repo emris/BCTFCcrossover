@@ -20,7 +20,6 @@ package emris.BCTFCcrossover.pipes.fluids;
 import net.minecraftforge.common.ForgeDirection;
 import buildcraft.api.core.IIconProvider;
 import buildcraft.transport.pipes.PipeFluidsWood;
-import buildcraft.transport.pipes.PipeLogicWood;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import emris.BCTFCcrossover.BCTFCcrossover;

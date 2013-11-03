@@ -21,11 +21,9 @@ import net.minecraft.item.Item;
 import buildcraft.transport.BlockGenericPipe;
 import buildcraft.transport.ItemPipe;
 import buildcraft.transport.Pipe;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 import emris.BCTFCcrossover.core.IDProvider;
 import emris.BCTFCcrossover.items.ItemBuckets;
 import emris.BCTFCcrossover.items.ItemGears;
-import emris.BCTFCcrossover.items.ItemGeneric;
 import emris.BCTFCcrossover.items.ItemLatexBowl;
 import emris.BCTFCcrossover.items.ItemPipeFrames;
 import emris.BCTFCcrossover.items.ItemPlans;
@@ -60,7 +58,6 @@ import emris.BCTFCcrossover.pipes.transport.TinPipeItem;
 import emris.BCTFCcrossover.pipes.transport.WroughtIronPipeItem;
 
 public class Items {
-	public static Item Latex;
 	public static Item LatexBowl;
 	
 	public static Item Buckets;
@@ -119,35 +116,32 @@ public class Items {
 		
 		// ===============Plans===============
 		Plans = new ItemPlans(IDProvider.Plans);
-			LanguageRegistry.addName(Plans, "Plan");
+			BCTFCcrossover.proxy.addName(Plans, "Plan");
 			BCTFCcrossover.proxy.registerItem(Plans);
 		
 		// ===============Gears===============
 		Gears = new ItemGears(IDProvider.Gears);
-			LanguageRegistry.addName(Gears, "Gear");
+			BCTFCcrossover.proxy.addName(Gears, "Gear");
 			BCTFCcrossover.proxy.registerItem(Gears);
 		
 		// ===============Buckets=============
 		Buckets = new ItemBuckets(IDProvider.Buckets);
-			LanguageRegistry.addName(Buckets, "Bucket");
+			BCTFCcrossover.proxy.addName(Buckets, "Bucket");
 			BCTFCcrossover.proxy.registerItem(Buckets);
 			
 		// ===============Latex=============
-		Latex = new ItemGeneric(IDProvider.Latex).setUnlocalizedName("Latex");
-			LanguageRegistry.addName(Latex, "Latex");
-			BCTFCcrossover.proxy.registerItem(Latex);
 		LatexBowl = new ItemLatexBowl(IDProvider.LatexBowl);
-			LanguageRegistry.addName(LatexBowl, "LatexBowl");
+			BCTFCcrossover.proxy.addName(LatexBowl, "LatexBowl");
 			BCTFCcrossover.proxy.registerItem(LatexBowl);
 
 		// ===============Rubber==============
 		Rubber = new ItemRubber(IDProvider.Rubber);
-			LanguageRegistry.addName(Rubber, "Rubber");
+			BCTFCcrossover.proxy.addName(Rubber, "Rubber");
 			BCTFCcrossover.proxy.registerItem(Rubber);
 
 		// ===============Pipe Frames=========
 		PipeFrames = new ItemPipeFrames(IDProvider.PipeFrames);
-			LanguageRegistry.addName(PipeFrames, "PipeFrame");
+			BCTFCcrossover.proxy.addName(PipeFrames, "PipeFrame");
 			BCTFCcrossover.proxy.registerItem(PipeFrames);
 
 		// ===============Transport Pipes===============
@@ -241,55 +235,55 @@ public class Items {
 		// ===============Wrenches===============
 		Item.itemsList[IDProvider.Wrench] = null;
 		BismuthWrenchItem = new ItemWrenchGeneral(IDProvider.BismuthWrenchItem).setUnlocalizedName("BismuthWrenchItem");
-		LanguageRegistry.addName(BismuthWrenchItem, "Wrench: Bismuth");
+		BCTFCcrossover.proxy.addName(BismuthWrenchItem, "Wrench: Bismuth");
 		BCTFCcrossover.proxy.registerItem(BismuthWrenchItem);
 		
 		TinWrenchItem = new ItemWrenchGeneral(IDProvider.TinWrenchItem).setUnlocalizedName("TinWrenchItem");
-		LanguageRegistry.addName(TinWrenchItem, "Wrench: Tin");
+		BCTFCcrossover.proxy.addName(TinWrenchItem, "Wrench: Tin");
 		BCTFCcrossover.proxy.registerItem(TinWrenchItem);
 		
 		ZincWrenchItem = new ItemWrenchGeneral(IDProvider.ZincWrenchItem).setUnlocalizedName("ZincWrenchItem");
-		LanguageRegistry.addName(ZincWrenchItem, "Wrench: Zinc");
+		BCTFCcrossover.proxy.addName(ZincWrenchItem, "Wrench: Zinc");
 		BCTFCcrossover.proxy.registerItem(ZincWrenchItem);
 		
 		CopperWrenchItem = new ItemWrenchGeneral(IDProvider.CopperWrenchItem).setUnlocalizedName("CopperWrenchItem");
-		LanguageRegistry.addName(CopperWrenchItem, "Wrench: Copper");
+		BCTFCcrossover.proxy.addName(CopperWrenchItem, "Wrench: Copper");
 		BCTFCcrossover.proxy.registerItem(CopperWrenchItem);
 		
 		BismuthBronzeWrenchItem = new ItemWrenchGeneral(IDProvider.BismuthBronzeWrenchItem).setUnlocalizedName("BismuthBronzeWrenchItem");
-		LanguageRegistry.addName(BismuthBronzeWrenchItem, "Wrench: Bismuth Bronze");
+		BCTFCcrossover.proxy.addName(BismuthBronzeWrenchItem, "Wrench: Bismuth Bronze");
 		BCTFCcrossover.proxy.registerItem(BismuthBronzeWrenchItem);
 		
 		BlackBronzeWrenchItem = new ItemWrenchGeneral(IDProvider.BlackBronzeWrenchItem).setUnlocalizedName("BlackBronzeWrenchItem");
-		LanguageRegistry.addName(BlackBronzeWrenchItem, "Wrench: Black Bronze");
+		BCTFCcrossover.proxy.addName(BlackBronzeWrenchItem, "Wrench: Black Bronze");
 		BCTFCcrossover.proxy.registerItem(BlackBronzeWrenchItem);
 		
 		BronzeWrenchItem = new ItemWrenchGeneral(IDProvider.BronzeWrenchItem).setUnlocalizedName("BronzeWrenchItem");
-		LanguageRegistry.addName(BronzeWrenchItem, "Wrench: Bronze");
+		BCTFCcrossover.proxy.addName(BronzeWrenchItem, "Wrench: Bronze");
 		BCTFCcrossover.proxy.registerItem(BronzeWrenchItem);
 		
 		RoseGoldWrenchItem = new ItemWrenchGeneral(IDProvider.RoseGoldWrenchItem).setUnlocalizedName("RoseGoldWrenchItem");
-		LanguageRegistry.addName(RoseGoldWrenchItem, "Wrench: Rose Gold");
+		BCTFCcrossover.proxy.addName(RoseGoldWrenchItem, "Wrench: Rose Gold");
 		BCTFCcrossover.proxy.registerItem(RoseGoldWrenchItem);
 		
 		WroughtIronWrenchItem = new ItemWrenchGeneral(IDProvider.WroughtIronWrenchItem).setUnlocalizedName("WroughtIronWrenchItem");
-		LanguageRegistry.addName(WroughtIronWrenchItem, "Wrench: Wrought Iron");
+		BCTFCcrossover.proxy.addName(WroughtIronWrenchItem, "Wrench: Wrought Iron");
 		BCTFCcrossover.proxy.registerItem(WroughtIronWrenchItem);
 		
 		SteelWrenchItem = new ItemWrenchGeneral(IDProvider.SteelWrenchItem).setUnlocalizedName("SteelWrenchItem");
-		LanguageRegistry.addName(SteelWrenchItem, "Wrench: Steel");
+		BCTFCcrossover.proxy.addName(SteelWrenchItem, "Wrench: Steel");
 		BCTFCcrossover.proxy.registerItem(SteelWrenchItem);
 		
 		BlackSteelWrenchItem = new ItemWrenchGeneral(IDProvider.BlackSteelWrenchItem).setUnlocalizedName("BlackSteelWrenchItem");
-		LanguageRegistry.addName(BlackSteelWrenchItem, "Wrench: Black Steel");
+		BCTFCcrossover.proxy.addName(BlackSteelWrenchItem, "Wrench: Black Steel");
 		BCTFCcrossover.proxy.registerItem(BlackSteelWrenchItem);
 		
 		BlueSteelWrenchItem = new ItemWrenchGeneral(IDProvider.BlueSteelWrenchItem).setUnlocalizedName("BlueSteelWrenchItem");
-		LanguageRegistry.addName(BlueSteelWrenchItem, "Wrench: Blue Steel");
+		BCTFCcrossover.proxy.addName(BlueSteelWrenchItem, "Wrench: Blue Steel");
 		BCTFCcrossover.proxy.registerItem(BlueSteelWrenchItem);
 		
 		RedSteelWrenchItem = new ItemWrenchGeneral(IDProvider.RedSteelWrenchItem).setUnlocalizedName("RedSteelWrenchItem");
-		LanguageRegistry.addName(RedSteelWrenchItem, "Wrench: Red Steel");
+		BCTFCcrossover.proxy.addName(RedSteelWrenchItem, "Wrench: Red Steel");
 		BCTFCcrossover.proxy.registerItem(RedSteelWrenchItem);
 	}
 	
@@ -297,7 +291,7 @@ public class Items {
 		String name = Character.toLowerCase(clas.getSimpleName().charAt(0)) + clas.getSimpleName().substring(1);
 		ItemPipe res = BlockGenericPipe.registerPipe(defaultID, clas);
 		res.setUnlocalizedName(clas.getSimpleName());
-		LanguageRegistry.addName(res, descr);
+		BCTFCcrossover.proxy.addName(res, descr);
 		return res;
 	}
 }

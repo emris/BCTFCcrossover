@@ -33,7 +33,7 @@ public class ItemWrenchGeneral extends ItemWrench {
 	
 	public ItemWrenchGeneral(int i) {
 		super(i);
-		setCreativeTab(CreativeTabBuildCraft.tabBuildCraft);
+		setCreativeTab(CreativeTabBuildCraft.MACHINES.get());
 		maxStackSize = 1;
 	}
 	

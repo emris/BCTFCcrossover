@@ -40,7 +40,7 @@ public class ItemLatexBowl extends ItemTerra implements ISize {
 		super(par1);
 		setUnlocalizedName("LatexBowl");
 		setContainerItem(Item.bowlEmpty);
-		setCreativeTab(CreativeTabBuildCraft.tabBuildCraft);
+		setCreativeTab(CreativeTabBuildCraft.MACHINES.get());
 	}
 	
 	@Override

@@ -43,7 +43,7 @@ public class ItemRubber extends ItemTerra implements ISize {
 		super(id);
 		setMaxDamage(0);
 		setHasSubtypes(true);
-		setCreativeTab(CreativeTabBuildCraft.tabBuildCraft);
+		setCreativeTab(CreativeTabBuildCraft.MACHINES.get());
 		setUnlocalizedName("Rubber");
 		MetaNames = new String[]{"Black", "Red", "Green", "Brown", "Blue", "Purple", "Cyan", "LightGray", "Gray", "Pink", "LimeGreen", "Yellow", "LightBlue", "Magenta", "Orange", "White"};
 	}

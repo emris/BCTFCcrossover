@@ -20,8 +20,6 @@ package emris.BCTFCcrossover.core;
 import java.util.List;
 import java.util.Random;
 
-import emris.BCTFCcrossover.BCTFCcrossover;
-import emris.BCTFCcrossover.Items;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -47,6 +45,8 @@ import buildcraft.builders.FillerFillPyramid;
 import buildcraft.builders.FillerFillStairs;
 import buildcraft.builders.FillerFillWalls;
 import buildcraft.builders.FillerFlattener;
+import emris.BCTFCcrossover.BCTFCcrossover;
+import emris.BCTFCcrossover.Items;
 
 public class Recipes {
 

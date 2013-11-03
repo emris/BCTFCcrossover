@@ -31,7 +31,7 @@ public class IDProvider {
 	public static int Buckets						= 25402;
 	public static int Rubber						= 25403;
 	public static int PipeFrames					= 25404;
-	public static int Latex							= 25405;
+//	public static int ???							= 25405;
 	public static int LatexBowl						= 25406;
 	
 	public static int TinPipeItem					= 25430;
@@ -81,6 +81,7 @@ public class IDProvider {
 	
 	// Blocks
 	public static int Hevea							= 4050;
+	public static int Latex							= 4051;
 	
 	// BC IDs
 	// Item Pipes
@@ -129,12 +130,12 @@ public class IDProvider {
 			config = null;
 		}
 	
+		// Items
 		Plans = getItemID(config, "items", "Plans", Plans);
 		Gears = getItemID(config, "items", "Gears", Gears);
 		Buckets = getItemID(config, "items", "Buckets", Buckets);
 		Rubber = getItemID(config, "items", "Rubber", Rubber);
 		PipeFrames = getItemID(config, "items", "PipeFrames", PipeFrames);
-		Latex = getItemID(config, "items", "Latex", Latex);
 		LatexBowl = getItemID(config, "items", "LatexBowl", LatexBowl);
 
 		TinPipeItem = getItemID(config, "items", "TinPipeItem", TinPipeItem);
@@ -182,7 +183,9 @@ public class IDProvider {
 		BlueSteelWrenchItem = getItemID(config, "items", "BlueSteelWrenchItem", BlueSteelWrenchItem);
 		RedSteelWrenchItem = getItemID(config, "items", "RedSteelWrenchItem", RedSteelWrenchItem);
 
+		// Blocks
 		Hevea = getItemID(config, "blocks", "Hevea", Hevea);
+		Latex = getItemID(config, "blocks", "Latex", Latex);
 		
 		
 		if (config.hasChanged()) { config.save(); }

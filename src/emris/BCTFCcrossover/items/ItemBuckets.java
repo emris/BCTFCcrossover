@@ -53,7 +53,7 @@ public class ItemBuckets extends ItemTerra implements ISize {
 		super(id);
 		setMaxDamage(0);
 		setHasSubtypes(true);
-		setCreativeTab(CreativeTabBuildCraft.tabBuildCraft);
+		setCreativeTab(CreativeTabBuildCraft.MACHINES.get());
 		setUnlocalizedName("Bucket");
 		setContainerItem(TFCItems.WoodenBucketEmpty);
 		MetaNames = new String[]{"Latex","Zinc","ZincWater","Steel","SteelOil","SteelFuel"};

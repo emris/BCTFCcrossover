@@ -43,7 +43,7 @@ public class ItemPipeFrames extends ItemTerra implements ISize {
 		super(id);
 		setMaxDamage(0);
 		setHasSubtypes(true);
-		setCreativeTab(CreativeTabBuildCraft.tabBuildCraft);
+		setCreativeTab(CreativeTabBuildCraft.MACHINES.get());
 		setUnlocalizedName("PipeFrame");
 		MetaNames = new String[]{"Tin", "Lead", "Bronze", "WroughtIron", "Steel", "BlueSteel", "RedSteel",
 						"BlackBronze", "RoseGold", "BlackSteel", "Zinc", "Copper", "Silver", "Platinum",

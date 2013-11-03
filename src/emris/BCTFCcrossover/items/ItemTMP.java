@@ -32,7 +32,7 @@ public class ItemTMP extends ItemTerra {
 
 	public ItemTMP(int i) {
 		super(i);
-		setCreativeTab(CreativeTabBuildCraft.tabBuildCraft);
+		setCreativeTab(CreativeTabBuildCraft.MACHINES.get());
 	}
 	
 	@Override

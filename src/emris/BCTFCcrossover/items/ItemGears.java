@@ -43,7 +43,7 @@ public class ItemGears extends ItemTerra implements ISize {
 		super(i);
 		setMaxDamage(0);
 		setHasSubtypes(true);
-		setCreativeTab(CreativeTabBuildCraft.tabBuildCraft);
+		setCreativeTab(CreativeTabBuildCraft.MACHINES.get());
 		setUnlocalizedName("Gear");
 		MetaNames = new String[]{"BismuthBronze", "BlackBronze", "Bronze", "Copper", "WroughtIron", "Steel", "BlackSteel", "BlueSteel", "RedSteel"};
 	}

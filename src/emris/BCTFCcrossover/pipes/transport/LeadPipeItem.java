@@ -41,5 +41,4 @@ public class LeadPipeItem extends PipeItemsCobblestone {
 	public int getIconIndex(ForgeDirection direction) {
 		return PipeIconProvider.TYPE.PipeLead.ordinal();
 	}
-
 }

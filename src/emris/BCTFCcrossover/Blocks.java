@@ -17,20 +17,28 @@
  */
 package emris.BCTFCcrossover;
 
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import cpw.mods.fml.common.registry.GameRegistry;
+import emris.BCTFCcrossover.blocks.BlockFluid;
+import emris.BCTFCcrossover.core.IDProvider;
+import emris.BCTFCcrossover.core.RegisterFluids;
+import emris.BCTFCcrossover.items.ItemBlocks;
 
 public class Blocks {
 
-//	public static Block Dandelion;
-	
+	public static Block blockLatex;
+
 	public static void RegisterBlocks() {
-//		GameRegistry.registerBlock(Dandelion, "Dandelion");
+		System.out.println(new StringBuilder().append("[BCTFCcrossover] Registering Blocks").toString());
+
+		BCTFCcrossover.proxy.addName(blockLatex, "Latex");
+		GameRegistry.registerBlock(blockLatex, ItemBlocks.class, "Latex");
 	}
-	
+
 	public static void LoadBlocks() {
-		
 		System.out.println(new StringBuilder().append("[BCTFCcrossover] Loading Blocks").toString());
-		
-//		Blocks.Dandelion = new BlockDandelion(IDProvider.Dandelion);
-		
+
+		blockLatex = new BlockFluid(IDProvider.Latex, RegisterFluids.LATEX, Material.water).setParticleColor(1F, 1F, 1F).setQuantaPerBlock(3).setUnlocalizedName("Latex");
 	}
 }

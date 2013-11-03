@@ -59,11 +59,13 @@ public class BCTFCcrossover {
 		tfcbcLog.info("Copyright (c) emris, 2013");
 		
 		IDProvider.setup();
+		
+		RegisterFluids.register();
 		Blocks.LoadBlocks();
 		Blocks.RegisterBlocks();
 		proxy.registerPowerPipeCapacities();
 		Items.LoadItems();
-		RegisterFluids.register();
+		RegisterFluids.registerFluidContainers();
 		
 		GameRegistry.registerWorldGenerator(new WorldGenOil(90, 200));
 	}

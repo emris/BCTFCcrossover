@@ -31,7 +31,7 @@ public class ItemGeneric extends Item {
 	private String iconName;
 	public ItemGeneric(int par1) {
 		super(par1);
-		setCreativeTab(CreativeTabBuildCraft.tabBuildCraft);
+		setCreativeTab(CreativeTabBuildCraft.MACHINES.get());
 	}
 	
 	@Override
@@ -47,8 +47,7 @@ public class ItemGeneric extends Item {
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister par1IconRegister)
-	{
+	public void registerIcons(IconRegister par1IconRegister) {
 		this.itemIcon = par1IconRegister.registerIcon(Reference.ModID + ":" + iconName);
 	}
 }

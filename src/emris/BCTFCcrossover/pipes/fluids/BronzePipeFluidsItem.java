@@ -17,13 +17,13 @@
  */
 package emris.BCTFCcrossover.pipes.fluids;
 
-import emris.BCTFCcrossover.BCTFCcrossover;
-import emris.BCTFCcrossover.core.PipeIconProvider;
 import net.minecraftforge.common.ForgeDirection;
 import buildcraft.api.core.IIconProvider;
 import buildcraft.transport.pipes.PipeFluidsStone;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import emris.BCTFCcrossover.BCTFCcrossover;
+import emris.BCTFCcrossover.core.PipeIconProvider;
 
 public class BronzePipeFluidsItem extends PipeFluidsStone {
 
