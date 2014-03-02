@@ -23,12 +23,13 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidRegistry;
 import TFC.TFCItems;
+import emris.BCTFCcrossover.BCTFCcrossover;
 import emris.BCTFCcrossover.Blocks;
 import emris.BCTFCcrossover.Items;
 
 public class RegisterFluids {
 
-	public static final Fluid LATEX = new Fluid("latex").setBlockID(IDProvider.Latex).setUnlocalizedName("Latex").setDensity(3000).setViscosity(6000);
+	public static final Fluid LATEX = new Fluid("latex").setBlockID(IDProvider.Latex).setUnlocalizedName("Latex").setDensity(6000).setViscosity(6000);
 
 	public static void register() {
 		FluidRegistry.registerFluid(LATEX);
@@ -43,6 +44,6 @@ public class RegisterFluids {
 	}
 
 	public static void registerFluidIcons() {
-		LATEX.setIcons(Blocks.blockLatex.getIcon(0, 0), Blocks.blockLatex.getIcon(1, 0));
+		BCTFCcrossover.proxy.registerFluidIcons(LATEX);
 	}
 }

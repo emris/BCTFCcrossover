@@ -25,6 +25,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.src.ModLoader;
 import net.minecraft.world.World;
 import net.minecraftforge.client.MinecraftForgeClient;
+import net.minecraftforge.fluids.Fluid;
 import buildcraft.transport.TransportProxyClient;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
@@ -104,4 +105,11 @@ public class ClientProxy extends CommonProxy
 		MinecraftForgeClient.registerItemRenderer(Items.SteelPipePowerItem.itemID, TransportProxyClient.pipeItemRenderer);
 		MinecraftForgeClient.registerItemRenderer(Items.PlatinumPipePowerItem.itemID, TransportProxyClient.pipeItemRenderer);
 	}
+
+	@Override
+	public void registerFluidIcons(Fluid f) {
+		super.registerFluidIcons(f);
+		f.setIcons(Blocks.blockLatex.getIcon(0, 0), Blocks.blockLatex.getIcon(1, 0));
+	}
+	
 }

@@ -217,7 +217,7 @@ public class Items {
 		RoseGoldPipePowerItem = createPipe(IDProvider.RoseGoldPipePowerItem, RoseGoldPipePowerItem.class, "Rose Gold Conductive Pipe");
 
 		Item.itemsList[IDProvider.bcWoodPipePower] = null;
-		BlackBronzePipePowerItem = createPipe(IDProvider.BlackBronzePipePowerItem, BlackBronzePipePowerItem.class, "Black Bronze Conductive Pipe");
+		BlackBronzePipePowerItem = createPipe(IDProvider.BlackBronzePipePowerItem, BlackBronzePipePowerItem.class, "Power Extraction Pipe");
 
 		Item.itemsList[IDProvider.bcQuartzPipePower] = null;
 		WroughtIronPipePowerItem = createPipe(IDProvider.WroughtIronPipePowerItem, WroughtIronPipePowerItem.class, "Wrought Iron Conductive Pipe");

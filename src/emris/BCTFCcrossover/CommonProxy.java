@@ -25,6 +25,7 @@ import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.src.ModLoader;
 import net.minecraft.world.World;
+import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import buildcraft.transport.PipeTransportPower;
@@ -122,4 +123,6 @@ public class CommonProxy {
 		PipeTransportPower.powerCapacities.put(PlatinumPipePowerItem.class, 1024);
 	}
 
+	public void registerFluidIcons(Fluid f) {
+	}
 }

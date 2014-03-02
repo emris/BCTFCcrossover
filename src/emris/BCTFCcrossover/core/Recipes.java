@@ -46,9 +46,11 @@ import buildcraft.builders.FillerFillStairs;
 import buildcraft.builders.FillerFillWalls;
 import buildcraft.builders.FillerFlattener;
 import emris.BCTFCcrossover.BCTFCcrossover;
+import emris.BCTFCcrossover.CommonProxy;
 import emris.BCTFCcrossover.Items;
 
 public class Recipes {
+	private static final CommonProxy proxy = BCTFCcrossover.proxy;
 
 	public static void loadRecipes() {
 		// Scribing Table Recipes
@@ -126,91 +128,91 @@ public class Recipes {
 		// =================Transport Pipes========================
 		// Tin replaces Wood
 		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsWood));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.TinPipeItem, 1), new Object[] { " G ", "GFG", " G ",
+		proxy.addCraftingRecipe(new ItemStack(Items.TinPipeItem, 1), new Object[] { " G ", "GFG", " G ",
 			Character.valueOf('F'), "pipeFrameTin",
 			Character.valueOf('G'), Block.thinGlass });
 		// Replaces pipeItemsCobblestone
 		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsCobblestone));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.LeadPipeItem, 1), new Object[] { " G ", "GFG", " G ",
+		proxy.addCraftingRecipe(new ItemStack(Items.LeadPipeItem, 1), new Object[] { " G ", "GFG", " G ",
 			Character.valueOf('F'), "pipeFrameLead",
 			Character.valueOf('G'), Block.thinGlass });
 		// Replaces pipeItemsStone
 		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsStone));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.BronzePipeItem, 1), new Object[] { " G ", "GFG", " G ",
+		proxy.addCraftingRecipe(new ItemStack(Items.BronzePipeItem, 1), new Object[] { " G ", "GFG", " G ",
 			Character.valueOf('F'), "pipeFrameBronze",
 			Character.valueOf('G'), Block.thinGlass });
 		// Replaces pipeItemsIron
 		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsIron));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.WroughtIronPipeItem, 1), new Object[] { " G ", "GFG", " G ",
+		proxy.addCraftingRecipe(new ItemStack(Items.WroughtIronPipeItem, 1), new Object[] { " G ", "GFG", " G ",
 			Character.valueOf('F'), "pipeFrameWroughtIron",
 			Character.valueOf('G'), Block.thinGlass });
 		// Replaces pipeItemsGold
 		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsGold));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.SteelPipeItem, 1), new Object[] { " G ", "GFG", " G ",
+		proxy.addCraftingRecipe(new ItemStack(Items.SteelPipeItem, 1), new Object[] { " G ", "GFG", " G ",
 			Character.valueOf('F'), "pipeFrameSteel",
 			Character.valueOf('G'), Block.thinGlass });
 		// Replaces pipeItemsDiamond
 		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsDiamond));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.BlueSteelPipeItem, 1), new Object[] { " G ", "GFG", " G ",
+		proxy.addCraftingRecipe(new ItemStack(Items.BlueSteelPipeItem, 1), new Object[] { " G ", "GFG", " G ",
 			Character.valueOf('F'), "pipeFrameBlueSteel",
 			Character.valueOf('G'), Block.thinGlass });
 		// Replaces pipeItemsEmerald
 		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsEmerald));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.RedSteelPipeItem, 1), new Object[] { " G ", "GFG", " G ",
+		proxy.addCraftingRecipe(new ItemStack(Items.RedSteelPipeItem, 1), new Object[] { " G ", "GFG", " G ",
 			Character.valueOf('F'), "pipeFrameRedSteel",
 			Character.valueOf('G'), Block.thinGlass });
 		// Replaces pipeItemsVoid
 		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsVoid));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.BlackBronzePipeItem, 1), new Object[] { "RG ", "GFG", " GR",
+		proxy.addCraftingRecipe(new ItemStack(Items.BlackBronzePipeItem, 1), new Object[] { "RG ", "GFG", " GR",
 			Character.valueOf('F'), "pipeFrameBlackBronze",
 			Character.valueOf('G'), Block.thinGlass,
 			Character.valueOf('R'), Item.redstone });
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.BlackBronzePipeItem, 1), new Object[] { " GR", "GFG", "RG ",
+		proxy.addCraftingRecipe(new ItemStack(Items.BlackBronzePipeItem, 1), new Object[] { " GR", "GFG", "RG ",
 			Character.valueOf('F'), "pipeFrameBlackBronze",
 			Character.valueOf('G'), Block.thinGlass,
 			Character.valueOf('R'), Item.redstone });
 		// Replaces pipeItemsSandstone
 		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsSandstone));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.RoseGoldPipeItem, 1), new Object[] { " G ", "GFG", " G ",
+		proxy.addCraftingRecipe(new ItemStack(Items.RoseGoldPipeItem, 1), new Object[] { " G ", "GFG", " G ",
 			Character.valueOf('F'), "pipeFrameRoseGold",
 			Character.valueOf('G'), Block.thinGlass });
 		// Replaces pipeItemsObsidian
 		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsObsidian));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.BlackSteelPipeItem, 1), new Object[] { " G ", "GFG", " G ",
+		proxy.addCraftingRecipe(new ItemStack(Items.BlackSteelPipeItem, 1), new Object[] { " G ", "GFG", " G ",
 			Character.valueOf('F'), "pipeFrameBlackSteel",
 			Character.valueOf('G'), Block.thinGlass });
 		// Replaces pipeItemsDaizuli
 		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsDaizuli));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.SterlingSilverPipeItem, 1), new Object[] { " G ", "GFG", " G ",
+		proxy.addCraftingRecipe(new ItemStack(Items.SterlingSilverPipeItem, 1), new Object[] { " G ", "GFG", " G ",
 			Character.valueOf('F'), "pipeFrameSterlingSilver",
 			Character.valueOf('G'), Block.thinGlass });
 		// Replaces pipeItemsLapis
 		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsLapis));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.BrassPipeItem, 1), new Object[] { " G ", "GFG", " G ",
+		proxy.addCraftingRecipe(new ItemStack(Items.BrassPipeItem, 1), new Object[] { " G ", "GFG", " G ",
 			Character.valueOf('F'), "pipeFrameBrass",
 			Character.valueOf('G'), Block.thinGlass });
 		// Replaces pipeItemsQuartz
 //		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsQuartz));
-//		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.????PipeItem, 1), new Object[] { " G ", "GFG", " G ",
+//		proxy.addCraftingRecipe(new ItemStack(Items.????PipeItem, 1), new Object[] { " G ", "GFG", " G ",
 //			Character.valueOf('F'), "pipeFrame????",
 //			Character.valueOf('G'), Block.thinGlass });
 		
 		// =================Structure Pipes========================
 		// Replaces pipeStructureCobblestone
 		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeStructureCobblestone));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.LeadPipeStructureItem, 1), new Object[] { " G ", "GFG", " GR",
+		proxy.addCraftingRecipe(new ItemStack(Items.LeadPipeStructureItem, 1), new Object[] { " G ", "GFG", " GR",
 			Character.valueOf('F'), "pipeFrameLead",
 			Character.valueOf('G'), Block.thinGlass,
 			Character.valueOf('R'), Block.gravel });
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.LeadPipeStructureItem, 1), new Object[] { " G ", "GFG", "RG ",
+		proxy.addCraftingRecipe(new ItemStack(Items.LeadPipeStructureItem, 1), new Object[] { " G ", "GFG", "RG ",
 			Character.valueOf('F'), "pipeFrameLead",
 			Character.valueOf('G'), Block.thinGlass,
 			Character.valueOf('R'), Block.gravel });
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.LeadPipeStructureItem, 1), new Object[] { " GR", "GFG", " G ",
+		proxy.addCraftingRecipe(new ItemStack(Items.LeadPipeStructureItem, 1), new Object[] { " GR", "GFG", " G ",
 			Character.valueOf('F'), "pipeFrameLead",
 			Character.valueOf('G'), Block.thinGlass,
 			Character.valueOf('R'), Block.gravel });
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.LeadPipeStructureItem, 1), new Object[] { "RG ", "GFG", " G ",
+		proxy.addCraftingRecipe(new ItemStack(Items.LeadPipeStructureItem, 1), new Object[] { "RG ", "GFG", " G ",
 			Character.valueOf('F'), "pipeFrameLead",
 			Character.valueOf('G'), Block.thinGlass,
 			Character.valueOf('R'), Block.gravel });
@@ -218,55 +220,55 @@ public class Recipes {
 		// =================Waterproof Pipes========================
 		// Replaces pipeFluidsWood
 		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeFluidsWood));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.TinPipeFluidsItem, 1), new Object[] { "WGW", "GFG", "WGW",
+		proxy.addCraftingRecipe(new ItemStack(Items.TinPipeFluidsItem, 1), new Object[] { "WGW", "GFG", "WGW",
 			Character.valueOf('F'), "pipeFrameTin",
 			Character.valueOf('G'), Block.thinGlass,
 			Character.valueOf('W'), "rubberGreen" });
 		// Replaces pipeFluidsCobblestone
 		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeFluidsCobblestone));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.LeadPipeFluidsItem, 1), new Object[] { "WGW", "GFG", "WGW",
+		proxy.addCraftingRecipe(new ItemStack(Items.LeadPipeFluidsItem, 1), new Object[] { "WGW", "GFG", "WGW",
 			Character.valueOf('F'), "pipeFrameLead",
 			Character.valueOf('G'), Block.thinGlass,
 			Character.valueOf('W'), "rubberGreen" });
 		// Replaces pipeFluidsStone
 		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeFluidsStone));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.BronzePipeFluidsItem, 1), new Object[] { "WGW", "GFG", "WGW",
+		proxy.addCraftingRecipe(new ItemStack(Items.BronzePipeFluidsItem, 1), new Object[] { "WGW", "GFG", "WGW",
 			Character.valueOf('F'), "pipeFrameBronze",
 			Character.valueOf('G'), Block.thinGlass,
 			Character.valueOf('W'), "rubberGreen" });
 		// Replaces pipeFluidsIron
 		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeFluidsIron));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.WroughtIronPipeFluidsItem, 1), new Object[] { "WGW", "GFG", "WGW",
+		proxy.addCraftingRecipe(new ItemStack(Items.WroughtIronPipeFluidsItem, 1), new Object[] { "WGW", "GFG", "WGW",
 			Character.valueOf('F'), "pipeFrameWroughtIron",
 			Character.valueOf('G'), Block.thinGlass,
 			Character.valueOf('W'), "rubberGreen" });
 		// Replaces pipeFluidsGold
 		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeFluidsGold));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.SteelPipeFluidsItem, 1), new Object[] { "WGW", "GFG", "WGW",
+		proxy.addCraftingRecipe(new ItemStack(Items.SteelPipeFluidsItem, 1), new Object[] { "WGW", "GFG", "WGW",
 			Character.valueOf('F'), "pipeFrameSteel",
 			Character.valueOf('G'), Block.thinGlass,
 			Character.valueOf('W'), "rubberGreen" });
 		// Replaces pipeFluidsEmerald
 		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeFluidsEmerald));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.RedSteelPipeFluidsItem, 1), new Object[] { "WGW", "GFG", "WGW",
+		proxy.addCraftingRecipe(new ItemStack(Items.RedSteelPipeFluidsItem, 1), new Object[] { "WGW", "GFG", "WGW",
 			Character.valueOf('F'), "pipeFrameRedSteel",
 			Character.valueOf('G'), Block.thinGlass,
 			Character.valueOf('W'), "rubberGreen" });
 		// Replaces pipeFluidsVoid
 		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeFluidsVoid));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.BlackBronzePipeFluidsItem, 1), new Object[] { "RGW", "GFG", "WGR",
+		proxy.addCraftingRecipe(new ItemStack(Items.BlackBronzePipeFluidsItem, 1), new Object[] { "RGW", "GFG", "WGR",
 			Character.valueOf('F'), "pipeFrameBlackBronze",
 			Character.valueOf('G'), Block.thinGlass,
 			Character.valueOf('W'), "rubberGreen",
 			Character.valueOf('R'), Item.redstone });
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.BlackBronzePipeFluidsItem, 1), new Object[] { "WGR", "GFG", "RGW",
+		proxy.addCraftingRecipe(new ItemStack(Items.BlackBronzePipeFluidsItem, 1), new Object[] { "WGR", "GFG", "RGW",
 			Character.valueOf('F'), "pipeFrameBlackBronze",
 			Character.valueOf('G'), Block.thinGlass,
 			Character.valueOf('W'), "rubberGreen",
 			Character.valueOf('R'), Item.redstone });
 		// Replaces pipeFluidsSandstone
 		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeFluidsSandstone));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.RoseGoldPipeFluidsItem, 1), new Object[] { "WGW", "GFG", "WGW",
+		proxy.addCraftingRecipe(new ItemStack(Items.RoseGoldPipeFluidsItem, 1), new Object[] { "WGW", "GFG", "WGW",
 			Character.valueOf('F'), "pipeFrameRoseGold",
 			Character.valueOf('G'), Block.thinGlass,
 			Character.valueOf('W'), "rubberGreen" });
@@ -274,93 +276,93 @@ public class Recipes {
 		// =================Power Pipes========================
 		// Conductive Pipe value 8
 		RemoveRecipe(new ItemStack(BuildCraftTransport.pipePowerCobblestone));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.CopperPipePowerItem, 1), new Object[] { "WGW", "GFG", "WGW",
+		proxy.addCraftingRecipe(new ItemStack(Items.CopperPipePowerItem, 1), new Object[] { "WGW", "GFG", "WGW",
 			Character.valueOf('F'), "pipeFrameCopper",
 			Character.valueOf('G'), Block.thinGlass,
 			Character.valueOf('W'), Item.redstone });
 		// Conductive Pipe value 16
 		RemoveRecipe(new ItemStack(BuildCraftTransport.pipePowerStone));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.RoseGoldPipePowerItem, 1), new Object[] { "WGW", "GFG", "WGW",
+		proxy.addCraftingRecipe(new ItemStack(Items.RoseGoldPipePowerItem, 1), new Object[] { "WGW", "GFG", "WGW",
 			Character.valueOf('F'), "pipeFrameRoseGold",
 			Character.valueOf('G'), Block.thinGlass,
 			Character.valueOf('W'), Item.redstone });
 		// Conductive Pipe value 32
 		RemoveRecipe(new ItemStack(BuildCraftTransport.pipePowerWood));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.BlackBronzePipePowerItem, 1), new Object[] { "WGW", "GFG", "WGW",
+		proxy.addCraftingRecipe(new ItemStack(Items.BlackBronzePipePowerItem, 1), new Object[] { "WGW", "GFG", "WGW",
 			Character.valueOf('F'), "pipeFrameBlackBronze",
 			Character.valueOf('G'), Block.thinGlass,
 			Character.valueOf('W'), Item.redstone });
 		// Conductive Pipe value 64
 		RemoveRecipe(new ItemStack(BuildCraftTransport.pipePowerQuartz));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.WroughtIronPipePowerItem, 1), new Object[] { "WGW", "GFG", "WGW",
+		proxy.addCraftingRecipe(new ItemStack(Items.WroughtIronPipePowerItem, 1), new Object[] { "WGW", "GFG", "WGW",
 			Character.valueOf('F'), "pipeFrameWroughtIron",
 			Character.valueOf('G'), Block.thinGlass,
 			Character.valueOf('W'), Item.redstone });
 		// Conductive Pipe value 256
 		RemoveRecipe(new ItemStack(BuildCraftTransport.pipePowerGold));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.SteelPipePowerItem, 1), new Object[] { "WGW", "GFG", "WGW",
+		proxy.addCraftingRecipe(new ItemStack(Items.SteelPipePowerItem, 1), new Object[] { "WGW", "GFG", "WGW",
 			Character.valueOf('F'), "pipeFrameSteel",
 			Character.valueOf('G'), Block.thinGlass,
 			Character.valueOf('W'), Item.redstone });
 		// Conductive Pipe value 1024
 		RemoveRecipe(new ItemStack(BuildCraftTransport.pipePowerDiamond));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.PlatinumPipePowerItem, 1), new Object[] { "WGW", "GFG", "WGW",
+		proxy.addCraftingRecipe(new ItemStack(Items.PlatinumPipePowerItem, 1), new Object[] { "WGW", "GFG", "WGW",
 			Character.valueOf('F'), "pipeFramePlatinum",
 			Character.valueOf('G'), Block.thinGlass,
 			Character.valueOf('W'), Item.redstone });
 		// ===================Engines=====================
 		// Mechanical
 		RemoveRecipe(new ItemStack(BuildCraftEnergy.engineBlock, 1, 0));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftEnergy.engineBlock, 1, 0), new Object[] { "WWW", " S ", "GPG",
+		proxy.addCraftingRecipe(new ItemStack(BuildCraftEnergy.engineBlock, 1, 0), new Object[] { "WWW", " S ", "GPG",
 			Character.valueOf('W'), TFCBlocks.Planks,
 			Character.valueOf('S'), Block.glass,
 			Character.valueOf('G'), "gearBismuthBronze",
 			Character.valueOf('P'), Block.pistonBase });
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftEnergy.engineBlock, 1, 0), new Object[] { "WWW", " S ", "GPG",
+		proxy.addCraftingRecipe(new ItemStack(BuildCraftEnergy.engineBlock, 1, 0), new Object[] { "WWW", " S ", "GPG",
 			Character.valueOf('W'), TFCBlocks.Planks,
 			Character.valueOf('S'), Block.glass,
 			Character.valueOf('G'), "gearBlackBronze",
 			Character.valueOf('P'), Block.pistonBase });
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftEnergy.engineBlock, 1, 0), new Object[] { "WWW", " S ", "GPG",
+		proxy.addCraftingRecipe(new ItemStack(BuildCraftEnergy.engineBlock, 1, 0), new Object[] { "WWW", " S ", "GPG",
 			Character.valueOf('W'), TFCBlocks.Planks,
 			Character.valueOf('S'), Block.glass,
 			Character.valueOf('G'), "gearBronze",
 			Character.valueOf('P'), Block.pistonBase });
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftEnergy.engineBlock, 1, 0), new Object[] { "WWW", " S ", "GPG",
+		proxy.addCraftingRecipe(new ItemStack(BuildCraftEnergy.engineBlock, 1, 0), new Object[] { "WWW", " S ", "GPG",
 			Character.valueOf('W'), TFCBlocks.Planks,
 			Character.valueOf('S'), Block.glass,
 			Character.valueOf('G'), "gearCopper",
 			Character.valueOf('P'), Block.pistonBase });
 		// Steam
 		RemoveRecipe(new ItemStack(BuildCraftEnergy.engineBlock, 1, 1));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftEnergy.engineBlock, 1, 1), new Object[] { "WWW", " S ", "GPG",
+		proxy.addCraftingRecipe(new ItemStack(BuildCraftEnergy.engineBlock, 1, 1), new Object[] { "WWW", " S ", "GPG",
 			Character.valueOf('W'), TFCBlocks.StoneIgInCobble,
 			Character.valueOf('S'), Block.glass,
 			Character.valueOf('G'), "gearWroughtIron",
 			Character.valueOf('P'), Block.pistonBase });
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftEnergy.engineBlock, 1, 1), new Object[] { "WWW", " S ", "GPG",
+		proxy.addCraftingRecipe(new ItemStack(BuildCraftEnergy.engineBlock, 1, 1), new Object[] { "WWW", " S ", "GPG",
 			Character.valueOf('W'), TFCBlocks.StoneIgExCobble,
 			Character.valueOf('S'), Block.glass,
 			Character.valueOf('G'), "gearWroughtIron",
 			Character.valueOf('P'), Block.pistonBase });
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftEnergy.engineBlock, 1, 1), new Object[] { "WWW", " S ", "GPG",
+		proxy.addCraftingRecipe(new ItemStack(BuildCraftEnergy.engineBlock, 1, 1), new Object[] { "WWW", " S ", "GPG",
 			Character.valueOf('W'), TFCBlocks.StoneSedCobble,
 			Character.valueOf('S'), Block.glass,
 			Character.valueOf('G'), "gearWroughtIron",
 			Character.valueOf('P'), Block.pistonBase });
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftEnergy.engineBlock, 1, 1), new Object[] { "WWW", " S ", "GPG",
+		proxy.addCraftingRecipe(new ItemStack(BuildCraftEnergy.engineBlock, 1, 1), new Object[] { "WWW", " S ", "GPG",
 			Character.valueOf('W'), TFCBlocks.StoneMMCobble,
 			Character.valueOf('S'), Block.glass,
 			Character.valueOf('G'), "gearWroughtIron",
 			Character.valueOf('P'), Block.pistonBase });
 		// Combustion
 		RemoveRecipe(new ItemStack(BuildCraftEnergy.engineBlock, 1, 2));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftEnergy.engineBlock, 1, 2), new Object[] { "WWW", " S ", "GPG",
+		proxy.addCraftingRecipe(new ItemStack(BuildCraftEnergy.engineBlock, 1, 2), new Object[] { "WWW", " S ", "GPG",
 			Character.valueOf('W'), TFCItems.WroughtIronIngot,
 			Character.valueOf('S'), Block.glass,
 			Character.valueOf('G'), "gearSteel",
 			Character.valueOf('P'), Block.pistonBase });
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftEnergy.engineBlock, 1, 2), new Object[] { "WWW", " S ", "GPG",
+		proxy.addCraftingRecipe(new ItemStack(BuildCraftEnergy.engineBlock, 1, 2), new Object[] { "WWW", " S ", "GPG",
 			Character.valueOf('W'), TFCItems.WroughtIronIngot,
 			Character.valueOf('S'), Block.glass,
 			Character.valueOf('G'), "gearSteel",
@@ -370,34 +372,34 @@ public class Recipes {
 		// AutoWorkbench
 		if (BuildCraftFactory.allowMining) {
 			RemoveRecipe(new ItemStack(BuildCraftFactory.autoWorkbenchBlock));
-			BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.autoWorkbenchBlock), new Object[] { " g ", "gwg", " g ",
+			proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.autoWorkbenchBlock), new Object[] { " g ", "gwg", " g ",
 				Character.valueOf('w'), Block.workbench,
 				Character.valueOf('g'), "gearBismuthBronze" });
-			BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.autoWorkbenchBlock), new Object[] { " g ", "gwg", " g ",
+			proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.autoWorkbenchBlock), new Object[] { " g ", "gwg", " g ",
 				Character.valueOf('w'), Block.workbench,
 				Character.valueOf('g'), "gearBlackBronze" });
-			BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.autoWorkbenchBlock), new Object[] { " g ", "gwg", " g ",
+			proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.autoWorkbenchBlock), new Object[] { " g ", "gwg", " g ",
 				Character.valueOf('w'), Block.workbench,
 				Character.valueOf('g'), "gearBronze" });
-			BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.autoWorkbenchBlock), new Object[] { " g ", "gwg", " g ",
+			proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.autoWorkbenchBlock), new Object[] { " g ", "gwg", " g ",
 				Character.valueOf('w'), Block.workbench,
 				Character.valueOf('g'), "gearCopper" });
 			// Mining Well
 			RemoveRecipe(new ItemStack(BuildCraftFactory.miningWellBlock));
-			BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.miningWellBlock, 1), new Object[] { "ipi", "igi", "iki",
+			proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.miningWellBlock, 1), new Object[] { "ipi", "igi", "iki",
 				Character.valueOf('p'), Item.redstone,
 				Character.valueOf('i'), TFCItems.SteelIngot,
 				Character.valueOf('g'), "gearSteel",
 				Character.valueOf('k'), TFCItems.SteelPick });
 			// Quarry
 			RemoveRecipe(new ItemStack(BuildCraftFactory.quarryBlock));
-			BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.quarryBlock), new Object[] { "ipi", "gig", "dkd",
+			proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.quarryBlock), new Object[] { "ipi", "gig", "dkd",
 				Character.valueOf('i'), "gearSteel",
 				Character.valueOf('p'), Item.redstone,
 				Character.valueOf('g'), "gearBlackSteel",
 				Character.valueOf('d'), "gearBlueSteel",
 				Character.valueOf('k'), TFCItems.BlueSteelPick });
-			BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.quarryBlock), new Object[] { "ipi", "gig", "dkd",
+			proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.quarryBlock), new Object[] { "ipi", "gig", "dkd",
 				Character.valueOf('i'), "gearSteel",
 				Character.valueOf('p'), Item.redstone,
 				Character.valueOf('g'), "gearBlackSteel",
@@ -405,7 +407,7 @@ public class Recipes {
 				Character.valueOf('k'), TFCItems.RedSteelPick });
 		} else {
 			RemoveRecipe(new ItemStack(BuildCraftFactory.pumpBlock));
-			BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.pumpBlock), new Object[] { "iri", "iTi", "gpg",
+			proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.pumpBlock), new Object[] { "iri", "iTi", "gpg",
 				Character.valueOf('r'), Item.redstone,
 				Character.valueOf('i'), TFCItems.SteelIngot,
 				Character.valueOf('T'), BuildCraftFactory.tankBlock,
@@ -415,11 +417,11 @@ public class Recipes {
 
 		// Refinery
 		RemoveRecipe(new ItemStack(BuildCraftFactory.refineryBlock));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.refineryBlock), new Object[] { "   ", "RTR", "TGT",
+		proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.refineryBlock), new Object[] { "   ", "RTR", "TGT",
 			Character.valueOf('T'), BuildCraftFactory.tankBlock,
 			Character.valueOf('G'), "gearBlueSteel",
 			Character.valueOf('R'), Block.torchRedstoneActive });
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.refineryBlock), new Object[] { "   ", "RTR", "TGT",
+		proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.refineryBlock), new Object[] { "   ", "RTR", "TGT",
 			Character.valueOf('T'), BuildCraftFactory.tankBlock,
 			Character.valueOf('G'), "gearRedSteel",
 			Character.valueOf('R'), Block.torchRedstoneActive });
@@ -427,7 +429,7 @@ public class Recipes {
 		// Hopper
 		if (BuildCraftFactory.hopperBlock != null) {
 			RemoveRecipe(new ItemStack(BuildCraftFactory.hopperBlock));
-			BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.hopperBlock), new Object[] { "ICI", "IGI", " I ",
+			proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.hopperBlock), new Object[] { "ICI", "IGI", " I ",
 				Character.valueOf('I'), TFCItems.WroughtIronIngot,
 				Character.valueOf('C'), Block.chest,
 				Character.valueOf('G'), "gearWroughtIron" });
@@ -436,7 +438,7 @@ public class Recipes {
 		// ==================Builders==========================
 		// Filler
 		RemoveRecipe(new ItemStack(BuildCraftBuilders.fillerBlock));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftBuilders.fillerBlock, 1), new Object[] { "btb", "ycy", "gsg",
+		proxy.addCraftingRecipe(new ItemStack(BuildCraftBuilders.fillerBlock, 1), new Object[] { "btb", "ycy", "gsg",
 			Character.valueOf('b'), new ItemStack(Item.dyePowder, 1, 0),
 			Character.valueOf('t'), BuildCraftBuilders.markerBlock,
 			Character.valueOf('y'), new ItemStack(Item.dyePowder, 1, 11),
@@ -445,14 +447,14 @@ public class Recipes {
 			Character.valueOf('s'), Block.chest });
 		// Builder
 		RemoveRecipe(new ItemStack(BuildCraftBuilders.builderBlock));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftBuilders.builderBlock, 1), new Object[] { "btb", "ycy", "gsg",
+		proxy.addCraftingRecipe(new ItemStack(BuildCraftBuilders.builderBlock, 1), new Object[] { "btb", "ycy", "gsg",
 			Character.valueOf('b'), new ItemStack(Item.dyePowder, 1, 0),
 			Character.valueOf('t'), BuildCraftBuilders.markerBlock,
 			Character.valueOf('y'), new ItemStack(Item.dyePowder, 1, 11),
 			Character.valueOf('c'), Block.workbench,
 			Character.valueOf('g'), "gearBlueSteel",
 			Character.valueOf('s'), Block.chest });
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftBuilders.builderBlock, 1), new Object[] { "btb", "ycy", "gsg",
+		proxy.addCraftingRecipe(new ItemStack(BuildCraftBuilders.builderBlock, 1), new Object[] { "btb", "ycy", "gsg",
 			Character.valueOf('b'), new ItemStack(Item.dyePowder, 1, 0),
 			Character.valueOf('t'), BuildCraftBuilders.markerBlock,
 			Character.valueOf('y'), new ItemStack(Item.dyePowder, 1, 11),
@@ -461,14 +463,14 @@ public class Recipes {
 			Character.valueOf('s'), Block.chest });
 		// Architect
 		RemoveRecipe(new ItemStack(BuildCraftBuilders.architectBlock));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftBuilders.architectBlock, 1), new Object[] { "btb", "ycy", "gsg",
+		proxy.addCraftingRecipe(new ItemStack(BuildCraftBuilders.architectBlock, 1), new Object[] { "btb", "ycy", "gsg",
 			Character.valueOf('b'), new ItemStack(Item.dyePowder, 1, 0),
 			Character.valueOf('t'), BuildCraftBuilders.markerBlock,
 			Character.valueOf('y'), new ItemStack(Item.dyePowder, 1, 11),
 			Character.valueOf('c'), Block.workbench,
 			Character.valueOf('g'), "gearBlueSteel",
 			Character.valueOf('s'), new ItemStack(BuildCraftBuilders.templateItem, 1) });
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftBuilders.architectBlock, 1), new Object[] { "btb", "ycy", "gsg",
+		proxy.addCraftingRecipe(new ItemStack(BuildCraftBuilders.architectBlock, 1), new Object[] { "btb", "ycy", "gsg",
 			Character.valueOf('b'), new ItemStack(Item.dyePowder, 1, 0),
 			Character.valueOf('t'), BuildCraftBuilders.markerBlock,
 			Character.valueOf('y'), new ItemStack(Item.dyePowder, 1, 11),
@@ -477,7 +479,7 @@ public class Recipes {
 			Character.valueOf('s'), new ItemStack(BuildCraftBuilders.templateItem, 1) });
 		// Library
 		RemoveRecipe(new ItemStack(BuildCraftBuilders.libraryBlock));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftBuilders.libraryBlock, 1), new Object[] { "bbb", "bkb", "bbb",
+		proxy.addCraftingRecipe(new ItemStack(BuildCraftBuilders.libraryBlock, 1), new Object[] { "bbb", "bkb", "bbb",
 			Character.valueOf('b'), new ItemStack(BuildCraftBuilders.blueprintItem),
 			Character.valueOf('k'), Block.bookShelf });
 		
@@ -537,23 +539,23 @@ public class Recipes {
 		
 		// ==================Silicone==================
 		RemoveRecipe(new ItemStack(BuildCraftSilicon.laserBlock));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftSilicon.laserBlock), new Object[] { "ORR", "DDR", "ORR",
+		proxy.addCraftingRecipe(new ItemStack(BuildCraftSilicon.laserBlock), new Object[] { "ORR", "DDR", "ORR",
 			Character.valueOf('O'), Block.obsidian,
 			Character.valueOf('R'), Item.redstone,
 			Character.valueOf('D'), new ItemStack(TFCItems.GemDiamond,1,2), });
 		
 		RemoveRecipe(new ItemStack(BuildCraftSilicon.assemblyTableBlock));
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftSilicon.assemblyTableBlock, 1, 0), new Object[] { "ORO", "ODO", "OGO",
+		proxy.addCraftingRecipe(new ItemStack(BuildCraftSilicon.assemblyTableBlock, 1, 0), new Object[] { "ORO", "ODO", "OGO",
 			Character.valueOf('O'), Block.obsidian,
 			Character.valueOf('R'), Item.redstone,
 			Character.valueOf('D'), new ItemStack(TFCItems.GemDiamond,1,2),
 			Character.valueOf('G'), "gearBlueSteel", });
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftSilicon.assemblyTableBlock, 1, 0), new Object[] { "ORO", "ODO", "OGO",
+		proxy.addCraftingRecipe(new ItemStack(BuildCraftSilicon.assemblyTableBlock, 1, 0), new Object[] { "ORO", "ODO", "OGO",
 			Character.valueOf('O'), Block.obsidian,
 			Character.valueOf('R'), Item.redstone,
 			Character.valueOf('D'), new ItemStack(TFCItems.GemDiamond,1,2),
 			Character.valueOf('G'), "gearRedSteel", });
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(BuildCraftSilicon.assemblyTableBlock, 1, 1), new Object[] { "OWO", "OCO", "ORO",
+		proxy.addCraftingRecipe(new ItemStack(BuildCraftSilicon.assemblyTableBlock, 1, 1), new Object[] { "OWO", "OCO", "ORO",
 			Character.valueOf('O'), Block.obsidian,
 			Character.valueOf('W'), Block.workbench,
 			Character.valueOf('C'), Block.chest,
@@ -577,26 +579,26 @@ public class Recipes {
 		AssemblyRecipe.assemblyRecipes.add(new AssemblyRecipe(new ItemStack[] { new ItemStack(Item.dyePowder, 1, 11), new ItemStack(Item.redstone, 1), new ItemStack(TFCItems.CopperIngot, 1) }, 500, new ItemStack(BuildCraftTransport.yellowPipeWire, 8)));
 
 		// ==========Latex==========
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.LatexBowl, 1), new Object[] { "fff", "fff", " b ",
+		proxy.addCraftingRecipe(new ItemStack(Items.LatexBowl, 1), new Object[] { "fff", "fff", " b ",
 			Character.valueOf('f'), Block.blocksList[37],
 			Character.valueOf('b'), Item.bowlEmpty });
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.Buckets, 1, 0), new Object[] { " f ", "fff", " b ",
+		proxy.addCraftingRecipe(new ItemStack(Items.Buckets, 1, 0), new Object[] { " f ", "fff", " b ",
 			Character.valueOf('f'), "bowlLatex",
 			Character.valueOf('b'), TFCItems.WoodenBucketEmpty });
 		
 		// ==========Rubber==========
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.Rubber, 1, 15), new Object[] { "s", "b",
+		proxy.addCraftingRecipe(new ItemStack(Items.Rubber, 1, 15), new Object[] { "s", "b",
 			Character.valueOf('s'), new ItemStack(TFCItems.Powder, 1, 3),
 			Character.valueOf('b'), "bowlLatex" });
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.Rubber, 4, 15), new Object[] { "s", "b",
+		proxy.addCraftingRecipe(new ItemStack(Items.Rubber, 4, 15), new Object[] { "s", "b",
 			Character.valueOf('s'), new ItemStack(TFCItems.Powder, 1, 3),
 			Character.valueOf('b'), "bucketLatex" });
 		for(int i = 0; i < 16; i++) {
-			BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.Rubber, 1, i), new Object[] { "g", "s", "b",
+			proxy.addCraftingRecipe(new ItemStack(Items.Rubber, 1, i), new Object[] { "g", "s", "b",
 				Character.valueOf('g'), new ItemStack(Item.dyePowder, 1 , i),
 				Character.valueOf('s'), new ItemStack(TFCItems.Powder, 1, 3),
 				Character.valueOf('b'), "bowlLatex" });
-			BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Items.Rubber, 4, i), new Object[] { "g", "s", "b",
+			proxy.addCraftingRecipe(new ItemStack(Items.Rubber, 4, i), new Object[] { "g", "s", "b",
 				Character.valueOf('g'), new ItemStack(Item.dyePowder, 1 , i),
 				Character.valueOf('s'), new ItemStack(TFCItems.Powder, 1, 3),
 				Character.valueOf('b'), "bucketLatex" });
@@ -606,29 +608,29 @@ public class Recipes {
 		// Olivien as green dye. Not sure if this makes any sense
 		Item[] tfcHammers = TFC.Core.Recipes.Hammers;
 		for(int j = 0; j < tfcHammers.length; j++) {
-			BCTFCcrossover.proxy.addShapelessRecipe(new ItemStack(Item.dyePowder, 4, 2), new Object[] {new ItemStack(TFCItems.OreChunk, 1, 33), new ItemStack(tfcHammers[j], 1, 32767)});
-			BCTFCcrossover.proxy.addShapelessRecipe(new ItemStack(Item.dyePowder, 8, 2), new Object[] {new ItemStack(TFCItems.OreChunk, 1, 9), new ItemStack(tfcHammers[j], 1, 32767)});
-			BCTFCcrossover.proxy.addShapelessRecipe(new ItemStack(Item.dyePowder, 4, 2), new Object[] {new ItemStack(TFCItems.SmallOreChunk, 1, 9), new ItemStack(tfcHammers[j], 1, 32767)});
+			proxy.addShapelessRecipe(new ItemStack(Item.dyePowder, 4, 2), new Object[] {new ItemStack(TFCItems.OreChunk, 1, 33), new ItemStack(tfcHammers[j], 1, 32767)});
+			proxy.addShapelessRecipe(new ItemStack(Item.dyePowder, 8, 2), new Object[] {new ItemStack(TFCItems.OreChunk, 1, 9), new ItemStack(tfcHammers[j], 1, 32767)});
+			proxy.addShapelessRecipe(new ItemStack(Item.dyePowder, 4, 2), new Object[] {new ItemStack(TFCItems.SmallOreChunk, 1, 9), new ItemStack(tfcHammers[j], 1, 32767)});
 		}
 		
 		// ===============Vanilla Recipes==================
 		// Vanilla Pistons
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Block.pistonBase, 1), new Object[] { "www", "cic", "crc",
+		proxy.addCraftingRecipe(new ItemStack(Block.pistonBase, 1), new Object[] { "www", "cic", "crc",
 			Character.valueOf('w'), TFCBlocks.Planks,
 			Character.valueOf('c'), TFCBlocks.StoneIgInCobble,
 			Character.valueOf('i'), TFCItems.WroughtIronIngot,
 			Character.valueOf('r'), Item.redstone });
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Block.pistonBase, 1), new Object[] { "www", "cic", "crc",
+		proxy.addCraftingRecipe(new ItemStack(Block.pistonBase, 1), new Object[] { "www", "cic", "crc",
 			Character.valueOf('w'), TFCBlocks.Planks,
 			Character.valueOf('c'), TFCBlocks.StoneIgExCobble,
 			Character.valueOf('i'), TFCItems.WroughtIronIngot,
 			Character.valueOf('r'), Item.redstone });
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Block.pistonBase, 1), new Object[] { "www", "cic", "crc",
+		proxy.addCraftingRecipe(new ItemStack(Block.pistonBase, 1), new Object[] { "www", "cic", "crc",
 			Character.valueOf('w'), TFCBlocks.Planks,
 			Character.valueOf('c'), TFCBlocks.StoneSedCobble,
 			Character.valueOf('i'), TFCItems.WroughtIronIngot,
 			Character.valueOf('r'), Item.redstone });
-		BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Block.pistonBase, 1), new Object[] { "www", "cic", "crc",
+		proxy.addCraftingRecipe(new ItemStack(Block.pistonBase, 1), new Object[] { "www", "cic", "crc",
 			Character.valueOf('w'), TFCBlocks.Planks,
 			Character.valueOf('c'), TFCBlocks.StoneMMCobble,
 			Character.valueOf('i'), TFCItems.WroughtIronIngot,
@@ -636,7 +638,7 @@ public class Recipes {
 
 		// Bookshelf Recipe for Library
 		for(int i = 0; i < 16; i++) {
-			BCTFCcrossover.proxy.addCraftingRecipe(new ItemStack(Block.bookShelf, 1), new Object[] { "ppp", "bbb", "ppp",
+			proxy.addCraftingRecipe(new ItemStack(Block.bookShelf, 1), new Object[] { "ppp", "bbb", "ppp",
 				Character.valueOf('p'), new ItemStack(TFCItems.SinglePlank,1,i),
 				Character.valueOf('b'), Item.book });
 		}
