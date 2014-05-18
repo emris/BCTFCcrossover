@@ -25,26 +25,30 @@ import cpw.mods.fml.relauncher.SideOnly;
 import emris.BCTFCcrossover.BCTFCcrossover;
 import emris.BCTFCcrossover.core.PipeIconProvider;
 
-public class TinPipeFluidsItem extends PipeFluidsWood {
-	
+public class TinPipeFluidsItem extends PipeFluidsWood
+{
 	protected int standardIconIndex = PipeIconProvider.TYPE.PipeFluidsTin.ordinal();
 	protected int solidIconIndex = PipeIconProvider.TYPE.PipeTin_Solid.ordinal();
 	
-	public TinPipeFluidsItem(int itemID) {
+	public TinPipeFluidsItem(int itemID)
+	{
 		super(itemID);
 	}
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public IIconProvider getIconProvider() {
+	public IIconProvider getIconProvider()
+	{
 		return BCTFCcrossover.instance.pipeIconProvider;
 	}
 
 	@Override
-	public int getIconIndex(ForgeDirection direction) {
+	public int getIconIndex(ForgeDirection direction)
+	{
 		if (direction == ForgeDirection.UNKNOWN)
 			return standardIconIndex;
-		else {
+		else
+		{
 			int metadata = container.getBlockMetadata();
 
 			if (metadata == direction.ordinal())

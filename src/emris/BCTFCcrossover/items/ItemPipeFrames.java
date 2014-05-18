@@ -34,12 +34,14 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import emris.BCTFCcrossover.Reference;
 
-public class ItemPipeFrames extends ItemTerra implements ISize {
+public class ItemPipeFrames extends ItemTerra implements ISize
+{
 
 	private int metaSize = 16;
 	private Icon[] icons = new Icon[metaSize];
 	
-	public ItemPipeFrames(int id) {
+	public ItemPipeFrames(int id)
+	{
 		super(id);
 		setMaxDamage(0);
 		setHasSubtypes(true);
@@ -51,53 +53,61 @@ public class ItemPipeFrames extends ItemTerra implements ISize {
 	}
 	
 	@Override
-	public EnumSize getSize() {
+	public EnumSize getSize(ItemStack is)
+	{
 		return EnumSize.MEDIUM;
 	}
 	
 	@Override
-	public EnumWeight getWeight() {
+	public EnumWeight getWeight(ItemStack is)
+	{
 		return EnumWeight.MEDIUM;
 	}
 
 	@Override
-	public boolean canStack() {
+	public boolean canStack()
+	{
 		return true;
 	}
 
 	@Override
-	public Icon getIconFromDamage(int meta) {
+	public Icon getIconFromDamage(int meta)
+	{
 		return icons[meta];
 	}
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister registerer) {
+	public void registerIcons(IconRegister registerer)
+	{
 		for(int i = 0; i < metaSize; i++)
 			icons[i] = registerer.registerIcon(Reference.ModID + ":" + this.getUnlocalizedName().replace("item.", "") + MetaNames[i]);
 	}
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void getSubItems(int par1, CreativeTabs par2CreativeTabs, List list) {
-		for(int i = 0; i < metaSize; i++) {
+	public void getSubItems(int par1, CreativeTabs tabs, List list)
+	{
+		for(int i = 0; i < metaSize; i++)
 			list.add(new ItemStack(this,1,i));
-		}
 	}
 	
 	@Override
-	public String getItemDisplayName(ItemStack itemstack) {
-		return StringUtils.localize(getUnlocalizedName(itemstack));
+	public String getItemDisplayName(ItemStack is)
+	{
+		return StringUtils.localize(getUnlocalizedName(is));
 	}
 	
-	public static void addSizeInformation(ISize object, List arraylist) {
-		if(object.getSize()!= null && object.getWeight() != null)
-			arraylist.add("\u2696" + object.getWeight().getName() + " \u21F2" + object.getSize().getName());
+	public static void addSizeInformation(ItemStack is, ISize object, List arraylist)
+	{
+		if(object.getSize(is)!= null && object.getWeight(is) != null)
+			arraylist.add("\u2696" + object.getWeight(is).getName() + " \u21F2" + object.getSize(is).getName());
 	}
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
-		this.addSizeInformation(this, par3List);
+	public void addInformation(ItemStack is, EntityPlayer player, List list, boolean flag)
+	{
+		this.addSizeInformation(is, this, list);
 	}
 }

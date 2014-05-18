@@ -10,19 +10,21 @@ import emris.BCTFCcrossover.core.PipeIconProvider;
 
 public class BrassPipeItem extends PipeItemsLapis
 {
-
-	public BrassPipeItem(int itemID) {
+	public BrassPipeItem(int itemID)
+	{
 		super(itemID);
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public IIconProvider getIconProvider() {
+	public IIconProvider getIconProvider()
+	{
 		return BCTFCcrossover.instance.pipeIconProvider;
 	}
 
 	@Override
-	public int getIconIndex(ForgeDirection direction) {
+	public int getIconIndex(ForgeDirection direction)
+	{
 		return PipeIconProvider.TYPE.PipeBrass.ordinal();
 	}
 }

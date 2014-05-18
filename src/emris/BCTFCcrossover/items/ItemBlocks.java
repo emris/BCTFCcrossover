@@ -5,15 +5,17 @@ import net.minecraft.item.ItemStack;
 import buildcraft.core.CreativeTabBuildCraft;
 import buildcraft.core.utils.StringUtils;
 
-public class ItemBlocks extends ItemBlock {
-
-	public ItemBlocks(int par1) {
-		super(par1);
+public class ItemBlocks extends ItemBlock
+{
+	public ItemBlocks(int id)
+	{
+		super(id);
 		setCreativeTab(CreativeTabBuildCraft.MACHINES.get());
 	}
 
 	@Override
-	public String getItemDisplayName(ItemStack itemstack) {
+	public String getItemDisplayName(ItemStack itemstack)
+	{
 		return StringUtils.localize(getUnlocalizedName(itemstack));
 	}
 

@@ -24,18 +24,19 @@ import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidRegistry;
 import TFC.TFCItems;
 import emris.BCTFCcrossover.BCTFCcrossover;
-import emris.BCTFCcrossover.Blocks;
 import emris.BCTFCcrossover.Items;
 
 public class RegisterFluids {
 
 	public static final Fluid LATEX = new Fluid("latex").setBlockID(IDProvider.Latex).setUnlocalizedName("Latex").setDensity(6000).setViscosity(6000);
 
-	public static void register() {
+	public static void register()
+	{
 		FluidRegistry.registerFluid(LATEX);
 	}
 
-	public static void registerFluidContainers() {
+	public static void registerFluidContainers()
+	{
 		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("latex", FluidContainerRegistry.BUCKET_VOLUME / 4), new ItemStack(Items.LatexBowl), new ItemStack(Item.bowlEmpty));
 		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("latex", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(Items.Buckets, 1, 0), new ItemStack(TFCItems.WoodenBucketEmpty));
 		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("water", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(Items.Buckets, 1, 2), new ItemStack(Items.Buckets, 1, 1));
@@ -43,7 +44,8 @@ public class RegisterFluids {
 		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("fuel", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(Items.Buckets, 1, 5), new ItemStack(Items.Buckets, 1, 3));
 	}
 
-	public static void registerFluidIcons() {
+	public static void registerFluidIcons()
+	{
 		BCTFCcrossover.proxy.registerFluidIcons(LATEX);
 	}
 }

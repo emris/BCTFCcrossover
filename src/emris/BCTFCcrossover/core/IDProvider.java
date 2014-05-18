@@ -25,8 +25,8 @@ import buildcraft.BuildCraftCore;
 import buildcraft.BuildCraftTransport;
 import emris.BCTFCcrossover.BCTFCcrossover;
 
-public class IDProvider {
-	public static int Plans							= 25400;
+public class IDProvider
+{
 	public static int Gears							= 25401;
 	public static int Buckets						= 25402;
 	public static int Rubber						= 25403;
@@ -121,17 +121,20 @@ public class IDProvider {
 
 	static Configuration config;
 
-	public static void setup() {
-		try {
+	public static void setup()
+	{
+		try
+		{
 			config = new Configuration(new File(BCTFCcrossover.proxy.getMinecraftDir(), "/config/BCTFCcrossover.cfg"));
 			config.load();
-		} catch (Exception e) {
+		}
+		catch (Exception e)
+		{
 			System.out.println(new StringBuilder().append("[BCTFCcrossover] Config file ERROR!").toString());
 			config = null;
 		}
 
 		// Items
-		Plans = getItemID(config, "items", "Plans", Plans);
 		Gears = getItemID(config, "items", "Gears", Gears);
 		Buckets = getItemID(config, "items", "Buckets", Buckets);
 		Rubber = getItemID(config, "items", "Rubber", Rubber);
@@ -191,14 +194,18 @@ public class IDProvider {
 		if (config.hasChanged()) { config.save(); }
 	}
 
-	private static int getItemID(Configuration config, String heading, String item, int value) {
-		if (config == null) {
+	private static int getItemID(Configuration config, String heading, String item, int value)
+	{
+		if (config == null)
 			return value;
-		}
-		try {
+
+		try
+		{
 			Property prop = config.get(heading, item, value);
 			return prop.getInt(value);
-		} catch (Exception e) {
+		}
+		catch (Exception e)
+		{
 			System.out.println(new StringBuilder().append("[BCTFCcrossover] ERROR adding Integer, config NOT loaded properly!").toString());
 		}
 		return value;

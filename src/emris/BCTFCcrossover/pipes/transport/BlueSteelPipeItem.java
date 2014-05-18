@@ -25,21 +25,25 @@ import cpw.mods.fml.relauncher.SideOnly;
 import emris.BCTFCcrossover.BCTFCcrossover;
 import emris.BCTFCcrossover.core.PipeIconProvider;
 
-public class BlueSteelPipeItem extends PipeItemsDiamond {
-
-	public BlueSteelPipeItem(int itemID) {
+public class BlueSteelPipeItem extends PipeItemsDiamond
+{
+	public BlueSteelPipeItem(int itemID)
+	{
 		super(itemID);
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public IIconProvider getIconProvider() {
+	public IIconProvider getIconProvider()
+	{
 		return BCTFCcrossover.instance.pipeIconProvider;
 	}
 
 	@Override
-	public int getIconIndex(ForgeDirection direction) {
-		switch(direction){
+	public int getIconIndex(ForgeDirection direction)
+	{
+		switch(direction)
+		{
 			case UNKNOWN: return PipeIconProvider.TYPE.PipeBlueSteel.ordinal();
 			case DOWN: return PipeIconProvider.TYPE.PipeBlueSteel_down.ordinal();
 			case UP: return PipeIconProvider.TYPE.PipeBlueSteel_up.ordinal();

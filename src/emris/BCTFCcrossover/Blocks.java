@@ -25,8 +25,8 @@ import emris.BCTFCcrossover.core.IDProvider;
 import emris.BCTFCcrossover.core.RegisterFluids;
 import emris.BCTFCcrossover.items.ItemBlocks;
 
-public class Blocks {
-
+public class Blocks
+{
 	public static Block blockLatex;
 
 	public static void setup() {

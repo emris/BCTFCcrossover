@@ -26,7 +26,6 @@ import emris.BCTFCcrossover.items.ItemBuckets;
 import emris.BCTFCcrossover.items.ItemGears;
 import emris.BCTFCcrossover.items.ItemLatexBowl;
 import emris.BCTFCcrossover.items.ItemPipeFrames;
-import emris.BCTFCcrossover.items.ItemPlans;
 import emris.BCTFCcrossover.items.ItemRubber;
 import emris.BCTFCcrossover.items.ItemWrenchGeneral;
 import emris.BCTFCcrossover.pipes.fluids.BlackBronzePipeFluidsItem;
@@ -57,7 +56,8 @@ import emris.BCTFCcrossover.pipes.transport.SterlingSilverPipeItem;
 import emris.BCTFCcrossover.pipes.transport.TinPipeItem;
 import emris.BCTFCcrossover.pipes.transport.WroughtIronPipeItem;
 
-public class Items {
+public class Items
+{
 	public static Item LatexBowl;
 	
 	public static Item Buckets;
@@ -111,13 +111,9 @@ public class Items {
 	public static Item BlueSteelWrenchItem;
 	public static Item RedSteelWrenchItem;
 	
-	public static void setup() {
+	public static void setup()
+	{
 		System.out.println(new StringBuilder().append("[BCTFCcrossover] Setup Items").toString());
-		
-		// ===============Plans===============
-		Plans = new ItemPlans(IDProvider.Plans);
-			BCTFCcrossover.proxy.addName(Plans, "Plan");
-			BCTFCcrossover.proxy.registerItem(Plans);
 		
 		// ===============Gears===============
 		Gears = new ItemGears(IDProvider.Gears);
@@ -149,10 +145,10 @@ public class Items {
 		TinPipeItem = createPipe(IDProvider.TinPipeItem, TinPipeItem.class, "Extraction Pipe");
 
 		Item.itemsList[IDProvider.bcCobblestonePipe] = null;
-		LeadPipeItem = createPipe(IDProvider.LeadPipeItem, LeadPipeItem.class, "Transport Pipe 01");
+		LeadPipeItem = createPipe(IDProvider.LeadPipeItem, LeadPipeItem.class, "Transport Pipe Slow");
 
 		Item.itemsList[IDProvider.bcStonePipe] = null;
-		BronzePipeItem = createPipe(IDProvider.BronzePipeItem, BronzePipeItem.class, "Transport Pipe 02");
+		BronzePipeItem = createPipe(IDProvider.BronzePipeItem, BronzePipeItem.class, "Transport Pipe Fast");
 		
 		Item.itemsList[IDProvider.bcIronPipe] = null;
 		WroughtIronPipeItem = createPipe(IDProvider.WroughtIronPipeItem, WroughtIronPipeItem.class, "Junction Collector Pipe");
@@ -189,10 +185,10 @@ public class Items {
 		TinPipeFluidsItem = createPipe(IDProvider.TinPipeFluidsItem, TinPipeFluidsItem.class, "Fluids Extraction Pipe");
 		
 		Item.itemsList[IDProvider.bcCobblestonePipeFluids] = null;
-		LeadPipeFluidsItem = createPipe(IDProvider.LeadPipeFluidsItem, LeadPipeFluidsItem.class, "Fluids Transport Pipe 01");
+		LeadPipeFluidsItem = createPipe(IDProvider.LeadPipeFluidsItem, LeadPipeFluidsItem.class, "Fluids Transport Pipe Slow");
 		
 		Item.itemsList[IDProvider.bcStonePipeFluids] = null;
-		BronzePipeFluidsItem = createPipe(IDProvider.BronzePipeFluidsItem, BronzePipeFluidsItem.class, "Fluids Transport Pipe 02");
+		BronzePipeFluidsItem = createPipe(IDProvider.BronzePipeFluidsItem, BronzePipeFluidsItem.class, "Fluids Transport Pipe Fast");
 		
 		Item.itemsList[IDProvider.bcIronPipeFluids] = null;
 		WroughtIronPipeFluidsItem = createPipe(IDProvider.WroughtIronPipeFluidsItem, WroughtIronPipeFluidsItem.class, "Fluids Junction Collector Pipe");
@@ -287,7 +283,8 @@ public class Items {
 		BCTFCcrossover.proxy.registerItem(RedSteelWrenchItem);
 	}
 	
-	private static Item createPipe(int defaultID, Class<? extends Pipe> clas, String descr) {
+	private static Item createPipe(int defaultID, Class<? extends Pipe> clas, String descr)
+	{
 		String name = Character.toLowerCase(clas.getSimpleName().charAt(0)) + clas.getSimpleName().substring(1);
 		ItemPipe res = BlockGenericPipe.registerPipe(defaultID, clas);
 		res.setUnlocalizedName(clas.getSimpleName());

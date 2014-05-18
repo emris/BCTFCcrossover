@@ -22,7 +22,6 @@ import java.io.File;
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.src.ModLoader;
 import net.minecraft.world.World;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.fluids.Fluid;
@@ -30,48 +29,55 @@ import buildcraft.transport.TransportProxyClient;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class ClientProxy extends CommonProxy 
-{	
+{
 	@Override
-	public World getCurrentWorld() {
-		return ModLoader.getMinecraftInstance().theWorld;
+	public World getCurrentWorld()
+	{
+		return Minecraft.getMinecraft().theWorld;
 	}
 
 	@Override
-	public boolean isRemote() {
+	public boolean isRemote()
+	{
 		return true;
 	}
 
 	@Override
-	public File getMinecraftDir() {
-		return ModLoader.getMinecraftInstance().mcDataDir;
+	public File getMinecraftDir()
+	{
+		return Minecraft.getMinecraft().mcDataDir;
 	}
 
 	/* LOCALIZATION */
 	@Override
-	public String getCurrentLanguage() {
+	public String getCurrentLanguage()
+	{
 		return Minecraft.getMinecraft().getLanguageManager().getCurrentLanguage().getLanguageCode();
 	}
 
 	@Override
-	public void addName(Object obj, String s) {
+	public void addName(Object obj, String s)
+	{
 		LanguageRegistry.addName(obj, s);
 	}
 
 	@Override
-	public void addLocalization(String s1, String string) {
+	public void addLocalization(String s1, String string)
+	{
 		LanguageRegistry.instance().addStringLocalization(s1, string);
 	}
 
 	@Override
-	public String getItemDisplayName(ItemStack stack) {
+	public String getItemDisplayName(ItemStack stack)
+	{
 		if (Item.itemsList[stack.itemID] == null)
 			return "";
-
 		return Item.itemsList[stack.itemID].getItemDisplayName(stack);
 	}
 	
 	@Override
-	public void registerPipeRenderer() {
+	public void registerPipeRenderer()
+	{
 		super.registerPipeRenderer();
 		// Transport Pipes
 		MinecraftForgeClient.registerItemRenderer(Items.TinPipeItem.itemID, TransportProxyClient.pipeItemRenderer);
@@ -107,9 +113,9 @@ public class ClientProxy extends CommonProxy
 	}
 
 	@Override
-	public void registerFluidIcons(Fluid f) {
+	public void registerFluidIcons(Fluid f)
+	{
 		super.registerFluidIcons(f);
 		f.setIcons(Blocks.blockLatex.getIcon(0, 0), Blocks.blockLatex.getIcon(1, 0));
 	}
-	
 }

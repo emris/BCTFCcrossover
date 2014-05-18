@@ -28,21 +28,26 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import emris.BCTFCcrossover.Reference;
 
-public class ItemWrenchGeneral extends ItemWrench {
+public class ItemWrenchGeneral extends ItemWrench
+{
 	public String iconName;
 	
-	public ItemWrenchGeneral(int i) {
-		super(i);
+	public ItemWrenchGeneral(int id)
+	{
+		super(id);
 		setCreativeTab(CreativeTabBuildCraft.MACHINES.get());
 		maxStackSize = 1;
 	}
 	
 	@Override
-	public void wrenchUsed(EntityPlayer player, int x, int y, int z) {
-		if(!player.capabilities.isCreativeMode) {
+	public void wrenchUsed(EntityPlayer player, int x, int y, int z)
+	{
+		if(!player.capabilities.isCreativeMode)
+		{
 			ItemStack stack = player.inventory.getCurrentItem();
 			stack.damageItem(1, player);
-			if(stack.getItemDamage() == stack.getMaxDamage() || stack.getItemDamage() == 0) {
+			if(stack.getItemDamage() == stack.getMaxDamage() || stack.getItemDamage() == 0)
+			{
 				player.renderBrokenItemStack(stack);
 				player.worldObj.playSoundAtEntity(player, "random.break", 0.8F, 0.8F + player.worldObj.rand.nextFloat() * 0.4F);
 				player.destroyCurrentEquippedItem();
@@ -51,24 +56,28 @@ public class ItemWrenchGeneral extends ItemWrench {
 	}
 
 	@Override
-	public Item setUnlocalizedName(String par1Str) {
-		iconName = par1Str;
-		setMaxDmg(par1Str);
-		return super.setUnlocalizedName(par1Str);
+	public Item setUnlocalizedName(String s)
+	{
+		iconName = s;
+		setMaxDmg(s);
+		return super.setUnlocalizedName(s);
 	}
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister registerer) {
+	public void registerIcons(IconRegister registerer)
+	{
 		this.itemIcon = registerer.registerIcon(Reference.ModID + ":" + iconName);
 	}
 	
 	@Override
-	public String getItemDisplayName(ItemStack itemstack) {
-		return StringUtils.localize(getUnlocalizedName(itemstack));
+	public String getItemDisplayName(ItemStack is)
+	{
+		return StringUtils.localize(getUnlocalizedName(is));
 	}
 	
-	private void setMaxDmg(String s) {
+	private void setMaxDmg(String s)
+	{
 		if(s.equals("BismuthWrenchItem")) this.setMaxDamage(70);
 		else if(s.equals("TinWrenchItem")) this.setMaxDamage(65);
 		else if(s.equals("ZincWrenchItem")) this.setMaxDamage(60);

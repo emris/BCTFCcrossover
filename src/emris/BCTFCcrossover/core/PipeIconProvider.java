@@ -24,8 +24,10 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import emris.BCTFCcrossover.Reference;
 
-public class PipeIconProvider implements IIconProvider {
-	public enum TYPE {
+public class PipeIconProvider implements IIconProvider
+{
+	public enum TYPE
+	{
 		PipeStructureLead("PipeStructureLead"),
 		//
 		PipeTin("PipeTin"),
@@ -82,7 +84,8 @@ public class PipeIconProvider implements IIconProvider {
 		private Icon icon;
 
 		private TYPE(String iconTag) { this.iconTag = iconTag; }
-		private void registerIcon(IconRegister iconRegister) {
+		private void registerIcon(IconRegister iconRegister)
+		{
 			icon = iconRegister.registerIcon(Reference.ModID + ":" + iconTag);
 		}
 		public Icon getIcon() { return icon; }
@@ -90,7 +93,8 @@ public class PipeIconProvider implements IIconProvider {
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public Icon getIcon(int pipeIconIndex) {
+	public Icon getIcon(int pipeIconIndex)
+	{
 		if (pipeIconIndex == -1)
 			return null;
 		return TYPE.VALUES[pipeIconIndex].icon;
@@ -98,10 +102,10 @@ public class PipeIconProvider implements IIconProvider {
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister iconRegister) {
-		for (TYPE type : TYPE.VALUES) {
+	public void registerIcons(IconRegister iconRegister)
+	{
+		for (TYPE type : TYPE.VALUES)
 			type.registerIcon(iconRegister);
-		}
 	}
 
 }

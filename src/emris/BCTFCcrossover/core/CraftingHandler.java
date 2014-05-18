@@ -26,26 +26,35 @@ import TFC.Core.Recipes;
 import cpw.mods.fml.common.ICraftingHandler;
 import emris.BCTFCcrossover.Items;
 
-public class CraftingHandler implements ICraftingHandler {
-
+public class CraftingHandler implements ICraftingHandler
+{
 	@Override
-	public void onCrafting(EntityPlayer player, ItemStack item,	IInventory craftMatrix) {
-		if(craftMatrix != null) {
-			if(item.itemID == Items.Rubber.itemID) {
-				for(int i = 0; i < craftMatrix.getSizeInventory(); i++) {
-					if(craftMatrix.getStackInSlot(i) == null) {
+	public void onCrafting(EntityPlayer player, ItemStack item, IInventory craftMatrix)
+	{
+		if(craftMatrix != null)
+		{
+			if(item.itemID == Items.Rubber.itemID)
+			{
+				for(int i = 0; i < craftMatrix.getSizeInventory(); i++)
+				{
+					if(craftMatrix.getStackInSlot(i) == null)
 						continue;
-					}
-					if(craftMatrix.getStackInSlot(i).itemID == Items.Buckets.itemID && craftMatrix.getStackInSlot(i).getItemDamage() == 0) {
+
+					if(craftMatrix.getStackInSlot(i).itemID == Items.Buckets.itemID && craftMatrix.getStackInSlot(i).getItemDamage() == 0)
+					{
 						ItemStack b = new ItemStack(TFCItems.WoodenBucketEmpty);
-						if(b != null) {
+						if(b != null)
+						{
 							craftMatrix.setInventorySlotContents(i, b);
 							craftMatrix.getStackInSlot(i).stackSize = 2;
 						}
 					}
-					if(craftMatrix.getStackInSlot(i).itemID == Items.LatexBowl.itemID) {
+
+					if(craftMatrix.getStackInSlot(i).itemID == Items.LatexBowl.itemID)
+					{
 						ItemStack b = new ItemStack(Item.bowlEmpty);
-						if(b != null) {
+						if(b != null)
+						{
 							craftMatrix.setInventorySlotContents(i, b);
 							craftMatrix.getStackInSlot(i).stackSize = 2;
 						}
@@ -53,18 +62,24 @@ public class CraftingHandler implements ICraftingHandler {
 				}
 			}
 
-			if(item.itemID == Item.dyePowder.itemID && item.getItemDamage() == 2) {
+			if(item.itemID == Item.dyePowder.itemID && item.getItemDamage() == 2)
+			{
 				Item[] tfcHammers = Recipes.Hammers;
-				for(int i = 0; i < craftMatrix.getSizeInventory(); i++) {
-					if(craftMatrix.getStackInSlot(i) == null) {
+				for(int i = 0; i < craftMatrix.getSizeInventory(); i++)
+				{
+					if(craftMatrix.getStackInSlot(i) == null)
 						continue;
-					}
-					for(int j = 0; j < tfcHammers.length; j++) {
-						if(craftMatrix.getStackInSlot(i).itemID == tfcHammers[j].itemID) {
+
+					for(int j = 0; j < tfcHammers.length; j++)
+					{
+						if(craftMatrix.getStackInSlot(i).itemID == tfcHammers[j].itemID)
+						{
 							ItemStack tfcHammer = craftMatrix.getStackInSlot(i).copy();
-							if(tfcHammer != null) {
+							if(tfcHammer != null)
+							{
 								tfcHammer.damageItem(1, player);
-								if(tfcHammer.getItemDamage() != 0 || player.capabilities.isCreativeMode) {
+								if(tfcHammer.getItemDamage() != 0 || player.capabilities.isCreativeMode)
+								{
 									craftMatrix.setInventorySlotContents(i, tfcHammer);
 									craftMatrix.getStackInSlot(i).stackSize = 2;
 								}
@@ -73,11 +88,9 @@ public class CraftingHandler implements ICraftingHandler {
 					}
 				}
 			}
-
 		}
 	}
 
 	@Override
-	public void onSmelting(EntityPlayer player, ItemStack item) {
-	}
+	public void onSmelting(EntityPlayer player, ItemStack item) {}
 }

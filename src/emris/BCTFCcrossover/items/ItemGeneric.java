@@ -26,28 +26,33 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import emris.BCTFCcrossover.Reference;
 
-public class ItemGeneric extends Item {
-
+public class ItemGeneric extends Item
+{
 	private String iconName;
-	public ItemGeneric(int par1) {
-		super(par1);
+
+	public ItemGeneric(int id)
+	{
+		super(id);
 		setCreativeTab(CreativeTabBuildCraft.MACHINES.get());
 	}
 	
 	@Override
-	public String getItemDisplayName(ItemStack itemstack) {
-		return StringUtils.localize(getUnlocalizedName(itemstack));
+	public String getItemDisplayName(ItemStack is)
+	{
+		return StringUtils.localize(getUnlocalizedName(is));
 	}
 
 	@Override
-	public Item setUnlocalizedName(String par1Str) {
-		iconName = par1Str;
-		return super.setUnlocalizedName(par1Str);
+	public Item setUnlocalizedName(String s)
+	{
+		iconName = s;
+		return super.setUnlocalizedName(s);
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister par1IconRegister) {
-		this.itemIcon = par1IconRegister.registerIcon(Reference.ModID + ":" + iconName);
+	public void registerIcons(IconRegister register)
+	{
+		this.itemIcon = register.registerIcon(Reference.ModID + ":" + iconName);
 	}
 }

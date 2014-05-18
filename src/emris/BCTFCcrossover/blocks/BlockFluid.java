@@ -32,8 +32,8 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import emris.BCTFCcrossover.Reference;
 
-public class BlockFluid extends BlockFluidClassic {
-
+public class BlockFluid extends BlockFluidClassic
+{
 	protected float particleRed;
 	protected float particleGreen;
 	protected float particleBlue;
@@ -41,22 +41,26 @@ public class BlockFluid extends BlockFluidClassic {
 	@SideOnly(Side.CLIENT)
 	protected Icon[] theIcon;
 
-	public BlockFluid(int id, Fluid fluid, Material material) {
+	public BlockFluid(int id, Fluid fluid, Material material)
+	{
 		super(id, fluid, material);
 	}
 
 	@Override
-	public Icon getIcon(int side, int meta) {
+	public Icon getIcon(int side, int meta)
+	{
 		return side != 0 && side != 1 ? this.theIcon[1] : this.theIcon[0];
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister iconRegister) {
+	public void registerIcons(IconRegister iconRegister)
+	{
 		this.theIcon = new Icon[] { iconRegister.registerIcon(Reference.ModID + ":" + fluidName + "_still"), iconRegister.registerIcon(Reference.ModID + ":" + fluidName + "_flow") };
 	}
 
-	public BlockFluid setParticleColor(float particleRed, float particleGreen, float particleBlue) {
+	public BlockFluid setParticleColor(float particleRed, float particleGreen, float particleBlue)
+	{
 		this.particleRed = particleRed;
 		this.particleGreen = particleGreen;
 		this.particleBlue = particleBlue;
@@ -65,10 +69,12 @@ public class BlockFluid extends BlockFluidClassic {
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void randomDisplayTick(World world, int x, int y, int z, Random rand) {
+	public void randomDisplayTick(World world, int x, int y, int z, Random rand)
+	{
 		super.randomDisplayTick(world, x, y, z, rand);
 
-		if (rand.nextInt(10) == 0 && world.doesBlockHaveSolidTopSurface(x, y - 1, z) && !world.getBlockMaterial(x, y - 2, z).blocksMovement()) {
+		if (rand.nextInt(10) == 0 && world.doesBlockHaveSolidTopSurface(x, y - 1, z) && !world.getBlockMaterial(x, y - 2, z).blocksMovement())
+		{
 			double px = (double) ((float) x + rand.nextFloat());
 			double py = (double) y - 1.05D;
 			double pz = (double) ((float) z + rand.nextFloat());

@@ -39,8 +39,8 @@ import emris.BCTFCcrossover.worldGen.WorldGenOil;
 
 @Mod(name = Reference.ModName, version = Reference.ModVersion, useMetadata = false, modid = Reference.ModID, dependencies = Reference.ModDependencies)
 @NetworkMod(clientSideRequired = true, serverSideRequired = true, versionBounds = "[" + Reference.ModVersion + "]")
-public class BCTFCcrossover {
-
+public class BCTFCcrossover
+{
 	public IIconProvider pipeIconProvider = new PipeIconProvider();
 	public static Logger tfcbcLog = Logger.getLogger(Reference.ModName);
 
@@ -51,7 +51,8 @@ public class BCTFCcrossover {
 	public static CommonProxy proxy;
 
 	@EventHandler
-	public void loadConfiguration(FMLPreInitializationEvent evt) {
+	public void loadConfiguration(FMLPreInitializationEvent evt)
+	{
 		instance = this;
 
 		tfcbcLog.setParent(FMLLog.getLogger());
@@ -69,7 +70,8 @@ public class BCTFCcrossover {
 	}
 
 	@EventHandler
-	public void load(FMLInitializationEvent evt) {
+	public void load(FMLInitializationEvent evt)
+	{
 		proxy.registerOreDict();
 		Recipes.loadRecipes();
 		proxy.registerPipeRenderer();
@@ -77,7 +79,7 @@ public class BCTFCcrossover {
 		RegisterFluids.registerFluidContainers();
 		RegisterFluids.registerFluidIcons();
 
-		Localization.addLocalization("/assets/"+Reference.ModID+"/lang/", "en_US");
+		Localization.addLocalization("/assets/" + Reference.ModID + "/lang/", "en_US");
 
 		GameRegistry.registerCraftingHandler(new CraftingHandler());
 	}
