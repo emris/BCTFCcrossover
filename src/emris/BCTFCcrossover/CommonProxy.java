@@ -33,6 +33,7 @@ import emris.BCTFCcrossover.pipes.power.BlackBronzePipePowerItem;
 import emris.BCTFCcrossover.pipes.power.CopperPipePowerItem;
 import emris.BCTFCcrossover.pipes.power.PlatinumPipePowerItem;
 import emris.BCTFCcrossover.pipes.power.RoseGoldPipePowerItem;
+import emris.BCTFCcrossover.pipes.power.SilverPipePowerItem;
 import emris.BCTFCcrossover.pipes.power.SteelPipePowerItem;
 import emris.BCTFCcrossover.pipes.power.WroughtIronPipePowerItem;
 
@@ -76,7 +77,8 @@ public class CommonProxy
 		String[] pipeFrameNames = new String[]{"pipeFrameTin", "pipeFrameLead", "pipeFrameBronze",
 				"pipeFrameWroughtIron", "pipeFrameSteel", "pipeFrameBlueSteel", "pipeFrameRedSteel",
 				"pipeFrameBlackBronze", "pipeFrameRoseGold", "pipeFrameBlackSteel", "pipeFrameZinc",
-				"pipeFrameCopper", "pipeFrameSilver", "pipeFrameSterlingSilver", "pipeFrameBrass"};
+				"pipeFrameCopper", "pipeFrameSilver", "pipeFramePlatinum", "pipeFrameSterlingSilver",
+				"pipeFrameBrass"};
 		for (int i = 0; i < pipeFrameNames.length; ++i)
 			OreDictionary.registerOre(pipeFrameNames[i], new ItemStack(Items.PipeFrames.itemID, 1, i));
 
@@ -115,9 +117,9 @@ public class CommonProxy
 		PipeTransportPower.powerCapacities.put(RoseGoldPipePowerItem.class, 16);
 		PipeTransportPower.powerCapacities.put(BlackBronzePipePowerItem.class, 32);
 		PipeTransportPower.powerCapacities.put(WroughtIronPipePowerItem.class, 64);
-//		PipeTransportPower.powerCapacities.put(CopperPipePowerItem.class, 128);
-		PipeTransportPower.powerCapacities.put(SteelPipePowerItem.class, 256);
-		PipeTransportPower.powerCapacities.put(PlatinumPipePowerItem.class, 1024);
+		PipeTransportPower.powerCapacities.put(SteelPipePowerItem.class, 128);
+		PipeTransportPower.powerCapacities.put(PlatinumPipePowerItem.class, 256);
+		PipeTransportPower.powerCapacities.put(SilverPipePowerItem.class, 1024);
 	}
 
 	//NOOP at Server

@@ -78,7 +78,8 @@ public class PipeIconProvider implements IIconProvider
 		PipePowerBlackBronze("PipePowerBlackBronze"),
 		PipePowerWroughtIron("PipePowerWroughtIron"),
 		PipePowerSteel("PipePowerSteel"),
-		PipePowerPlatinum("PipePowerPlatinum");
+		PipePowerPlatinum("PipePowerPlatinum"),
+		PipePowerSilver("PipePowerSilver");
 		public static final TYPE[] VALUES = values();
 		private final String iconTag;
 		private Icon icon;

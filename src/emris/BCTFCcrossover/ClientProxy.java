@@ -28,7 +28,7 @@ import net.minecraftforge.fluids.Fluid;
 import buildcraft.transport.TransportProxyClient;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-public class ClientProxy extends CommonProxy 
+public class ClientProxy extends CommonProxy
 {
 	@Override
 	public World getCurrentWorld()
@@ -110,6 +110,7 @@ public class ClientProxy extends CommonProxy
 		MinecraftForgeClient.registerItemRenderer(Items.WroughtIronPipePowerItem.itemID, TransportProxyClient.pipeItemRenderer);
 		MinecraftForgeClient.registerItemRenderer(Items.SteelPipePowerItem.itemID, TransportProxyClient.pipeItemRenderer);
 		MinecraftForgeClient.registerItemRenderer(Items.PlatinumPipePowerItem.itemID, TransportProxyClient.pipeItemRenderer);
+		MinecraftForgeClient.registerItemRenderer(Items.SilverPipePowerItem.itemID, TransportProxyClient.pipeItemRenderer);
 	}
 
 	@Override

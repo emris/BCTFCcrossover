@@ -18,6 +18,9 @@
 package emris.BCTFCcrossover;
 
 import net.minecraft.item.Item;
+import buildcraft.BuildCraftCore;
+import buildcraft.BuildCraftEnergy;
+import buildcraft.BuildCraftTransport;
 import buildcraft.transport.BlockGenericPipe;
 import buildcraft.transport.ItemPipe;
 import buildcraft.transport.Pipe;
@@ -40,6 +43,7 @@ import emris.BCTFCcrossover.pipes.power.BlackBronzePipePowerItem;
 import emris.BCTFCcrossover.pipes.power.CopperPipePowerItem;
 import emris.BCTFCcrossover.pipes.power.PlatinumPipePowerItem;
 import emris.BCTFCcrossover.pipes.power.RoseGoldPipePowerItem;
+import emris.BCTFCcrossover.pipes.power.SilverPipePowerItem;
 import emris.BCTFCcrossover.pipes.power.SteelPipePowerItem;
 import emris.BCTFCcrossover.pipes.power.WroughtIronPipePowerItem;
 import emris.BCTFCcrossover.pipes.structure.LeadPipeStructureItem;
@@ -59,13 +63,13 @@ import emris.BCTFCcrossover.pipes.transport.WroughtIronPipeItem;
 public class Items
 {
 	public static Item LatexBowl;
-	
+
 	public static Item Buckets;
 	public static Item Rubber;
 	public static Item Gears;
 	public static Item Plans;
 	public static Item PipeFrames;
-	
+
 	public static Item TinPipeItem;
 	public static Item LeadPipeItem;
 	public static Item BronzePipeItem;
@@ -94,195 +98,129 @@ public class Items
 	public static Item WroughtIronPipePowerItem;
 	public static Item SteelPipePowerItem;
 	public static Item PlatinumPipePowerItem;
-	
+	public static Item SilverPipePowerItem;
+
 	public static Item LeadPipeStructureItem;
-	
-	public static Item BismuthWrenchItem;
-	public static Item TinWrenchItem;
-	public static Item ZincWrenchItem;
+
 	public static Item CopperWrenchItem;
+	public static Item BronzeWrenchItem;
 	public static Item BismuthBronzeWrenchItem;
 	public static Item BlackBronzeWrenchItem;
-	public static Item BronzeWrenchItem;
-	public static Item RoseGoldWrenchItem;
 	public static Item WroughtIronWrenchItem;
 	public static Item SteelWrenchItem;
 	public static Item BlackSteelWrenchItem;
 	public static Item BlueSteelWrenchItem;
 	public static Item RedSteelWrenchItem;
-	
+
 	public static void setup()
 	{
 		System.out.println(new StringBuilder().append("[BCTFCcrossover] Setup Items").toString());
-		
+
 		// ===============Gears===============
 		Gears = new ItemGears(IDProvider.Gears);
-			BCTFCcrossover.proxy.addName(Gears, "Gear");
-			BCTFCcrossover.proxy.registerItem(Gears);
-		
+		BCTFCcrossover.proxy.addName(Gears, "Gear");
+		BCTFCcrossover.proxy.registerItem(Gears);
+
 		// ===============Buckets=============
 		Buckets = new ItemBuckets(IDProvider.Buckets);
-			BCTFCcrossover.proxy.addName(Buckets, "Bucket");
-			BCTFCcrossover.proxy.registerItem(Buckets);
-			
+		BCTFCcrossover.proxy.addName(Buckets, "Bucket");
+		BCTFCcrossover.proxy.registerItem(Buckets);
+
 		// ===============Latex=============
 		LatexBowl = new ItemLatexBowl(IDProvider.LatexBowl);
-			BCTFCcrossover.proxy.addName(LatexBowl, "LatexBowl");
-			BCTFCcrossover.proxy.registerItem(LatexBowl);
+		BCTFCcrossover.proxy.addName(LatexBowl, "LatexBowl");
+		BCTFCcrossover.proxy.registerItem(LatexBowl);
 
 		// ===============Rubber==============
 		Rubber = new ItemRubber(IDProvider.Rubber);
-			BCTFCcrossover.proxy.addName(Rubber, "Rubber");
-			BCTFCcrossover.proxy.registerItem(Rubber);
+		BCTFCcrossover.proxy.addName(Rubber, "Rubber");
+		BCTFCcrossover.proxy.registerItem(Rubber);
 
 		// ===============Pipe Frames=========
 		PipeFrames = new ItemPipeFrames(IDProvider.PipeFrames);
-			BCTFCcrossover.proxy.addName(PipeFrames, "PipeFrame");
-			BCTFCcrossover.proxy.registerItem(PipeFrames);
+		BCTFCcrossover.proxy.addName(PipeFrames, "PipeFrame");
+		BCTFCcrossover.proxy.registerItem(PipeFrames);
 
 		// ===============Transport Pipes===============
-		Item.itemsList[IDProvider.bcWoodPipe] = null;
-		TinPipeItem = createPipe(IDProvider.TinPipeItem, TinPipeItem.class, "Extraction Pipe");
+		TinPipeItem = createPipe(IDProvider.TinPipeItem, TinPipeItem.class, "Tin Transport Pipe");
+		LeadPipeItem = createPipe(IDProvider.LeadPipeItem, LeadPipeItem.class, "Lead Transport Pipe");
+		BronzePipeItem = createPipe(IDProvider.BronzePipeItem, BronzePipeItem.class, "Bronze Transport Pipe");
+		WroughtIronPipeItem = createPipe(IDProvider.WroughtIronPipeItem, WroughtIronPipeItem.class, "Wrought Iron Transport Pipe");
+		SteelPipeItem = createPipe(IDProvider.SteelPipeItem, SteelPipeItem.class, "Steel Transport Pipe");
+		BlueSteelPipeItem = createPipe(IDProvider.BlueSteelPipeItem, BlueSteelPipeItem.class, "Blue Steel Transport Pipe");
+		RedSteelPipeItem = createPipe(IDProvider.RedSteelPipeItem, RedSteelPipeItem.class, "Red Steel Transport Pipe");
+		BlackBronzePipeItem = createPipe(IDProvider.BlackBronzePipeItem, BlackBronzePipeItem.class, "Black Bronze Transport Pipe");
+		RoseGoldPipeItem = createPipe(IDProvider.RoseGoldPipeItem, RoseGoldPipeItem.class, "Rose Gold Transport Pipe");
+		BlackSteelPipeItem = createPipe(IDProvider.BlackSteelPipeItem, BlackSteelPipeItem.class, "Black Steel Transport Pipe");
+		SterlingSilverPipeItem = createPipe(IDProvider.SterlingSilverPipeItem, SterlingSilverPipeItem.class, "Sterling Silver Transport Pipe");
+		BrassPipeItem = createPipe(IDProvider.BrassPipeItem, BrassPipeItem.class, "Brass Transport Pipe");
+		//BuildCraftTransport.pipeItemsQuartz
+		//TODO
+		//BuildCraftTransport.pipeItemsEmzuli
+		//TODO
 
-		Item.itemsList[IDProvider.bcCobblestonePipe] = null;
-		LeadPipeItem = createPipe(IDProvider.LeadPipeItem, LeadPipeItem.class, "Transport Pipe Slow");
-
-		Item.itemsList[IDProvider.bcStonePipe] = null;
-		BronzePipeItem = createPipe(IDProvider.BronzePipeItem, BronzePipeItem.class, "Transport Pipe Fast");
-		
-		Item.itemsList[IDProvider.bcIronPipe] = null;
-		WroughtIronPipeItem = createPipe(IDProvider.WroughtIronPipeItem, WroughtIronPipeItem.class, "Junction Collector Pipe");
-
-		Item.itemsList[IDProvider.bcGoldPipe] = null;
-		SteelPipeItem = createPipe(IDProvider.SteelPipeItem, SteelPipeItem.class, "Advanced Transport Pipe");
-		
-		Item.itemsList[IDProvider.bcDiamondPipe] = null;
-		BlueSteelPipeItem = createPipe(IDProvider.BlueSteelPipeItem, BlueSteelPipeItem.class, "Router Pipe");
-		
-		Item.itemsList[IDProvider.bcEmeraldPipe] = null;
-		RedSteelPipeItem = createPipe(IDProvider.RedSteelPipeItem, RedSteelPipeItem.class, "Filter Extraction Pipe");
-		
-		Item.itemsList[IDProvider.bcVoidPipe] = null;
-		BlackBronzePipeItem = createPipe(IDProvider.BlackBronzePipeItem, BlackBronzePipeItem.class, "Void Pipe");
-		
-		Item.itemsList[IDProvider.bcSandstonePipe] = null;
-		RoseGoldPipeItem = createPipe(IDProvider.RoseGoldPipeItem, RoseGoldPipeItem.class, "Transport Pipe Connector");
-		
-		Item.itemsList[IDProvider.bcObsidianPipe] = null;
-		BlackSteelPipeItem = createPipe(IDProvider.BlackSteelPipeItem, BlackSteelPipeItem.class, "Suction Pipe");
-
-		Item.itemsList[IDProvider.bcDaizuliPipe] = null;
-		SterlingSilverPipeItem = createPipe(IDProvider.SterlingSilverPipeItem, SterlingSilverPipeItem.class, "Color Routing Pipe");
-		
-		Item.itemsList[IDProvider.bcLapisPipe] = null;
-		BrassPipeItem = createPipe(IDProvider.BrassPipeItem, BrassPipeItem.class, "Color Tagging Pipe");
-		
-		Item.itemsList[IDProvider.bcQuartzPipe] = null;
-//		BlackSteelPipeItem = createPipe(IDProvider.BlackSteelPipeItem, BlackSteelPipeItem.class, "Inverted Filter Extraction Pipe");
-		
 		// ===============Fluid Pipes===============
-		Item.itemsList[IDProvider.bcWoodPipeFluids] = null;
-		TinPipeFluidsItem = createPipe(IDProvider.TinPipeFluidsItem, TinPipeFluidsItem.class, "Fluids Extraction Pipe");
-		
-		Item.itemsList[IDProvider.bcCobblestonePipeFluids] = null;
-		LeadPipeFluidsItem = createPipe(IDProvider.LeadPipeFluidsItem, LeadPipeFluidsItem.class, "Fluids Transport Pipe Slow");
-		
-		Item.itemsList[IDProvider.bcStonePipeFluids] = null;
-		BronzePipeFluidsItem = createPipe(IDProvider.BronzePipeFluidsItem, BronzePipeFluidsItem.class, "Fluids Transport Pipe Fast");
-		
-		Item.itemsList[IDProvider.bcIronPipeFluids] = null;
-		WroughtIronPipeFluidsItem = createPipe(IDProvider.WroughtIronPipeFluidsItem, WroughtIronPipeFluidsItem.class, "Fluids Junction Collector Pipe");
-		
-		Item.itemsList[IDProvider.bcGoldPipeFluids] = null;
-		SteelPipeFluidsItem = createPipe(IDProvider.SteelPipeFluidsItem, SteelPipeFluidsItem.class, "Advanced Fluids Transport Pipe");
-		
-		Item.itemsList[IDProvider.bcEmeraldPipeFluids] = null;
-		RedSteelPipeFluidsItem = createPipe(IDProvider.RedSteelPipeFluidsItem, RedSteelPipeFluidsItem.class, "Advanced Fluids Extraction Pipe");
-		
-		Item.itemsList[IDProvider.bcVoidPipeFluids] = null;
-		BlackBronzePipeFluidsItem = createPipe(IDProvider.BlackBronzePipeFluidsItem, BlackBronzePipeFluidsItem.class, "Fluids Void Pipe");
-		
-		Item.itemsList[IDProvider.bcSandstoneFluids] = null;
-		RoseGoldPipeFluidsItem = createPipe(IDProvider.RoseGoldPipeFluidsItem, RoseGoldPipeFluidsItem.class, "Fluids Pipe Connector");
+		TinPipeFluidsItem = createPipe(IDProvider.TinPipeFluidsItem, TinPipeFluidsItem.class, "Tin Fluid Pipe"); // Wood
+		LeadPipeFluidsItem = createPipe(IDProvider.LeadPipeFluidsItem, LeadPipeFluidsItem.class, "Lead Fluid Pipe"); // Cobblestone
+		BronzePipeFluidsItem = createPipe(IDProvider.BronzePipeFluidsItem, BronzePipeFluidsItem.class, "Bronze Fluid Pipe"); // Stone
+		WroughtIronPipeFluidsItem = createPipe(IDProvider.WroughtIronPipeFluidsItem, WroughtIronPipeFluidsItem.class, "Wrought Iron Fluid Pipe"); // Iron
+		SteelPipeFluidsItem = createPipe(IDProvider.SteelPipeFluidsItem, SteelPipeFluidsItem.class, "Steel Fluid Pipe"); // Gold
+		RedSteelPipeFluidsItem = createPipe(IDProvider.RedSteelPipeFluidsItem, RedSteelPipeFluidsItem.class, "Red Steel Fluid Pipe"); // Emerald
+		BlackBronzePipeFluidsItem = createPipe(IDProvider.BlackBronzePipeFluidsItem, BlackBronzePipeFluidsItem.class, "Black Bronze Fluid Pipe"); // Void
+		RoseGoldPipeFluidsItem = createPipe(IDProvider.RoseGoldPipeFluidsItem, RoseGoldPipeFluidsItem.class, "Rose Gold Fluid Pipe"); // Sandstone
 
 		// ===============Power Pipes===============
-		Item.itemsList[IDProvider.bcCobblestonePipePower] = null;
-		CopperPipePowerItem = createPipe(IDProvider.CopperPipePowerItem, CopperPipePowerItem.class, "Copper Conductive Pipe");
-
-		Item.itemsList[IDProvider.bcStonePipePower] = null;
-		RoseGoldPipePowerItem = createPipe(IDProvider.RoseGoldPipePowerItem, RoseGoldPipePowerItem.class, "Rose Gold Conductive Pipe");
-
-		Item.itemsList[IDProvider.bcWoodPipePower] = null;
-		BlackBronzePipePowerItem = createPipe(IDProvider.BlackBronzePipePowerItem, BlackBronzePipePowerItem.class, "Power Extraction Pipe");
-
-		Item.itemsList[IDProvider.bcQuartzPipePower] = null;
-		WroughtIronPipePowerItem = createPipe(IDProvider.WroughtIronPipePowerItem, WroughtIronPipePowerItem.class, "Wrought Iron Conductive Pipe");
-
-		Item.itemsList[IDProvider.bcGoldPipePower] = null;
-		SteelPipePowerItem = createPipe(IDProvider.SteelPipePowerItem, SteelPipePowerItem.class, "Steel Conductive Pipe");
-
-		Item.itemsList[IDProvider.bcDiamondPipePower] = null;
-		PlatinumPipePowerItem = createPipe(IDProvider.PlatinumPipePowerItem, PlatinumPipePowerItem.class, "Platinum Conductive Pipe");
+		CopperPipePowerItem = createPipe(IDProvider.CopperPipePowerItem, CopperPipePowerItem.class, "Copper Kinesis Pipe"); // Cobblestone
+		RoseGoldPipePowerItem = createPipe(IDProvider.RoseGoldPipePowerItem, RoseGoldPipePowerItem.class, "Rose Gold Kinesis Pipe"); // Stone
+		BlackBronzePipePowerItem = createPipe(IDProvider.BlackBronzePipePowerItem, BlackBronzePipePowerItem.class, "Black Bronze Kinesis Pipe"); // Wood
+		WroughtIronPipePowerItem = createPipe(IDProvider.WroughtIronPipePowerItem, WroughtIronPipePowerItem.class, "Wrought Iron Kinesis Pipe"); // Quartz
+		SteelPipePowerItem = createPipe(IDProvider.SteelPipePowerItem, SteelPipePowerItem.class, "Steel Kinesis Pipe"); // Iron
+		PlatinumPipePowerItem = createPipe(IDProvider.PlatinumPipePowerItem, PlatinumPipePowerItem.class, "Platinum Kinesis Pipe"); // Gold
+		SilverPipePowerItem = createPipe(IDProvider.SilverPipePowerItem, SilverPipePowerItem.class, "Silver Kinesis Pipe"); // Diamond
 
 		// ===============Structure Pipes===============
-		Item.itemsList[IDProvider.bcStructurePipeCobblestone] = null;
 		LeadPipeStructureItem = createPipe(IDProvider.LeadPipeStructureItem, LeadPipeStructureItem.class, "Structure Pipe");
-		
+
 		// ===============Wrenches===============
-		Item.itemsList[IDProvider.Wrench] = null;
-		BismuthWrenchItem = new ItemWrenchGeneral(IDProvider.BismuthWrenchItem).setUnlocalizedName("BismuthWrenchItem");
-		BCTFCcrossover.proxy.addName(BismuthWrenchItem, "Wrench: Bismuth");
-		BCTFCcrossover.proxy.registerItem(BismuthWrenchItem);
-		
-		TinWrenchItem = new ItemWrenchGeneral(IDProvider.TinWrenchItem).setUnlocalizedName("TinWrenchItem");
-		BCTFCcrossover.proxy.addName(TinWrenchItem, "Wrench: Tin");
-		BCTFCcrossover.proxy.registerItem(TinWrenchItem);
-		
-		ZincWrenchItem = new ItemWrenchGeneral(IDProvider.ZincWrenchItem).setUnlocalizedName("ZincWrenchItem");
-		BCTFCcrossover.proxy.addName(ZincWrenchItem, "Wrench: Zinc");
-		BCTFCcrossover.proxy.registerItem(ZincWrenchItem);
-		
 		CopperWrenchItem = new ItemWrenchGeneral(IDProvider.CopperWrenchItem).setUnlocalizedName("CopperWrenchItem");
 		BCTFCcrossover.proxy.addName(CopperWrenchItem, "Wrench: Copper");
 		BCTFCcrossover.proxy.registerItem(CopperWrenchItem);
-		
+
 		BismuthBronzeWrenchItem = new ItemWrenchGeneral(IDProvider.BismuthBronzeWrenchItem).setUnlocalizedName("BismuthBronzeWrenchItem");
 		BCTFCcrossover.proxy.addName(BismuthBronzeWrenchItem, "Wrench: Bismuth Bronze");
 		BCTFCcrossover.proxy.registerItem(BismuthBronzeWrenchItem);
-		
+
 		BlackBronzeWrenchItem = new ItemWrenchGeneral(IDProvider.BlackBronzeWrenchItem).setUnlocalizedName("BlackBronzeWrenchItem");
 		BCTFCcrossover.proxy.addName(BlackBronzeWrenchItem, "Wrench: Black Bronze");
 		BCTFCcrossover.proxy.registerItem(BlackBronzeWrenchItem);
-		
+
 		BronzeWrenchItem = new ItemWrenchGeneral(IDProvider.BronzeWrenchItem).setUnlocalizedName("BronzeWrenchItem");
 		BCTFCcrossover.proxy.addName(BronzeWrenchItem, "Wrench: Bronze");
 		BCTFCcrossover.proxy.registerItem(BronzeWrenchItem);
-		
-		RoseGoldWrenchItem = new ItemWrenchGeneral(IDProvider.RoseGoldWrenchItem).setUnlocalizedName("RoseGoldWrenchItem");
-		BCTFCcrossover.proxy.addName(RoseGoldWrenchItem, "Wrench: Rose Gold");
-		BCTFCcrossover.proxy.registerItem(RoseGoldWrenchItem);
-		
+
 		WroughtIronWrenchItem = new ItemWrenchGeneral(IDProvider.WroughtIronWrenchItem).setUnlocalizedName("WroughtIronWrenchItem");
 		BCTFCcrossover.proxy.addName(WroughtIronWrenchItem, "Wrench: Wrought Iron");
 		BCTFCcrossover.proxy.registerItem(WroughtIronWrenchItem);
-		
+
 		SteelWrenchItem = new ItemWrenchGeneral(IDProvider.SteelWrenchItem).setUnlocalizedName("SteelWrenchItem");
 		BCTFCcrossover.proxy.addName(SteelWrenchItem, "Wrench: Steel");
 		BCTFCcrossover.proxy.registerItem(SteelWrenchItem);
-		
+
 		BlackSteelWrenchItem = new ItemWrenchGeneral(IDProvider.BlackSteelWrenchItem).setUnlocalizedName("BlackSteelWrenchItem");
 		BCTFCcrossover.proxy.addName(BlackSteelWrenchItem, "Wrench: Black Steel");
 		BCTFCcrossover.proxy.registerItem(BlackSteelWrenchItem);
-		
+
 		BlueSteelWrenchItem = new ItemWrenchGeneral(IDProvider.BlueSteelWrenchItem).setUnlocalizedName("BlueSteelWrenchItem");
 		BCTFCcrossover.proxy.addName(BlueSteelWrenchItem, "Wrench: Blue Steel");
 		BCTFCcrossover.proxy.registerItem(BlueSteelWrenchItem);
-		
+
 		RedSteelWrenchItem = new ItemWrenchGeneral(IDProvider.RedSteelWrenchItem).setUnlocalizedName("RedSteelWrenchItem");
 		BCTFCcrossover.proxy.addName(RedSteelWrenchItem, "Wrench: Red Steel");
 		BCTFCcrossover.proxy.registerItem(RedSteelWrenchItem);
+
+		removeFromCreativeTab();
 	}
-	
+
 	private static Item createPipe(int defaultID, Class<? extends Pipe> clas, String descr)
 	{
 		String name = Character.toLowerCase(clas.getSimpleName().charAt(0)) + clas.getSimpleName().substring(1);
@@ -290,5 +228,66 @@ public class Items
 		res.setUnlocalizedName(clas.getSimpleName());
 		BCTFCcrossover.proxy.addName(res, descr);
 		return res;
+	}
+
+	private static void removeFromCreativeTab()
+	{
+		// Remove BC gears
+		BuildCraftCore.woodenGearItem.setCreativeTab(null);
+		BuildCraftCore.stoneGearItem.setCreativeTab(null);
+		BuildCraftCore.ironGearItem.setCreativeTab(null);
+		BuildCraftCore.goldGearItem.setCreativeTab(null);
+		BuildCraftCore.diamondGearItem.setCreativeTab(null);
+
+		// Remove BC buckets
+		BuildCraftEnergy.bucketFuel.setCreativeTab(null);
+		BuildCraftEnergy.bucketOil.setCreativeTab(null);
+
+		// Remove BC transport pipes
+		BuildCraftTransport.pipeItemsWood.setCreativeTab(null);
+		BuildCraftTransport.pipeItemsCobblestone.setCreativeTab(null);
+		BuildCraftTransport.pipeItemsStone.setCreativeTab(null);
+		BuildCraftTransport.pipeItemsIron.setCreativeTab(null);
+		BuildCraftTransport.pipeItemsGold.setCreativeTab(null);
+		BuildCraftTransport.pipeItemsDiamond.setCreativeTab(null);
+		BuildCraftTransport.pipeItemsEmerald.setCreativeTab(null);
+		BuildCraftTransport.pipeItemsVoid.setCreativeTab(null);
+		BuildCraftTransport.pipeItemsSandstone.setCreativeTab(null);
+		BuildCraftTransport.pipeItemsObsidian.setCreativeTab(null);
+		BuildCraftTransport.pipeItemsDaizuli.setCreativeTab(null);
+		BuildCraftTransport.pipeItemsLapis.setCreativeTab(null);
+		BuildCraftTransport.pipeItemsQuartz.setCreativeTab(null);
+		BuildCraftTransport.pipeItemsEmzuli.setCreativeTab(null);
+
+		// Remove BC fluid pipes
+		BuildCraftTransport.pipeFluidsWood.setCreativeTab(null);
+		BuildCraftTransport.pipeFluidsCobblestone.setCreativeTab(null);
+		BuildCraftTransport.pipeFluidsStone.setCreativeTab(null);
+		BuildCraftTransport.pipeFluidsIron.setCreativeTab(null);
+		BuildCraftTransport.pipeFluidsGold.setCreativeTab(null);
+		BuildCraftTransport.pipeFluidsEmerald.setCreativeTab(null);
+		BuildCraftTransport.pipeFluidsVoid.setCreativeTab(null);
+		BuildCraftTransport.pipeFluidsSandstone.setCreativeTab(null);
+
+		// Remove BC kinesis pipes
+		BuildCraftTransport.pipePowerCobblestone.setCreativeTab(null);
+		BuildCraftTransport.pipePowerStone.setCreativeTab(null);
+		BuildCraftTransport.pipePowerWood.setCreativeTab(null);
+		BuildCraftTransport.pipePowerQuartz.setCreativeTab(null);
+		BuildCraftTransport.pipePowerIron.setCreativeTab(null);
+		BuildCraftTransport.pipePowerGold.setCreativeTab(null);
+		BuildCraftTransport.pipePowerDiamond.setCreativeTab(null);
+
+		// Remove BC structure pipe
+		BuildCraftTransport.pipeStructureCobblestone.setCreativeTab(null);
+
+		// Remove BC wranch item
+		BuildCraftCore.wrenchItem.setCreativeTab(null);
+
+		// Remove BC pipe sealant item
+		BuildCraftTransport.pipeWaterproof.setCreativeTab(null);
+
+		// Remove BC water and oil spring blocks
+		BuildCraftCore.springBlock.setCreativeTab(null);
 	}
 }

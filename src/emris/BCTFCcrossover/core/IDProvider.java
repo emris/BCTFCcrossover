@@ -62,6 +62,7 @@ public class IDProvider
 	public static int WroughtIronPipePowerItem		= 25473;
 	public static int SteelPipePowerItem			= 25474;
 	public static int PlatinumPipePowerItem			= 25475;
+	public static int SilverPipePowerItem			= 25476;
 
 	public static int LeadPipeStructureItem			= 25490;
 
@@ -169,6 +170,7 @@ public class IDProvider
 		WroughtIronPipePowerItem = getItemID(config, "items", "WroughtIronPipePowerItem", WroughtIronPipePowerItem);
 		SteelPipePowerItem = getItemID(config, "items", "SteelPipePowerItem", SteelPipePowerItem);
 		PlatinumPipePowerItem = getItemID(config, "items", "PlatinumPipePowerItem", PlatinumPipePowerItem);
+		SilverPipePowerItem = getItemID(config, "items", "SilverPipePowerItem", SilverPipePowerItem);
 
 		LeadPipeStructureItem = getItemID(config, "items", "LeadPipeStructureItem", LeadPipeStructureItem);
 

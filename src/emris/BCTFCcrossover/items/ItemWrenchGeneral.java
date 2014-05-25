@@ -78,14 +78,10 @@ public class ItemWrenchGeneral extends ItemWrench
 	
 	private void setMaxDmg(String s)
 	{
-		if(s.equals("BismuthWrenchItem")) this.setMaxDamage(70);
-		else if(s.equals("TinWrenchItem")) this.setMaxDamage(65);
-		else if(s.equals("ZincWrenchItem")) this.setMaxDamage(60);
-		else if(s.equals("CopperWrenchItem"))this.setMaxDamage(150);
+		if(s.equals("CopperWrenchItem"))this.setMaxDamage(150);
 		else if(s.equals("BismuthBronzeWrenchItem")) this.setMaxDamage(230);
 		else if(s.equals("BlackBronzeWrenchItem")) this.setMaxDamage(240);
 		else if(s.equals("BronzeWrenchItem")) this.setMaxDamage(260);
-		else if(s.equals("RoseGoldWrenchItem")) this.setMaxDamage(210);
 		else if(s.equals("WroughtIronWrenchItem")) this.setMaxDamage(510);
 		else if(s.equals("SteelWrenchItem")) this.setMaxDamage(700);
 		else if(s.equals("BlackSteelWrenchItem")) this.setMaxDamage(8500);
