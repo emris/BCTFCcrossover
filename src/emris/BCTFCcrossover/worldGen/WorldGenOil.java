@@ -24,7 +24,6 @@ import net.minecraft.world.chunk.IChunkProvider;
 import TFC.TFCBlocks;
 import TFC.WorldGen.DataLayer;
 import TFC.WorldGen.TFCWorldChunkManager;
-import TFC.WorldGen.Generators.WorldGenMinableTFC;
 import buildcraft.BuildCraftEnergy;
 import cpw.mods.fml.common.IWorldGenerator;
 
@@ -32,34 +31,34 @@ public class WorldGenOil implements IWorldGenerator
 {
 	static int worldHeight;
 	static Boolean infoStop;
+	int Min = 5; // Minimum Height
+	int Max = 130; // Maximum Height
 
-	int Min;
-	int Max;
-	public WorldGenOil(int min, int max)
-	{
-		Min = min;
-		Max = max;
-	}
+	public WorldGenOil() {}
 
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider)
 	{
 		chunkX *= 16;
 		chunkZ *= 16;
-		int height = Min-Max;
+		int height = random.nextInt(15) + 5;
+		int size = random.nextInt(40) + 20;
+		int amount = random.nextInt(20) + 20;
 
-		createOreVein(BuildCraftEnergy.blockOil.blockID, 0, new int[]{TFCBlocks.StoneSed.blockID, -1},//sedimentary, veins
+		createOil(BuildCraftEnergy.blockOil.blockID, 0, new int[]{TFCBlocks.StoneSed.blockID, -1},/*spawn in sedimentary stone*/
 				/*rarity-100*/100,
-				/*veinSize-80*/40,
-				/*veinAmt-60*/30,
+				/*Size-80*/size,
+				/*Amount-60*/amount,
 				/*height*/height,
 				/*diameter-300*/40,
-				/*vDensity-10*/30,
+				/*vDensity-10*/40,
 				/*hDensity-120*/90,
-				world, random, chunkX, chunkZ, Min, Max, "Oil");
+				world, random, chunkX, chunkZ, Min, Max, "Oil", false);
 	}
 
-	private static void createOreVein(int i, int j, int[] Layers, int rarity, int veinSize, int veinAmount, int height, int diameter, int vDensity, int hDensity,World world, Random rand, int chunkX, int chunkZ, int min, int max, String name) {
+	private static void createOil(int i, int j, int[] Layers, int rarity, int veinSize, int veinAmount, int height, int diameter,
+			int vDensity, int hDensity, World world, Random rand, int chunkX, int chunkZ, int min, int max, String name, boolean vein)
+	{
 		if(world.getWorldChunkManager() instanceof TFCWorldChunkManager)
 		{
 			for(int n = 0; n < Layers.length / 2; )
@@ -72,8 +71,8 @@ public class WorldGenOil implements IWorldGenerator
 						(rockLayer2.data1 == Layers[n] && (rockLayer2.data2 == Layers[n+1] || Layers[n+1] == -1)) ||
 						(rockLayer3.data1 == Layers[n] && (rockLayer3.data2 == Layers[n+1] || Layers[n+1] == -1)))
 				{
-					//					new WorldGenMinableTFC(i, j,Layers[n],Layers[n+1],rarity,veinSize,veinAmount,height,diameter,vDensity,hDensity).generateVein(world, rand, chunkX, chunkZ, min, max, name);
-					new WorldGenMinableTFC(i, j, Layers[n], Layers[n + 1], rarity, veinSize, veinAmount, height, diameter, vDensity, hDensity).generate(world, rand, chunkX, chunkZ, min, max, name);
+					new GenOil(i, j, Layers[n], Layers[n + 1], rarity, veinSize, veinAmount, height,
+							diameter, vDensity, hDensity, vein).generate(world, rand, chunkX, chunkZ, min, max, name);
 				}
 				n += 2;
 			}

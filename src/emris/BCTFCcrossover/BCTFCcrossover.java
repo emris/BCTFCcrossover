@@ -66,7 +66,7 @@ public class BCTFCcrossover
 		proxy.registerPowerPipeCapacities();
 		Items.setup();
 
-		GameRegistry.registerWorldGenerator(new WorldGenOil(90, 200));
+		GameRegistry.registerWorldGenerator(new WorldGenOil());
 	}
 
 	@EventHandler
