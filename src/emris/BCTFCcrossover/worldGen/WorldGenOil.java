@@ -14,6 +14,8 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>
+ *  
+ *  This is based on TerraFirmaCraft -- http://terrafirmacraft.com
  */
 package emris.BCTFCcrossover.worldGen;
 
@@ -29,11 +31,6 @@ import cpw.mods.fml.common.IWorldGenerator;
 
 public class WorldGenOil implements IWorldGenerator
 {
-	static int worldHeight;
-	static Boolean infoStop;
-	int Min = 5; // Minimum Height
-	int Max = 130; // Maximum Height
-
 	public WorldGenOil() {}
 
 	@Override
@@ -41,23 +38,26 @@ public class WorldGenOil implements IWorldGenerator
 	{
 		chunkX *= 16;
 		chunkZ *= 16;
-		int height = random.nextInt(15) + 5;
-		int size = random.nextInt(40) + 20;
-		int amount = random.nextInt(20) + 20;
 
-		createOil(BuildCraftEnergy.blockOil.blockID, 0, new int[]{TFCBlocks.StoneSed.blockID, -1},/*spawn in sedimentary stone*/
-				/*rarity-100*/100,
-				/*Size-80*/size,
-				/*Amount-60*/amount,
-				/*height*/height,
-				/*diameter-300*/40,
-				/*vDensity-10*/40,
-				/*hDensity-120*/90,
-				world, random, chunkX, chunkZ, Min, Max, "Oil", false);
+		int oil = BuildCraftEnergy.blockOil.blockID;
+		int meta = 0;
+		int[] stoneLayer = new int[]{TFCBlocks.StoneSed.blockID, -1}; /*spawn in sedimentary stone*/
+		int rarity = 90;
+		int size = random.nextInt(40) + 20;
+		int amount = random.nextInt(10) + 30;
+		int height = random.nextInt(5) + 5;
+		int diameter = random.nextInt(40) + 80;
+		int vDensity = 90;
+		int hDensity = 40;
+		int Min = 5; // Minimum Height
+		int Max = 90; // Maximum Height
+
+		createOil(oil, meta, stoneLayer, rarity, size, amount, height, diameter, vDensity, hDensity,
+				world, random, chunkX, chunkZ, Min, Max, false);
 	}
 
 	private static void createOil(int i, int j, int[] Layers, int rarity, int veinSize, int veinAmount, int height, int diameter,
-			int vDensity, int hDensity, World world, Random rand, int chunkX, int chunkZ, int min, int max, String name, boolean vein)
+			int vDensity, int hDensity, World world, Random rand, int chunkX, int chunkZ, int min, int max, boolean vein)
 	{
 		if(world.getWorldChunkManager() instanceof TFCWorldChunkManager)
 		{
@@ -72,7 +72,7 @@ public class WorldGenOil implements IWorldGenerator
 						(rockLayer3.data1 == Layers[n] && (rockLayer3.data2 == Layers[n+1] || Layers[n+1] == -1)))
 				{
 					new GenOil(i, j, Layers[n], Layers[n + 1], rarity, veinSize, veinAmount, height,
-							diameter, vDensity, hDensity, vein).generate(world, rand, chunkX, chunkZ, min, max, name);
+							diameter, vDensity, hDensity, vein).generate(world, rand, chunkX, chunkZ, min, max);
 				}
 				n += 2;
 			}

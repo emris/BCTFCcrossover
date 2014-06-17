@@ -62,7 +62,10 @@ public class GenOil extends WorldGenerator
 		this.useMarcoVeins = vein;
 	}
 
-	public boolean generateBeforeCheck() // takes a set of current global variables and checks to see if this ore has spawned before in this chunk
+	/**
+	 *  takes a set of current global variables and checks to see if this ore has spawned before in this chunk
+	 */
+	public boolean generateBeforeCheck()
 	{
 		genBeforeCheck = false;
 		genBeforeCheck = oreList.contains(Arrays.asList(MPBlockID, minableBlockMeta));
@@ -90,7 +93,7 @@ public class GenOil extends WorldGenerator
 		}
 	}
 
-	public boolean generate(World world, Random random, int x, int z, int min, int max, String n)
+	public boolean generate(World world, Random random, int x, int z, int min, int max)
 	{
 		MPChunk_X = x;
 		MPChunk_Z = z;
@@ -228,6 +231,7 @@ public class GenOil extends WorldGenerator
 						if(isCorrectRockType && isCorrectMeta)
 						{
 							world.setBlock(posX, posY, posZ, MPBlockID, minableBlockMeta, 2);
+							//System.out.println("OIL: "+posX+":"+posY+":"+posZ);
 						}
 
 						blocksMade++;
@@ -245,7 +249,7 @@ public class GenOil extends WorldGenerator
 				if(isCorrectRockType && isCorrectMeta)
 				{
 					world.setBlock(posX, posY, posZ, MPBlockID, minableBlockMeta, 2);
-					//System.out.println("OIL: "+posX+":"+posZ);
+					//System.out.println("OIL: "+posX+":"+posY+":"+posZ);
 				}
 
 				blocksMade++;
@@ -323,7 +327,7 @@ public class GenOil extends WorldGenerator
 									if (var39 * var39 + var42 * var42 + var45 * var45 < 1.0D)
 									{
 										world.setBlock(posX, posY, posZ, MPBlockID, minableBlockMeta, 2);
-										//System.out.println("OIL: "+posX+":"+posZ);
+										System.out.println("OIL: "+posX+":"+posY+":"+posZ);
 									}
 								}
 							}
