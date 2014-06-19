@@ -6,7 +6,7 @@ public class Reference
 	public static final String ModName = "BCTFCcrossover";
 
 	public static final int VersionMajor = 0;
-	public static final int VersionMinor = 8;
+	public static final int VersionMinor = 9;
 	public static final String VersionRevision = "B78";
 
 	public static final String ModVersion = VersionMajor + "." + VersionMinor + "." + VersionRevision;

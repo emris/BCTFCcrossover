@@ -352,17 +352,21 @@ public class Recipes
 		if (BuildCraftFactory.allowMining)
 		{
 			// AutoWorkbench
-			proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.autoWorkbenchBlock), new Object[] { " g ", "gwg", " g ",
-				Character.valueOf('w'), Block.workbench,
+			proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.autoWorkbenchBlock), new Object[] {"pgp", "gcg", "pgp",
+				Character.valueOf('c'), Block.chest,
+				Character.valueOf('p'), "plankWood",
 				Character.valueOf('g'), "gearBismuthBronze" });
-			proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.autoWorkbenchBlock), new Object[] { " g ", "gwg", " g ",
-				Character.valueOf('w'), Block.workbench,
+			proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.autoWorkbenchBlock), new Object[] {"pgp", "gcg", "pgp",
+				Character.valueOf('c'), Block.chest,
+				Character.valueOf('p'), "plankWood",
 				Character.valueOf('g'), "gearBlackBronze" });
-			proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.autoWorkbenchBlock), new Object[] { " g ", "gwg", " g ",
-				Character.valueOf('w'), Block.workbench,
+			proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.autoWorkbenchBlock), new Object[] {"pgp", "gcg", "pgp",
+				Character.valueOf('c'), Block.chest,
+				Character.valueOf('p'), "plankWood",
 				Character.valueOf('g'), "gearBronze" });
-			proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.autoWorkbenchBlock), new Object[] { " g ", "gwg", " g ",
-				Character.valueOf('w'), Block.workbench,
+			proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.autoWorkbenchBlock), new Object[] {"pgp", "gcg", "pgp",
+				Character.valueOf('c'), Block.chest,
+				Character.valueOf('p'), "plankWood",
 				Character.valueOf('g'), "gearCopper" });
 			// Mining Well
 			proxy.addCraftingRecipe(new ItemStack(BuildCraftFactory.miningWellBlock, 1), new Object[] { "ipi", "igi", "iki",
@@ -437,7 +441,7 @@ public class Recipes
 			Character.valueOf('b'), new ItemStack(Item.dyePowder, 1, 0),
 			Character.valueOf('t'), BuildCraftBuilders.markerBlock,
 			Character.valueOf('y'), new ItemStack(Item.dyePowder, 1, 11),
-			Character.valueOf('c'), Block.workbench,
+			Character.valueOf('c'), BuildCraftFactory.autoWorkbenchBlock,
 			Character.valueOf('g'), "gearBlackSteel",
 			Character.valueOf('s'), Block.chest });
 
@@ -458,7 +462,7 @@ public class Recipes
 			Character.valueOf('G'), "gearRedSteel", });
 		proxy.addCraftingRecipe(new ItemStack(BuildCraftSilicon.assemblyTableBlock, 1, 1), new Object[] { "OWO", "OCO", "ORO",
 			Character.valueOf('O'), Block.obsidian,
-			Character.valueOf('W'), Block.workbench,
+			Character.valueOf('W'), BuildCraftFactory.autoWorkbenchBlock,
 			Character.valueOf('C'), Block.chest,
 			Character.valueOf('R'), new ItemStack(BuildCraftSilicon.redstoneChipset, 1, 0), });
 
@@ -620,7 +624,8 @@ public class Recipes
 
 		// ==================Silicone==================
 		RemoveRecipe(new ItemStack(BuildCraftSilicon.laserBlock));
-		RemoveRecipe(new ItemStack(BuildCraftSilicon.assemblyTableBlock));
+		RemoveRecipe(new ItemStack(BuildCraftSilicon.assemblyTableBlock, 1, 0));
+		RemoveRecipe(new ItemStack(BuildCraftSilicon.assemblyTableBlock, 1, 1));
 
 		// BC Wires
 		AssemblyRecipe.assemblyRecipes.remove(new ItemStack(BuildCraftTransport.redPipeWire));
