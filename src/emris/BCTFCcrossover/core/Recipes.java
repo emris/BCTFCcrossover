@@ -560,20 +560,20 @@ public class Recipes
 		RemoveRecipe(new ItemStack(BuildCraftCore.diamondGearItem));
 
 		// =================Transport Pipes========================
-		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsWood));
-		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsCobblestone));
-		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsStone));
-		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsIron));
-		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsGold));
-		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsDiamond));
-		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsEmerald));
-		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsVoid));
-		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsSandstone));
-		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsObsidian));
-		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsDaizuli));
-		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsLapis));
-		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsQuartz));
-		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsEmzuli));
+		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsWood, 8));
+		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsCobblestone, 8));
+		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsStone, 8));
+		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsIron, 8));
+		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsGold, 8));
+		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsDiamond, 8));
+		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsEmerald, 8));
+		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsVoid, 8));
+		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsSandstone, 8));
+		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsObsidian, 8));
+		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsDaizuli, 8));
+		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsLapis, 8));
+		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsQuartz, 8));
+		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeItemsEmzuli, 8));
 
 		// =================Structure Pipes========================
 		RemoveRecipe(new ItemStack(BuildCraftTransport.pipeStructureCobblestone));
