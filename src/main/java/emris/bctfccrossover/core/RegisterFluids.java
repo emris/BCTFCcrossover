@@ -41,9 +41,11 @@ public class RegisterFluids
 	{
 		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("latex", FluidContainerRegistry.BUCKET_VOLUME / 4), new ItemStack(BCTFCItems.LatexBowl), new ItemStack(Items.bowl));
 		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("latex", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(BCTFCItems.Buckets, 1, 0), new ItemStack(TFCItems.WoodenBucketEmpty));
-		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("water", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(BCTFCItems.Buckets, 1, 2), new ItemStack(BCTFCItems.Buckets, 1, 1));
-		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("oil", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(BCTFCItems.Buckets, 1, 4), new ItemStack(BCTFCItems.Buckets, 1, 3));
-		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("fuel", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(BCTFCItems.Buckets, 1, 5), new ItemStack(BCTFCItems.Buckets, 1, 3));
+		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("saltwater", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(BCTFCItems.Buckets, 1, 2), new ItemStack(BCTFCItems.Buckets, 1, 1));
+		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("freshwater", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(BCTFCItems.Buckets, 1, 3), new ItemStack(BCTFCItems.Buckets, 1, 1));
+		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("hotwater", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(BCTFCItems.Buckets, 1, 4), new ItemStack(BCTFCItems.Buckets, 1, 1));
+		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("oil", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(BCTFCItems.Buckets, 1, 6), new ItemStack(BCTFCItems.Buckets, 1, 5));
+		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("fuel", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(BCTFCItems.Buckets, 1, 7), new ItemStack(BCTFCItems.Buckets, 1, 5));
 	}
 
 	public static void registerFluidIcons()

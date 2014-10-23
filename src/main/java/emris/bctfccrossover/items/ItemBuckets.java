@@ -29,7 +29,6 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.MovingObjectPosition.MovingObjectType;
-import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.FillBucketEvent;
 import buildcraft.BuildCraftEnergy;
@@ -38,16 +37,15 @@ import buildcraft.core.CreativeTabBuildCraft;
 import com.bioxx.tfc.TFCBlocks;
 import com.bioxx.tfc.TFCItems;
 import com.bioxx.tfc.Items.ItemTerra;
+import com.bioxx.tfc.api.TFC_ItemHeat;
 import com.bioxx.tfc.api.Enums.EnumSize;
 import com.bioxx.tfc.api.Enums.EnumWeight;
 import com.bioxx.tfc.api.Interfaces.ISize;
 
-import cpw.mods.fml.common.eventhandler.Event;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import emris.bctfccrossover.BCTFCItems;
 import emris.bctfccrossover.Reference;
-import emris.bctfccrossover.utils.McColor;
 import emris.bctfccrossover.utils.PlayerUtils;
 
 public class ItemBuckets extends ItemTerra implements ISize
@@ -67,23 +65,39 @@ public class ItemBuckets extends ItemTerra implements ISize
 		setCreativeTab(creativeTab.get());
 		setUnlocalizedName("Bucket");
 		setContainerItem(TFCItems.WoodenBucketEmpty);
-		MetaNames = new String[]{"Latex","Zinc","ZincWater","Steel","SteelOil","SteelFuel"};
+		MetaNames = new String[]{"Latex","Zinc","ZincSaltWater","ZincFreshWater","ZincHotWater","Steel","SteelOil","SteelFuel"};
 	}
 
-	/*@Override
-	public ItemStack getContainerItemStack(ItemStack is)
+	@Override
+	public boolean onUpdate(ItemStack is, World world, int x, int y, int z)
+	{
+		if(is.getItemDamage() != 4) return true;
+
+		//It will take about 3min for the hot water to cool down and turn into fresh water
+		if(TFC_ItemHeat.HasTemp(is))
+			is.getTagCompound().setFloat("temperature", is.getTagCompound().getFloat("temperature") - 0.1F);
+
+		if(TFC_ItemHeat.GetTemp(is) < 1)
+		{
+			TFC_ItemHeat.RemoveTempTag(is);
+			is.setItemDamage(3);
+		}
+
+		return false;
+	}
+
+	@Override
+	public ItemStack getContainerItem(ItemStack is)
 	{
 		if(is.getItemDamage() == 0)
 			return new ItemStack(TFCItems.WoodenBucketEmpty);
-		else if(is.getItemDamage() == 2)
-			return new ItemStack(Items.Buckets, 1, 1);
-		else if(is.getItemDamage() == 4)
-			return new ItemStack(Items.Buckets, 1, 3);
-		else if(is.getItemDamage() == 5)
-			return new ItemStack(Items.Buckets, 1, 3);
+		else if(is.getItemDamage() == 2 || is.getItemDamage() == 3 || is.getItemDamage() == 4)
+			return new ItemStack(BCTFCItems.Buckets, 1, 1);
+		else if(is.getItemDamage() == 6 || is.getItemDamage() == 7)
+			return new ItemStack(BCTFCItems.Buckets, 1, 5);
 
-		return super.getContainerItemStack(is);
-	}*/
+		return null;
+	}
 
 	@Override
 	public EnumSize getSize(ItemStack is)
@@ -124,7 +138,7 @@ public class ItemBuckets extends ItemTerra implements ISize
 	public void getSubItems(Item item, CreativeTabs tabs, List list)
 	{
 		for(int i = 0; i < MetaNames.length; i++)
-			list.add(new ItemStack(this,1,i));
+			list.add(new ItemStack(this, 1, i));
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
@@ -134,25 +148,18 @@ public class ItemBuckets extends ItemTerra implements ISize
 			arraylist.add("\u2696" + object.getWeight(is).getName() + " \u21F2" + object.getSize(is).getName());
 	}
 
-	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@SuppressWarnings({ "rawtypes", "unchecked"})
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack is, EntityPlayer player, List list, boolean flag)
 	{
 		ItemBuckets.addSizeInformation(is, this, list);
-		if(is.hasTagCompound() && is.stackTagCompound.hasKey("LiquidType"))
-		{
-			if(is.stackTagCompound.getString("LiquidType").equalsIgnoreCase("freshWater"))
-				list.add(McColor.darkAqua + StatCollector.translateToLocal("gui.bucketFreshWater"));
-			else if(is.stackTagCompound.getString("LiquidType").equalsIgnoreCase("saltWater"))
-				list.add(McColor.darkAqua + StatCollector.translateToLocal("gui.bucketSaltWater"));
-			else
-				list.add(McColor.darkAqua + StatCollector.translateToLocal("gui.bucketHotWater"));
-		}
+		if(TFC_ItemHeat.HasTemp(is))
+			list.add(TFC_ItemHeat.getHeatColor(TFC_ItemHeat.GetTemp(is), 600));
 	}
 
 	@Override
-	public ItemStack onItemRightClick(ItemStack is, World world, EntityPlayer player)
+	public ItemStack onItemRightClick(ItemStack bucket, World world, EntityPlayer player)
 	{
 		MovingObjectPosition mop = PlayerUtils.getTargetBlock(player);
 		if (mop != null)
@@ -160,43 +167,57 @@ public class ItemBuckets extends ItemTerra implements ISize
 			int X = mop.blockX;
 			int Y = mop.blockY;
 			int Z = mop.blockZ;
-			if (!world.canMineBlock(player, X, Y, Z)) { return is; }
+			if (!world.canMineBlock(player, X, Y, Z)) { return bucket; }
 
 			if (mop.typeOfHit == MovingObjectType.BLOCK)
 			{
-				if (is.getItemDamage() == 1 || is.getItemDamage() == 3)
+				if (bucket.getItemDamage() == 1 || bucket.getItemDamage() == 5)
 				{
-					if (!player.canPlayerEdit(X, Y, Z, mop.sideHit, is))
-						return is;
+					if (!player.canPlayerEdit(X, Y, Z, mop.sideHit, bucket))
+						return bucket;
 
-					FillBucketEvent event = new FillBucketEvent(player, is, world, mop);
+					FillBucketEvent event = new FillBucketEvent(player, bucket, world, mop);
 					if (event.isCanceled())
-						return is;
+						return bucket;
 
-					if (event.getResult() == Event.Result.ALLOW)
-						return event.result;
-
-					//Pickup Oil
-					else if(world.getBlock(X, Y, Z) == BuildCraftEnergy.blockOil && is.getItemDamage() == 3)
+					Block fluid = world.getBlock(X, Y, Z);
+					//Pickup Salt Water
+					if(isSaltWater(fluid) && bucket.getItemDamage() == 1)
 					{
-						if (!player.capabilities.isCreativeMode)
-							world.setBlockToAir(X, Y, Z);
-						return new ItemStack(BCTFCItems.Buckets, 1, 4);
+						if (!player.capabilities.isCreativeMode) world.setBlockToAir(X, Y, Z);
+						return new ItemStack(BCTFCItems.Buckets, 1, 2);
 					}
-					//Pickup Water
-					if(isWater(world.getBlock(X, Y, Z)) && is.getItemDamage() == 1 && world.getBlockMetadata(X, Y, Z) <= 2)
+					//Pickup Fresh Water
+					else if(isFreshWater(fluid) && bucket.getItemDamage() == 1)
 					{
-						ItemStack waterBucket = new ItemStack(BCTFCItems.Buckets, 1, 2);
+						if (!player.capabilities.isCreativeMode) world.setBlockToAir(X, Y, Z);
+						return new ItemStack(BCTFCItems.Buckets, 1, 3);
+					}
+					//Pickup Hot Water
+					else if(isHotWater(fluid) && bucket.getItemDamage() == 1)
+					{
+						ItemStack hotBucket = new ItemStack(BCTFCItems.Buckets, 1, 4);
 						NBTTagCompound nbttc = new NBTTagCompound();
-						nbttc.setString("LiquidType", getWaterType(world.getBlock(X, Y, Z)));
-						waterBucket.setTagCompound(nbttc);
-						if (!player.capabilities.isCreativeMode)
-							world.setBlockToAir(X, Y, Z);
-						return waterBucket;
+						nbttc.setFloat("temperature", 480);
+						hotBucket.setTagCompound(nbttc);
+						if (!player.capabilities.isCreativeMode) world.setBlockToAir(X, Y, Z);
+						return hotBucket;
+					}
+					//Pickup Oil
+					else if(fluid == BuildCraftEnergy.blockOil && bucket.getItemDamage() == 5)
+					{
+						if (!player.capabilities.isCreativeMode) world.setBlockToAir(X, Y, Z);
+						return new ItemStack(BCTFCItems.Buckets, 1, 6);
+					}
+					//Pickup Fuel
+					else if(fluid == BuildCraftEnergy.blockFuel && bucket.getItemDamage() == 5)
+					{
+						if (!player.capabilities.isCreativeMode) world.setBlockToAir(X, Y, Z);
+						return new ItemStack(BCTFCItems.Buckets, 1, 7);
 					}
 				}
 
-				if (is.getItemDamage() == 2 || is.getItemDamage() == 4)
+				if (bucket.getItemDamage() == 2 || bucket.getItemDamage() == 3 || bucket.getItemDamage() == 4)
 				{
 					if (mop.sideHit == 0) {--Y;}
 					else if (mop.sideHit == 1) {++Y;}
@@ -205,65 +226,68 @@ public class ItemBuckets extends ItemTerra implements ISize
 					else if (mop.sideHit == 4) {--X;}
 					else if (mop.sideHit == 5) {++X;}
 
-					if (!player.canPlayerEdit(X, Y, Z, mop.sideHit, is))
-						return is;
+					if (!player.canPlayerEdit(X, Y, Z, mop.sideHit, bucket))
+						return bucket;
 
 					if (world.isAirBlock(X, Y, Z) || !world.getBlock(X, Y, Z).getMaterial().isSolid())
 					{
-						if (world.provider.isHellWorld && is.getItemDamage() == 2)
+						if (world.provider.isHellWorld && bucket.getItemDamage() == 2)
 						{
 							world.playSoundEffect(X + 0.5D, Y + 0.5D, Z + 0.5D, "random.fizz", 0.5F, 2.6F + (world.rand.nextFloat() - world.rand.nextFloat()) * 0.8F);
 							for (int i = 0; i < 8; ++i)
 								world.spawnParticle("largesmoke", X + Math.random(), Y + Math.random(), Z + Math.random(), 0.0D, 0.0D, 0.0D);
 						}
-						//Put Water
-						else if(is.getItemDamage() == 2)
+						//Put Salt Water
+						else if(bucket.getItemDamage() == 2)
 						{
-							if(is.hasTagCompound() && is.stackTagCompound.hasKey("LiquidType"))
-								world.setBlock(X, Y, Z, getWaterType(is.stackTagCompound.getString("LiquidType")));
-							else
-								world.setBlock(X, Y, Z, getWaterType("freshWater"));
-
+							world.setBlock(X, Y, Z, TFCBlocks.SaltWaterStationary);
 							if (player.capabilities.isCreativeMode)
-								return is;
+								return bucket;
+							return new ItemStack(BCTFCItems.Buckets, 1, 1);
+						}
+						//Put Fresh Water
+						else if(bucket.getItemDamage() == 3)
+						{
+							world.setBlock(X, Y, Z, TFCBlocks.FreshWaterStationary);
+							if (player.capabilities.isCreativeMode)
+								return bucket;
+							return new ItemStack(BCTFCItems.Buckets, 1, 1);
+						}
+						//Put Hot Water
+						else if(bucket.getItemDamage() == 4)
+						{
+							world.setBlock(X, Y, Z, TFCBlocks.HotWaterStationary);
+							if (player.capabilities.isCreativeMode)
+								return bucket;
 							return new ItemStack(BCTFCItems.Buckets, 1, 1);
 						}
 						//Put Oil
-						else if (is.getItemDamage() == 4)
+						else if (bucket.getItemDamage() == 6)
 						{
 							world.setBlock(X, Y, Z, BuildCraftEnergy.blockOil);
 							if (player.capabilities.isCreativeMode)
-								return is;
-							return new ItemStack(BCTFCItems.Buckets, 1, 3);
+								return bucket;
+							return new ItemStack(BCTFCItems.Buckets, 1, 5);
 						}
 					}
 				}
 			}
 		}
-		return is;
+		return bucket;
 	}
 
-	private String getWaterType(Block block)
+	private boolean isSaltWater(Block water)
 	{
-		if(block == TFCBlocks.SaltWater || block == TFCBlocks.SaltWaterStationary) return "saltWater";
-		if(block == TFCBlocks.HotWater || block == TFCBlocks.HotWaterStationary) return "hotWater";
-		return "freshWater";
+		return water == TFCBlocks.SaltWater || water == TFCBlocks.SaltWaterStationary;
 	}
 
-	private Block getWaterType(String s)
+	private boolean isFreshWater(Block water)
 	{
-		if(s.equalsIgnoreCase("saltWater")) return TFCBlocks.SaltWaterStationary;
-		if(s.equalsIgnoreCase("hotWater")) return TFCBlocks.HotWaterStationary;
-		return TFCBlocks.FreshWaterStationary;
+		return water == TFCBlocks.FreshWater || water == TFCBlocks.FreshWaterStationary;
 	}
 
-	private static boolean isWater(Block block)
+	private boolean isHotWater(Block water)
 	{
-		return block == TFCBlocks.SaltWater
-				|| block == TFCBlocks.SaltWaterStationary
-				|| block == TFCBlocks.FreshWater
-				|| block == TFCBlocks.FreshWaterStationary
-				|| block == TFCBlocks.HotWater
-				|| block == TFCBlocks.HotWaterStationary;
+		return water == TFCBlocks.HotWater || water == TFCBlocks.HotWaterStationary;
 	}
 }

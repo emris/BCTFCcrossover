@@ -12,7 +12,9 @@ item.Gear.Steel.name=Gear: Steel
 
 item.Bucket.Latex.name=Wooden Bucket (Latex)
 item.Bucket.Zinc.name=Zink Bucket (Empty)
-item.Bucket.ZincWater.name=Zink Bucket (Water)
+item.Bucket.ZincSaltWater.name=Zink Bucket (Salt Water)
+item.Bucket.ZincFreshWater.name=Zink Bucket (Fresh Water)
+item.Bucket.ZincHotWater.name=Zink Bucket (Hot Water)
 item.Bucket.Steel.name=Steel Bucket (Empty)
 item.Bucket.SteelOil.name=Steel Bucket (Oil)
 item.Bucket.SteelFuel.name=Steel Bucket (Fuel)
@@ -124,7 +126,3 @@ item.BlueSteelWrenchItem.name=Wrench: Blue Steel
 item.RedSteelWrenchItem.name=Wrench: Red Steel
 
 fluid.Latex=Latex
-
-gui.bucketFreshWater=Contains Fresh Water
-gui.bucketSaltWater=Contains Salt Water
-gui.bucketHotWater=Contains Hot Water
