@@ -18,8 +18,9 @@
 package emris.bctfccrossover;
 
 import java.util.logging.Logger;
-
+import buildcraft.BuildCraftEnergy;
 import buildcraft.api.core.IIconProvider;
+import buildcraft.core.BlockSpring;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -59,6 +60,11 @@ public class BCTFCcrossover
 		proxy.registerPowerPipeCapacities();
 		BCTFCItems.setup();
 
+		BlockSpring.EnumSpring.OIL.canGen = false;
+		BlockSpring.EnumSpring.WATER.canGen = false;
+		BuildCraftEnergy.biomeOilDesert = null;
+		BuildCraftEnergy.biomeOilOcean = null;
+		BuildCraftEnergy.spawnOilSprings = false;
 		GameRegistry.registerWorldGenerator(new WorldGenOil(), 0);
 	}
 

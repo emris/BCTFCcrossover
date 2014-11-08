@@ -18,6 +18,7 @@
 package emris.bctfccrossover;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import cpw.mods.fml.common.registry.GameRegistry;
 import emris.bctfccrossover.blocks.BlockFluid;
@@ -32,7 +33,7 @@ public class BCTFCBlocks
 	{
 		System.out.println(new StringBuilder().append("[BCTFCcrossover] Setup Blocks").toString());
 
-		blockLatex = new BlockFluid(RegisterFluids.LATEX, Material.water).setFlammable(true).setFlammability(5).setParticleColor(1F, 1F, 1F).setQuantaPerBlock(3);
+		blockLatex = new BlockFluid(RegisterFluids.LATEX, Material.water, MapColor.snowColor).setFlammable(true).setFlammability(5).setParticleColor(1F, 1F, 1F).setQuantaPerBlock(3);
 		GameRegistry.registerBlock(blockLatex, ItemBlocks.class, "Latex");
 	}
 }

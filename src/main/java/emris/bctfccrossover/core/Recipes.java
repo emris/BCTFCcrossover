@@ -18,7 +18,6 @@
 package emris.bctfccrossover.core;
 
 import java.util.List;
-
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -30,10 +29,8 @@ import buildcraft.BuildCraftEnergy;
 import buildcraft.BuildCraftFactory;
 import buildcraft.BuildCraftSilicon;
 import buildcraft.BuildCraftTransport;
-import buildcraft.api.recipes.BuildcraftRecipes;
-import buildcraft.api.transport.PipeWire;
+import buildcraft.api.recipes.BuildcraftRecipeRegistry;
 import buildcraft.silicon.ItemRedstoneChipset.Chipset;
-
 import com.bioxx.tfc.TFCBlocks;
 import com.bioxx.tfc.TFCItems;
 import com.bioxx.tfc.api.Crafting.AnvilManager;
@@ -41,7 +38,6 @@ import com.bioxx.tfc.api.Crafting.AnvilRecipe;
 import com.bioxx.tfc.api.Crafting.AnvilReq;
 import com.bioxx.tfc.api.Crafting.PlanRecipe;
 import com.bioxx.tfc.api.Enums.RuleEnum;
-
 import emris.bctfccrossover.BCTFCItems;
 import emris.bctfccrossover.BCTFCcrossover;
 import emris.bctfccrossover.CommonProxy;
@@ -471,19 +467,28 @@ public class Recipes
 			Character.valueOf('R'), new ItemStack(BuildCraftSilicon.redstoneChipset, 1, 0), });
 
 		// / REDSTONE CHIPSETS
-		BuildcraftRecipes.assemblyTable.addRecipe(20000, Chipset.IRON.getStack(), Items.redstone, TFCItems.WroughtIronIngot);
-		BuildcraftRecipes.assemblyTable.addRecipe(40000, Chipset.GOLD.getStack(), Items.redstone, TFCItems.GoldIngot);
-		BuildcraftRecipes.assemblyTable.addRecipe(80000, Chipset.DIAMOND.getStack(), Items.redstone, new ItemStack(TFCItems.GemDiamond,1,2).getItem());
-		BuildcraftRecipes.assemblyTable.addRecipe(40000, Chipset.PULSATING.getStack(), Items.redstone, new ItemStack(TFCItems.GemEmerald,1,2).getItem());
-		//BuildcraftRecipes.assemblyTable.addRecipe(60000, Chipset.QUARTZ.getStack(), Items.redstone, Items.quartz);
-		//BuildcraftRecipes.assemblyTable.addRecipe(60000, Chipset.COMP.getStack(), Items.redstone, Items.comparator);
-		
-		// BC Wires
-		BuildcraftRecipes.assemblyTable.addRecipe(500, PipeWire.RED.getStack(8), "dyeRed", 1, Items.redstone, TFCItems.CopperIngot);
-		BuildcraftRecipes.assemblyTable.addRecipe(500, PipeWire.BLUE.getStack(8), "dyeBlue", 1, Items.redstone, TFCItems.CopperIngot);
-		BuildcraftRecipes.assemblyTable.addRecipe(500, PipeWire.GREEN.getStack(8), "dyeGreen", 1, Items.redstone, TFCItems.CopperIngot);
-		BuildcraftRecipes.assemblyTable.addRecipe(500, PipeWire.YELLOW.getStack(8), "dyeYellow", 1, Items.redstone, TFCItems.CopperIngot);
+		BuildcraftRecipeRegistry.assemblyTable.removeRecipe("buildcraft:ironChipset");
+		BuildcraftRecipeRegistry.assemblyTable.addRecipe("buildcraft:ironChipset", 20000, Chipset.IRON.getStack(), Items.redstone, TFCItems.WroughtIronIngot);
+		BuildcraftRecipeRegistry.assemblyTable.removeRecipe("buildcraft:goldChipset");
+		BuildcraftRecipeRegistry.assemblyTable.addRecipe("buildcraft:goldChipset", 40000, Chipset.GOLD.getStack(), Items.redstone, TFCItems.GoldIngot);
+		BuildcraftRecipeRegistry.assemblyTable.removeRecipe("buildcraft:diamondChipset");
+		BuildcraftRecipeRegistry.assemblyTable.addRecipe("buildcraft:diamondChipset", 80000, Chipset.DIAMOND.getStack(), Items.redstone, new ItemStack(TFCItems.GemDiamond,1,2).getItem());
+		BuildcraftRecipeRegistry.assemblyTable.removeRecipe("buildcraft:pulsatingChipset");
+		BuildcraftRecipeRegistry.assemblyTable.addRecipe("buildcraft:pulsatingChipset", 40000, Chipset.PULSATING.getStack(), Items.redstone, new ItemStack(TFCItems.GemEmerald,1,2).getItem());
+		//BuildcraftRecipeRegistry.assemblyTable.addRecipe("buildcraft:quartzChipset", 60000, Chipset.QUARTZ.getStack(), Items.redstone, Items.quartz);
+		//BuildcraftRecipeRegistry.assemblyTable.addRecipe("buildcraft:compChipset", 60000, Chipset.COMP.getStack(), Items.redstone, Items.comparator);
+		//BuildcraftRecipeRegistry.assemblyTable.addRecipe("buildcraft:emeraldChipset", 1200000, Chipset.EMERALD.getStack(), Items.redstone, Items.emerald);
 
+		// BC Wires
+/*		BuildcraftRecipeRegistry.assemblyTable.removeRecipe("buildcraft:redWire");
+		BuildcraftRecipeRegistry.assemblyTable.addRecipe("buildcraft:redWire", 5000, PipeWire.RED.getStack(8), OreDictionary.getOres("dyeRed"), 1, Items.redstone, TFCItems.CopperIngot);
+		BuildcraftRecipeRegistry.assemblyTable.removeRecipe("buildcraft:blueWire");
+		BuildcraftRecipeRegistry.assemblyTable.addRecipe("buildcraft:blueWire", 5000, PipeWire.BLUE.getStack(8), OreDictionary.getOres("dyeBlue"), 1, Items.redstone, TFCItems.CopperIngot);
+		BuildcraftRecipeRegistry.assemblyTable.removeRecipe("buildcraft:greenWire");
+		BuildcraftRecipeRegistry.assemblyTable.addRecipe("buildcraft:greenWire", 5000, PipeWire.GREEN.getStack(8), OreDictionary.getOres("dyeGreen"), 1, Items.redstone, TFCItems.CopperIngot);
+		BuildcraftRecipeRegistry.assemblyTable.removeRecipe("buildcraft:yellowWire");
+		BuildcraftRecipeRegistry.assemblyTable.addRecipe("buildcraft:yellowWire", 5000, PipeWire.YELLOW.getStack(8), OreDictionary.getOres("dyeYellow"), 1, Items.redstone, TFCItems.CopperIngot);
+*/
 		// ==========Latex==========
 		proxy.addCraftingRecipe(new ItemStack(BCTFCItems.LatexBowl, 1), new Object[] { "fff", "fff", " b ",
 			Character.valueOf('f'), Blocks.yellow_flower,

@@ -17,6 +17,7 @@
  */
 package emris.bctfccrossover.blocks;
 
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.util.IIcon;
@@ -28,9 +29,9 @@ import emris.bctfccrossover.Reference;
 
 public class BlockFluid extends BlockBuildcraftFluid
 {
-	public BlockFluid(Fluid fluid, Material material)
+	public BlockFluid(Fluid fluid, Material material, MapColor iMapColor)
 	{
-		super(fluid, material);
+		super(fluid, material, iMapColor);
 	}
 
 	@Override
