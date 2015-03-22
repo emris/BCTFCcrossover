@@ -34,8 +34,8 @@ import net.minecraftforge.event.entity.player.FillBucketEvent;
 import buildcraft.BuildCraftEnergy;
 import buildcraft.core.CreativeTabBuildCraft;
 
-import com.bioxx.tfc.TFCBlocks;
-import com.bioxx.tfc.TFCItems;
+import com.bioxx.tfc.api.TFCBlocks;
+import com.bioxx.tfc.api.TFCItems;
 import com.bioxx.tfc.Items.ItemTerra;
 import com.bioxx.tfc.api.TFC_ItemHeat;
 import com.bioxx.tfc.api.Enums.EnumSize;

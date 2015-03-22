@@ -36,6 +36,7 @@ import emris.bctfccrossover.pipes.power.RoseGoldPipePowerItem;
 import emris.bctfccrossover.pipes.power.SilverPipePowerItem;
 import emris.bctfccrossover.pipes.power.SteelPipePowerItem;
 import emris.bctfccrossover.pipes.power.WroughtIronPipePowerItem;
+import emris.bctfccrossover.tileEntities.TETreeLog;
 
 public class CommonProxy
 {
@@ -115,6 +116,11 @@ public class CommonProxy
 		PipeTransportPower.powerCapacities.put(SteelPipePowerItem.class, 128);
 		PipeTransportPower.powerCapacities.put(PlatinumPipePowerItem.class, 256);
 		PipeTransportPower.powerCapacities.put(SilverPipePowerItem.class, 1024);
+	}
+
+	public void registerTileEntities(boolean b)
+	{
+		GameRegistry.registerTileEntity(TETreeLog.class, "TETreeLog");
 	}
 
 	//NOOP at Server

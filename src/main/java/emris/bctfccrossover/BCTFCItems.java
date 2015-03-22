@@ -25,8 +25,12 @@ import buildcraft.core.CreativeTabBuildCraft;
 import buildcraft.transport.BlockGenericPipe;
 import buildcraft.transport.ItemPipe;
 import buildcraft.transport.Pipe;
+
+import com.bioxx.tfc.Handlers.TFCFuelHandler;
+
 import emris.bctfccrossover.items.ItemBuckets;
 import emris.bctfccrossover.items.ItemGears;
+import emris.bctfccrossover.items.ItemHeveaLog;
 import emris.bctfccrossover.items.ItemLatexBowl;
 import emris.bctfccrossover.items.ItemPipeFrames;
 import emris.bctfccrossover.items.ItemRubber;
@@ -63,12 +67,12 @@ import emris.bctfccrossover.pipes.transport.WroughtIronPipeItem;
 public class BCTFCItems
 {
 	public static Item LatexBowl;
-
 	public static Item Buckets;
 	public static Item Rubber;
 	public static Item Gears;
 	public static Item Plans;
 	public static Item PipeFrames;
+	public static Item Hevea;
 
 	public static Item TinPipeItem;
 	public static Item LeadPipeItem;
@@ -135,6 +139,11 @@ public class BCTFCItems
 		// ===============Pipe Frames=========
 		PipeFrames = new ItemPipeFrames();
 		BCTFCcrossover.proxy.registerItem(PipeFrames);
+
+		// ===============Hevea Log=========
+		Hevea = new ItemHeveaLog();
+		BCTFCcrossover.proxy.registerItem(Hevea);
+		TFCFuelHandler.registerFuel(Hevea, 800);
 
 		// ===============Transport Pipes===============
 		TinPipeItem = createPipe(TinPipeItem.class, "Tin Transport Pipe", CreativeTabBuildCraft.PIPES);

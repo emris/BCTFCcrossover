@@ -48,4 +48,22 @@ public class PlayerUtils
 
 		return P.worldObj.rayTraceBlocks(v5, v15, true);
 	}
+
+	public static boolean isNumber(String string)
+	{
+		for (int i = 0; i < string.length(); i++)
+		{
+			if (!Character.isDigit(string.charAt(i)))
+				return false;
+		}
+		return true;
+	}
+
+	public static boolean isBoolean(String string)
+	{
+		return string.equalsIgnoreCase("1")
+				|| string.equalsIgnoreCase("true")
+				|| string.equalsIgnoreCase("0")
+				|| string.equalsIgnoreCase("false");
+	}
 }

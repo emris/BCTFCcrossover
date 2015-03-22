@@ -61,8 +61,7 @@ artifacts {
 }
 
 dependencies {
-    // Copy "[1.7.10]TerraFirmaCraft-deobf-0.79.0.jar" and buildcraft-6.0.18-dev.jar
-	// into the ./libs directory
+	// Copy "[1.7.10]TerraFirmaCraft-deobf-0.79.15.jar" and "buildcraft-6.4.1-dev.jar" into the ./libs directory
 }
 
 processResources {

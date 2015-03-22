@@ -25,7 +25,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import buildcraft.BuildCraftEnergy;
 
-import com.bioxx.tfc.TFCBlocks;
+import com.bioxx.tfc.api.TFCBlocks;
 import com.bioxx.tfc.Core.TFC_Climate;
 import com.bioxx.tfc.WorldGen.DataLayer;
 import com.bioxx.tfc.WorldGen.TFCWorldChunkManager;

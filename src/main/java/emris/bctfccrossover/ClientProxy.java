@@ -99,4 +99,10 @@ public class ClientProxy extends CommonProxy
 		super.registerFluidIcons(f);
 		f.setIcons(BCTFCBlocks.blockLatex.getIcon(0, 0), BCTFCBlocks.blockLatex.getIcon(1, 0));
 	}
+
+	@Override
+	public void registerTileEntities(boolean b)
+	{
+		super.registerTileEntities(false);
+	}
 }

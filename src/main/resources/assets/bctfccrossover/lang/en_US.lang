@@ -126,3 +126,7 @@ item.BlueSteelWrenchItem.name=Wrench: Blue Steel
 item.RedSteelWrenchItem.name=Wrench: Red Steel
 
 fluid.Latex=Latex
+
+tile.hevea.name=Hevea Log
+tile.heveaLeaves.name=Hevea Leaves
+item.Hevea Log.name=Hevea Log

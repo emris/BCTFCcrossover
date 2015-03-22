@@ -23,7 +23,7 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidRegistry;
 
-import com.bioxx.tfc.TFCItems;
+import com.bioxx.tfc.api.TFCItems;
 
 import emris.bctfccrossover.BCTFCItems;
 import emris.bctfccrossover.BCTFCcrossover;

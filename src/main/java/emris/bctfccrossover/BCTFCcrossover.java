@@ -18,6 +18,7 @@
 package emris.bctfccrossover;
 
 import java.util.logging.Logger;
+
 import buildcraft.BuildCraftEnergy;
 import buildcraft.api.core.IIconProvider;
 import buildcraft.core.BlockSpring;
@@ -27,12 +28,18 @@ import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import emris.bctfccrossover.core.CraftingHandler;
 import emris.bctfccrossover.core.PipeIconProvider;
 import emris.bctfccrossover.core.Recipes;
 import emris.bctfccrossover.core.RegisterFluids;
+import emris.bctfccrossover.core.TreeManager;
+import emris.bctfccrossover.core.commands.CommandGenHevea;
+import emris.bctfccrossover.core.network.PacketPipeline;
+import emris.bctfccrossover.worldGen.WorldGenHevea;
 import emris.bctfccrossover.worldGen.WorldGenOil;
 
 @Mod(name = Reference.ModName, version = Reference.ModVersion, useMetadata = false, modid = Reference.ModID, dependencies = Reference.ModDependencies)
@@ -47,6 +54,11 @@ public class BCTFCcrossover
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
 	public static CommonProxy proxy;
 
+	// The packet pipeline
+	public static final PacketPipeline packetPipeline = new PacketPipeline();
+
+	public BCTFCcrossover() {}
+
 	@EventHandler
 	public void loadConfiguration(FMLPreInitializationEvent evt)
 	{
@@ -59,18 +71,25 @@ public class BCTFCcrossover
 		BCTFCBlocks.setup();
 		proxy.registerPowerPipeCapacities();
 		BCTFCItems.setup();
+		TreeManager.setupTrees();
+		proxy.registerTileEntities(true);
 
 		BlockSpring.EnumSpring.OIL.canGen = false;
 		BlockSpring.EnumSpring.WATER.canGen = false;
 		BuildCraftEnergy.biomeOilDesert = null;
 		BuildCraftEnergy.biomeOilOcean = null;
 		BuildCraftEnergy.spawnOilSprings = false;
+
 		GameRegistry.registerWorldGenerator(new WorldGenOil(), 0);
+		GameRegistry.registerWorldGenerator(new WorldGenHevea(), 1);
 	}
 
 	@EventHandler
 	public void load(FMLInitializationEvent evt)
 	{
+		// Register Packet Handler
+		packetPipeline.initalise();
+
 		proxy.registerOreDict();
 		Recipes.loadRecipes();
 		proxy.registerPipeRenderer();
@@ -81,4 +100,15 @@ public class BCTFCcrossover
 		FMLCommonHandler.instance().bus().register(new CraftingHandler());
 	}
 
+	@EventHandler
+	public void postInit (FMLPostInitializationEvent evt)
+	{
+		packetPipeline.postInitialise();
+	}
+
+	@EventHandler
+	public void serverStarting(FMLServerStartingEvent evt)
+	{
+		//evt.registerServerCommand(new CommandGenHevea());
+	}
 }
