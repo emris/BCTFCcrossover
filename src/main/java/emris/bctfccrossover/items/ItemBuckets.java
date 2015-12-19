@@ -32,11 +32,11 @@ import net.minecraft.util.MovingObjectPosition.MovingObjectType;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.FillBucketEvent;
 import buildcraft.BuildCraftEnergy;
-import buildcraft.core.CreativeTabBuildCraft;
+import buildcraft.core.BCCreativeTab;
 
+import com.bioxx.tfc.Items.ItemTerra;
 import com.bioxx.tfc.api.TFCBlocks;
 import com.bioxx.tfc.api.TFCItems;
-import com.bioxx.tfc.Items.ItemTerra;
 import com.bioxx.tfc.api.TFC_ItemHeat;
 import com.bioxx.tfc.api.Enums.EnumSize;
 import com.bioxx.tfc.api.Enums.EnumWeight;
@@ -54,18 +54,18 @@ public class ItemBuckets extends ItemTerra implements ISize
 
 	public ItemBuckets()
 	{
-		this(CreativeTabBuildCraft.ITEMS);
+		this("items");
 	}
 
-	public ItemBuckets(CreativeTabBuildCraft creativeTab)
+	public ItemBuckets(String tabName)
 	{
 		super();
 		setMaxDamage(0);
 		setHasSubtypes(true);
-		setCreativeTab(creativeTab.get());
+		setCreativeTab(BCCreativeTab.get(tabName));
 		setUnlocalizedName("Bucket");
-		setContainerItem(TFCItems.WoodenBucketEmpty);
-		MetaNames = new String[]{"Latex","Zinc","ZincSaltWater","ZincFreshWater","ZincHotWater","Steel","SteelOil","SteelFuel"};
+		setContainerItem(TFCItems.woodenBucketEmpty);
+		this.setMetaNames(new String[]{"Latex","Zinc","ZincSaltWater","ZincFreshWater","ZincHotWater","Steel","SteelOil","SteelFuel"});
 	}
 
 	@Override
@@ -74,12 +74,12 @@ public class ItemBuckets extends ItemTerra implements ISize
 		if(is.getItemDamage() != 4) return true;
 
 		//It will take about 3min for the hot water to cool down and turn into fresh water
-		if(TFC_ItemHeat.HasTemp(is))
+		if(TFC_ItemHeat.hasTemp(is))
 			is.getTagCompound().setFloat("temperature", is.getTagCompound().getFloat("temperature") - 0.1F);
 
-		if(TFC_ItemHeat.GetTemp(is) < 1)
+		if(TFC_ItemHeat.getTemp(is) < 1)
 		{
-			TFC_ItemHeat.RemoveTempTag(is);
+			TFC_ItemHeat.removeTempTag(is);
 			is.setItemDamage(3);
 		}
 
@@ -90,7 +90,7 @@ public class ItemBuckets extends ItemTerra implements ISize
 	public ItemStack getContainerItem(ItemStack is)
 	{
 		if(is.getItemDamage() == 0)
-			return new ItemStack(TFCItems.WoodenBucketEmpty);
+			return new ItemStack(TFCItems.woodenBucketEmpty);
 		else if(is.getItemDamage() == 2 || is.getItemDamage() == 3 || is.getItemDamage() == 4)
 			return new ItemStack(BCTFCItems.Buckets, 1, 1);
 		else if(is.getItemDamage() == 6 || is.getItemDamage() == 7)
@@ -127,9 +127,9 @@ public class ItemBuckets extends ItemTerra implements ISize
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IIconRegister registerer)
 	{
-		icons = new IIcon[MetaNames.length];
-		for(int i = 0; i < MetaNames.length; i++)
-			icons[i] = registerer.registerIcon(Reference.ModID + ":" + this.getUnlocalizedName().replace("item.", "") + MetaNames[i]);
+		icons = new IIcon[metaNames.length];
+		for(int i = 0; i < metaNames.length; i++)
+			icons[i] = registerer.registerIcon(Reference.ModID + ":" + this.getUnlocalizedName().replace("item.", "") + metaNames[i]);
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
@@ -137,7 +137,7 @@ public class ItemBuckets extends ItemTerra implements ISize
 	@SideOnly(Side.CLIENT)
 	public void getSubItems(Item item, CreativeTabs tabs, List list)
 	{
-		for(int i = 0; i < MetaNames.length; i++)
+		for(int i = 0; i < metaNames.length; i++)
 			list.add(new ItemStack(this, 1, i));
 	}
 
@@ -154,8 +154,8 @@ public class ItemBuckets extends ItemTerra implements ISize
 	public void addInformation(ItemStack is, EntityPlayer player, List list, boolean flag)
 	{
 		ItemBuckets.addSizeInformation(is, this, list);
-		if(TFC_ItemHeat.HasTemp(is))
-			list.add(TFC_ItemHeat.getHeatColor(TFC_ItemHeat.GetTemp(is), 600));
+		if(TFC_ItemHeat.hasTemp(is))
+			list.add(TFC_ItemHeat.getHeatColor(TFC_ItemHeat.getTemp(is), 600));
 	}
 
 	@Override
@@ -240,7 +240,7 @@ public class ItemBuckets extends ItemTerra implements ISize
 						//Put Salt Water
 						else if(bucket.getItemDamage() == 2)
 						{
-							world.setBlock(X, Y, Z, TFCBlocks.SaltWaterStationary);
+							world.setBlock(X, Y, Z, TFCBlocks.saltWaterStationary);
 							if (player.capabilities.isCreativeMode)
 								return bucket;
 							return new ItemStack(BCTFCItems.Buckets, 1, 1);
@@ -248,7 +248,7 @@ public class ItemBuckets extends ItemTerra implements ISize
 						//Put Fresh Water
 						else if(bucket.getItemDamage() == 3)
 						{
-							world.setBlock(X, Y, Z, TFCBlocks.FreshWaterStationary);
+							world.setBlock(X, Y, Z, TFCBlocks.freshWaterStationary);
 							if (player.capabilities.isCreativeMode)
 								return bucket;
 							return new ItemStack(BCTFCItems.Buckets, 1, 1);
@@ -256,7 +256,7 @@ public class ItemBuckets extends ItemTerra implements ISize
 						//Put Hot Water
 						else if(bucket.getItemDamage() == 4)
 						{
-							world.setBlock(X, Y, Z, TFCBlocks.HotWaterStationary);
+							world.setBlock(X, Y, Z, TFCBlocks.hotWaterStationary);
 							if (player.capabilities.isCreativeMode)
 								return bucket;
 							return new ItemStack(BCTFCItems.Buckets, 1, 1);
@@ -278,16 +278,16 @@ public class ItemBuckets extends ItemTerra implements ISize
 
 	private boolean isSaltWater(Block water)
 	{
-		return water == TFCBlocks.SaltWater || water == TFCBlocks.SaltWaterStationary;
+		return water == TFCBlocks.saltWater || water == TFCBlocks.saltWaterStationary;
 	}
 
 	private boolean isFreshWater(Block water)
 	{
-		return water == TFCBlocks.FreshWater || water == TFCBlocks.FreshWaterStationary;
+		return water == TFCBlocks.freshWater || water == TFCBlocks.freshWaterStationary;
 	}
 
 	private boolean isHotWater(Block water)
 	{
-		return water == TFCBlocks.HotWater || water == TFCBlocks.HotWaterStationary;
+		return water == TFCBlocks.hotWater || water == TFCBlocks.hotWaterStationary;
 	}
 }

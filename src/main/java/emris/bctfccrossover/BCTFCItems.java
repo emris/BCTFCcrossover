@@ -18,10 +18,7 @@
 package emris.bctfccrossover;
 
 import net.minecraft.item.Item;
-import buildcraft.BuildCraftCore;
-import buildcraft.BuildCraftEnergy;
-import buildcraft.BuildCraftTransport;
-import buildcraft.core.CreativeTabBuildCraft;
+import buildcraft.core.BCCreativeTab;
 import buildcraft.transport.BlockGenericPipe;
 import buildcraft.transport.ItemPipe;
 import buildcraft.transport.Pipe;
@@ -146,44 +143,44 @@ public class BCTFCItems
 		TFCFuelHandler.registerFuel(Hevea, 800);
 
 		// ===============Transport Pipes===============
-		TinPipeItem = createPipe(TinPipeItem.class, "Tin Transport Pipe", CreativeTabBuildCraft.PIPES);
-		LeadPipeItem = createPipe(LeadPipeItem.class, "Lead Transport Pipe", CreativeTabBuildCraft.PIPES);
-		BronzePipeItem = createPipe(BronzePipeItem.class, "Bronze Transport Pipe", CreativeTabBuildCraft.PIPES);
-		WroughtIronPipeItem = createPipe(WroughtIronPipeItem.class, "Wrought Iron Transport Pipe", CreativeTabBuildCraft.PIPES);
-		SteelPipeItem = createPipe(SteelPipeItem.class, "Steel Transport Pipe", CreativeTabBuildCraft.PIPES);
-		BlueSteelPipeItem = createPipe(BlueSteelPipeItem.class, "Blue Steel Transport Pipe", CreativeTabBuildCraft.PIPES);
-		RedSteelPipeItem = createPipe(RedSteelPipeItem.class, "Red Steel Transport Pipe", CreativeTabBuildCraft.PIPES);
-		BlackBronzePipeItem = createPipe(BlackBronzePipeItem.class, "Black Bronze Transport Pipe", CreativeTabBuildCraft.PIPES);
-		RoseGoldPipeItem = createPipe(RoseGoldPipeItem.class, "Rose Gold Transport Pipe", CreativeTabBuildCraft.PIPES);
-		BlackSteelPipeItem = createPipe(BlackSteelPipeItem.class, "Black Steel Transport Pipe", CreativeTabBuildCraft.PIPES);
-		SterlingSilverPipeItem = createPipe(SterlingSilverPipeItem.class, "Sterling Silver Transport Pipe", CreativeTabBuildCraft.PIPES);
-		BrassPipeItem = createPipe(BrassPipeItem.class, "Brass Transport Pipe", CreativeTabBuildCraft.PIPES);
+		TinPipeItem = createPipe(TinPipeItem.class, "Tin Transport Pipe", BCCreativeTab.get("pipes"));
+		LeadPipeItem = createPipe(LeadPipeItem.class, "Lead Transport Pipe", BCCreativeTab.get("pipes"));
+		BronzePipeItem = createPipe(BronzePipeItem.class, "Bronze Transport Pipe", BCCreativeTab.get("pipes"));
+		WroughtIronPipeItem = createPipe(WroughtIronPipeItem.class, "Wrought Iron Transport Pipe", BCCreativeTab.get("pipes"));
+		SteelPipeItem = createPipe(SteelPipeItem.class, "Steel Transport Pipe", BCCreativeTab.get("pipes"));
+		BlueSteelPipeItem = createPipe(BlueSteelPipeItem.class, "Blue Steel Transport Pipe", BCCreativeTab.get("pipes"));
+		RedSteelPipeItem = createPipe(RedSteelPipeItem.class, "Red Steel Transport Pipe", BCCreativeTab.get("pipes"));
+		BlackBronzePipeItem = createPipe(BlackBronzePipeItem.class, "Black Bronze Transport Pipe", BCCreativeTab.get("pipes"));
+		RoseGoldPipeItem = createPipe(RoseGoldPipeItem.class, "Rose Gold Transport Pipe", BCCreativeTab.get("pipes"));
+		BlackSteelPipeItem = createPipe(BlackSteelPipeItem.class, "Black Steel Transport Pipe", BCCreativeTab.get("pipes"));
+		SterlingSilverPipeItem = createPipe(SterlingSilverPipeItem.class, "Sterling Silver Transport Pipe", BCCreativeTab.get("pipes"));
+		BrassPipeItem = createPipe(BrassPipeItem.class, "Brass Transport Pipe", BCCreativeTab.get("pipes"));
 		//BuildCraftTransport.pipeItemsQuartz
 		//TODO
 		//BuildCraftTransport.pipeItemsEmzuli
 		//TODO
 
 		// ===============Fluid Pipes===============
-		TinPipeFluidsItem = createPipe(TinPipeFluidsItem.class, "Tin Fluid Pipe", CreativeTabBuildCraft.PIPES); // Wood
-		LeadPipeFluidsItem = createPipe(LeadPipeFluidsItem.class, "Lead Fluid Pipe", CreativeTabBuildCraft.PIPES); // Cobblestone
-		BronzePipeFluidsItem = createPipe(BronzePipeFluidsItem.class, "Bronze Fluid Pipe", CreativeTabBuildCraft.PIPES); // Stone
-		WroughtIronPipeFluidsItem = createPipe(WroughtIronPipeFluidsItem.class, "Wrought Iron Fluid Pipe", CreativeTabBuildCraft.PIPES); // Iron
-		SteelPipeFluidsItem = createPipe(SteelPipeFluidsItem.class, "Steel Fluid Pipe", CreativeTabBuildCraft.PIPES); // Gold
-		RedSteelPipeFluidsItem = createPipe(RedSteelPipeFluidsItem.class, "Red Steel Fluid Pipe", CreativeTabBuildCraft.PIPES); // Emerald
-		BlackBronzePipeFluidsItem = createPipe(BlackBronzePipeFluidsItem.class, "Black Bronze Fluid Pipe", CreativeTabBuildCraft.PIPES); // Void
-		RoseGoldPipeFluidsItem = createPipe(RoseGoldPipeFluidsItem.class, "Rose Gold Fluid Pipe", CreativeTabBuildCraft.PIPES); // Sandstone
+		TinPipeFluidsItem = createPipe(TinPipeFluidsItem.class, "Tin Fluid Pipe", BCCreativeTab.get("pipes")); // Wood
+		LeadPipeFluidsItem = createPipe(LeadPipeFluidsItem.class, "Lead Fluid Pipe", BCCreativeTab.get("pipes")); // Cobblestone
+		BronzePipeFluidsItem = createPipe(BronzePipeFluidsItem.class, "Bronze Fluid Pipe", BCCreativeTab.get("pipes")); // Stone
+		WroughtIronPipeFluidsItem = createPipe(WroughtIronPipeFluidsItem.class, "Wrought Iron Fluid Pipe", BCCreativeTab.get("pipes")); // Iron
+		SteelPipeFluidsItem = createPipe(SteelPipeFluidsItem.class, "Steel Fluid Pipe", BCCreativeTab.get("pipes")); // Gold
+		RedSteelPipeFluidsItem = createPipe(RedSteelPipeFluidsItem.class, "Red Steel Fluid Pipe", BCCreativeTab.get("pipes")); // Emerald
+		BlackBronzePipeFluidsItem = createPipe(BlackBronzePipeFluidsItem.class, "Black Bronze Fluid Pipe", BCCreativeTab.get("pipes")); // Void
+		RoseGoldPipeFluidsItem = createPipe(RoseGoldPipeFluidsItem.class, "Rose Gold Fluid Pipe", BCCreativeTab.get("pipes")); // Sandstone
 
 		// ===============Power Pipes===============
-		CopperPipePowerItem = createPipe(CopperPipePowerItem.class, "Copper Kinesis Pipe", CreativeTabBuildCraft.PIPES); // Cobblestone
-		RoseGoldPipePowerItem = createPipe(RoseGoldPipePowerItem.class, "Rose Gold Kinesis Pipe", CreativeTabBuildCraft.PIPES); // Stone
-		BlackBronzePipePowerItem = createPipe(BlackBronzePipePowerItem.class, "Black Bronze Kinesis Pipe", CreativeTabBuildCraft.PIPES); // Wood
-		WroughtIronPipePowerItem = createPipe(WroughtIronPipePowerItem.class, "Wrought Iron Kinesis Pipe", CreativeTabBuildCraft.PIPES); // Quartz
-		SteelPipePowerItem = createPipe(SteelPipePowerItem.class, "Steel Kinesis Pipe", CreativeTabBuildCraft.PIPES); // Iron
-		PlatinumPipePowerItem = createPipe(PlatinumPipePowerItem.class, "Platinum Kinesis Pipe", CreativeTabBuildCraft.PIPES); // Gold
-		SilverPipePowerItem = createPipe(SilverPipePowerItem.class, "Silver Kinesis Pipe", CreativeTabBuildCraft.PIPES); // Diamond
+		CopperPipePowerItem = createPipe(CopperPipePowerItem.class, "Copper Kinesis Pipe", BCCreativeTab.get("pipes")); // Cobblestone
+		RoseGoldPipePowerItem = createPipe(RoseGoldPipePowerItem.class, "Rose Gold Kinesis Pipe", BCCreativeTab.get("pipes")); // Stone
+		BlackBronzePipePowerItem = createPipe(BlackBronzePipePowerItem.class, "Black Bronze Kinesis Pipe", BCCreativeTab.get("pipes")); // Wood
+		WroughtIronPipePowerItem = createPipe(WroughtIronPipePowerItem.class, "Wrought Iron Kinesis Pipe", BCCreativeTab.get("pipes")); // Quartz
+		SteelPipePowerItem = createPipe(SteelPipePowerItem.class, "Steel Kinesis Pipe", BCCreativeTab.get("pipes")); // Iron
+		PlatinumPipePowerItem = createPipe(PlatinumPipePowerItem.class, "Platinum Kinesis Pipe", BCCreativeTab.get("pipes")); // Gold
+		SilverPipePowerItem = createPipe(SilverPipePowerItem.class, "Silver Kinesis Pipe", BCCreativeTab.get("pipes")); // Diamond
 
 		// ===============Structure Pipes===============
-		LeadPipeStructureItem = createPipe(LeadPipeStructureItem.class, "Structure Pipe", CreativeTabBuildCraft.PIPES);
+		LeadPipeStructureItem = createPipe(LeadPipeStructureItem.class, "Structure Pipe", BCCreativeTab.get("pipes"));
 
 		// ===============Wrenches===============
 		CopperWrenchItem = new ItemWrenchGeneral().setUnlocalizedName("CopperWrenchItem");
@@ -212,12 +209,9 @@ public class BCTFCItems
 
 		RedSteelWrenchItem = new ItemWrenchGeneral().setUnlocalizedName("RedSteelWrenchItem");
 		BCTFCcrossover.proxy.registerItem(RedSteelWrenchItem);
-
-		removeFromCreativeTab();
 	}
 
-	@SuppressWarnings("rawtypes")
-	private static Item createPipe(Class<? extends Pipe> clas, String descr, CreativeTabBuildCraft creativeTab)
+	private static Item createPipe(Class<? extends Pipe<?>> clas, String descr, BCCreativeTab creativeTab)
 	{
 		//String name = Character.toLowerCase(clas.getSimpleName().charAt(0)) + clas.getSimpleName().substring(1);
 		ItemPipe res = BlockGenericPipe.registerPipe(clas, creativeTab);
@@ -225,64 +219,4 @@ public class BCTFCItems
 		return res;
 	}
 
-	private static void removeFromCreativeTab()
-	{
-		// Remove BC gears
-		BuildCraftCore.woodenGearItem.setCreativeTab(null);
-		BuildCraftCore.stoneGearItem.setCreativeTab(null);
-		BuildCraftCore.ironGearItem.setCreativeTab(null);
-		BuildCraftCore.goldGearItem.setCreativeTab(null);
-		BuildCraftCore.diamondGearItem.setCreativeTab(null);
-
-		// Remove BC buckets
-		BuildCraftEnergy.bucketFuel.setCreativeTab(null);
-		BuildCraftEnergy.bucketOil.setCreativeTab(null);
-
-		// Remove BC transport pipes
-		BuildCraftTransport.pipeItemsWood.setCreativeTab(null);
-		BuildCraftTransport.pipeItemsCobblestone.setCreativeTab(null);
-		BuildCraftTransport.pipeItemsStone.setCreativeTab(null);
-		BuildCraftTransport.pipeItemsIron.setCreativeTab(null);
-		BuildCraftTransport.pipeItemsGold.setCreativeTab(null);
-		BuildCraftTransport.pipeItemsDiamond.setCreativeTab(null);
-		BuildCraftTransport.pipeItemsEmerald.setCreativeTab(null);
-		BuildCraftTransport.pipeItemsVoid.setCreativeTab(null);
-		BuildCraftTransport.pipeItemsSandstone.setCreativeTab(null);
-		BuildCraftTransport.pipeItemsObsidian.setCreativeTab(null);
-		BuildCraftTransport.pipeItemsDaizuli.setCreativeTab(null);
-		BuildCraftTransport.pipeItemsLapis.setCreativeTab(null);
-		BuildCraftTransport.pipeItemsQuartz.setCreativeTab(null);
-		BuildCraftTransport.pipeItemsEmzuli.setCreativeTab(null);
-
-		// Remove BC fluid pipes
-		BuildCraftTransport.pipeFluidsWood.setCreativeTab(null);
-		BuildCraftTransport.pipeFluidsCobblestone.setCreativeTab(null);
-		BuildCraftTransport.pipeFluidsStone.setCreativeTab(null);
-		BuildCraftTransport.pipeFluidsIron.setCreativeTab(null);
-		BuildCraftTransport.pipeFluidsGold.setCreativeTab(null);
-		BuildCraftTransport.pipeFluidsEmerald.setCreativeTab(null);
-		BuildCraftTransport.pipeFluidsVoid.setCreativeTab(null);
-		BuildCraftTransport.pipeFluidsSandstone.setCreativeTab(null);
-
-		// Remove BC kinesis pipes
-		BuildCraftTransport.pipePowerCobblestone.setCreativeTab(null);
-		BuildCraftTransport.pipePowerStone.setCreativeTab(null);
-		BuildCraftTransport.pipePowerWood.setCreativeTab(null);
-		BuildCraftTransport.pipePowerQuartz.setCreativeTab(null);
-		BuildCraftTransport.pipePowerIron.setCreativeTab(null);
-		BuildCraftTransport.pipePowerGold.setCreativeTab(null);
-		BuildCraftTransport.pipePowerDiamond.setCreativeTab(null);
-
-		// Remove BC structure pipe
-		BuildCraftTransport.pipeStructureCobblestone.setCreativeTab(null);
-
-		// Remove BC wranch item
-		BuildCraftCore.wrenchItem.setCreativeTab(null);
-
-		// Remove BC pipe sealant item
-		BuildCraftTransport.pipeWaterproof.setCreativeTab(null);
-
-		// Remove BC water and oil spring blocks
-		BuildCraftCore.springBlock.setCreativeTab(null);
-	}
 }

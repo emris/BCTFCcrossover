@@ -40,7 +40,7 @@ public class RegisterFluids
 	public static void registerFluidContainers()
 	{
 		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("latex", FluidContainerRegistry.BUCKET_VOLUME / 4), new ItemStack(BCTFCItems.LatexBowl), new ItemStack(Items.bowl));
-		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("latex", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(BCTFCItems.Buckets, 1, 0), new ItemStack(TFCItems.WoodenBucketEmpty));
+		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("latex", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(BCTFCItems.Buckets, 1, 0), new ItemStack(TFCItems.woodenBucketEmpty));
 		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("saltwater", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(BCTFCItems.Buckets, 1, 2), new ItemStack(BCTFCItems.Buckets, 1, 1));
 		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("freshwater", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(BCTFCItems.Buckets, 1, 3), new ItemStack(BCTFCItems.Buckets, 1, 1));
 		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("hotwater", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(BCTFCItems.Buckets, 1, 4), new ItemStack(BCTFCItems.Buckets, 1, 1));

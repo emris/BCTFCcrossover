@@ -37,8 +37,8 @@ public class BlockLogHevea extends BlockContainer
 	private IIcon iconH;
 	private static int damage = 0;
 	private boolean isStoneTool = false;
-	private Item[] StoneTools = new Item[]{TFCItems.IgInShovel, TFCItems.IgInAxe, TFCItems.IgInHoe, TFCItems.SedShovel, TFCItems.SedAxe,
-		TFCItems.SedHoe, TFCItems.IgExShovel, TFCItems.IgExAxe, TFCItems.IgExHoe, TFCItems.MMShovel, TFCItems.MMAxe, TFCItems.MMHoe};
+	private Item[] StoneTools = new Item[]{TFCItems.igInShovel, TFCItems.igInAxe, TFCItems.igInHoe, TFCItems.sedShovel, TFCItems.sedAxe,
+		TFCItems.sedHoe, TFCItems.igExShovel, TFCItems.igExAxe, TFCItems.igExHoe, TFCItems.mMShovel, TFCItems.mMAxe, TFCItems.mMHoe};
 
 	public BlockLogHevea()
 	{
@@ -223,43 +223,43 @@ public class BlockLogHevea extends BlockContainer
 		boolean isValid = false;
 		if(tool != null)
 		{
-			for(int cnt = 0; cnt < Recipes.Axes.length && !isValid; cnt++)
+			for(int cnt = 0; cnt < Recipes.axes.length && !isValid; cnt++)
 			{
-				if(tool == Recipes.Axes[cnt]) isValid = true;
+				if(tool == Recipes.axes[cnt]) isValid = true;
 			}
 			if(!isValid)
 			{
-				for(int cnt = 0; cnt < Recipes.Saws.length && !isValid; cnt++)
+				for(int cnt = 0; cnt < Recipes.saws.length && !isValid; cnt++)
 				{
-					if(tool == Recipes.Saws[cnt]) isValid = true;
+					if(tool == Recipes.saws[cnt]) isValid = true;
 				}
 			}
 			if(!isValid)
 			{
-				for(int cnt = 0; cnt < Recipes.Hammers.length && !isValid; cnt++)
+				for(int cnt = 0; cnt < Recipes.hammers.length && !isValid; cnt++)
 				{
-					if(tool == Recipes.Hammers[cnt]) isValid = true;
+					if(tool == Recipes.hammers[cnt]) isValid = true;
 				}
 			}
 			if(!isValid)
 			{
-				for(int cnt = 0; cnt < Recipes.Knives.length && !isValid; cnt++)
+				for(int cnt = 0; cnt < Recipes.knives.length && !isValid; cnt++)
 				{
-					if(tool == Recipes.Knives[cnt]) isValid = true;
+					if(tool == Recipes.knives[cnt]) isValid = true;
 				}
 			}
 			if(!isValid)
 			{
-				for(int cnt = 0; cnt < Recipes.Chisels.length && !isValid; cnt++)
+				for(int cnt = 0; cnt < Recipes.chisels.length && !isValid; cnt++)
 				{
-					if(tool == Recipes.Chisels[cnt]) isValid = true;
+					if(tool == Recipes.chisels[cnt]) isValid = true;
 				}
 			}
 			if(!isValid)
 			{
-				for(int cnt = 0; cnt < Recipes.Scythes.length && !isValid; cnt++)
+				for(int cnt = 0; cnt < Recipes.scythes.length && !isValid; cnt++)
 				{
-					if(tool == Recipes.Scythes[cnt]) isValid = true;
+					if(tool == Recipes.scythes[cnt]) isValid = true;
 				}
 			}
 /*			if(!isValid)

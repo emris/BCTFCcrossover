@@ -25,7 +25,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
-import buildcraft.core.CreativeTabBuildCraft;
+import buildcraft.core.BCCreativeTab;
 
 import com.bioxx.tfc.Items.ItemTerra;
 import com.bioxx.tfc.api.Enums.EnumSize;
@@ -42,17 +42,17 @@ public class ItemRubber extends ItemTerra implements ISize
 	
 	public ItemRubber()
 	{
-		this(CreativeTabBuildCraft.ITEMS);
+		this("items");
 	}
 	
-	public ItemRubber(CreativeTabBuildCraft creativeTab)
+	public ItemRubber(String tabName)
 	{
 		super();
 		setMaxDamage(0);
 		setHasSubtypes(true);
-		setCreativeTab(creativeTab.get());
+		setCreativeTab(BCCreativeTab.get(tabName));
 		setUnlocalizedName("Rubber");
-		MetaNames = new String[]{"Black","Red","Green","Brown","Blue","Purple","Cyan","LightGray","Gray","Pink","LimeGreen","Yellow","LightBlue","Magenta","Orange","White"};
+		this.setMetaNames(new String[]{"Black","Red","Green","Brown","Blue","Purple","Cyan","LightGray","Gray","Pink","LimeGreen","Yellow","LightBlue","Magenta","Orange","White"});
 	}
 	
 	@Override
@@ -83,9 +83,9 @@ public class ItemRubber extends ItemTerra implements ISize
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IIconRegister registerer)
 	{
-		icons = new IIcon[MetaNames.length];
-		for(int i = 0; i < MetaNames.length; i++)
-			icons[i] = registerer.registerIcon(Reference.ModID + ":" + this.getUnlocalizedName().replace("item.", "") + MetaNames[i]);
+		icons = new IIcon[metaNames.length];
+		for(int i = 0; i < metaNames.length; i++)
+			icons[i] = registerer.registerIcon(Reference.ModID + ":" + this.getUnlocalizedName().replace("item.", "") + metaNames[i]);
 	}
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
@@ -93,7 +93,7 @@ public class ItemRubber extends ItemTerra implements ISize
 	@SideOnly(Side.CLIENT)
 	public void getSubItems(Item item, CreativeTabs tabs, List list)
 	{
-		for(int i = 0; i < MetaNames.length; i++)
+		for(int i = 0; i < metaNames.length; i++)
 			list.add(new ItemStack(this, 1, i));
 	}
 	

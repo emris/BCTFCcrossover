@@ -44,7 +44,7 @@ public class WorldGenOil implements IWorldGenerator
 
 		if(world.getWorldChunkManager() instanceof TFCWorldChunkManager)
 		{
-			Block oilRockLayers = TFCBlocks.StoneSed; /*spawn only in sedimentary stone*/
+			Block oilRockLayers = TFCBlocks.stoneSed; /*spawn only in sedimentary stone*/
 
 			DataLayer rockLayer1 = TFC_Climate.getCacheManager(world).getRockLayerAt(chunkX, chunkZ, 0);
 			DataLayer rockLayer2 = TFC_Climate.getCacheManager(world).getRockLayerAt(chunkX, chunkZ, 1);

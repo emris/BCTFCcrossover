@@ -27,8 +27,19 @@ import net.minecraft.world.World;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
+import buildcraft.BuildCraftTransport;
+import buildcraft.transport.PipeTransportFluids;
 import buildcraft.transport.PipeTransportPower;
+import buildcraft.transport.TransportConstants;
 import cpw.mods.fml.common.registry.GameRegistry;
+import emris.bctfccrossover.pipes.fluids.BlackBronzePipeFluidsItem;
+import emris.bctfccrossover.pipes.fluids.BronzePipeFluidsItem;
+import emris.bctfccrossover.pipes.fluids.LeadPipeFluidsItem;
+import emris.bctfccrossover.pipes.fluids.RedSteelPipeFluidsItem;
+import emris.bctfccrossover.pipes.fluids.RoseGoldPipeFluidsItem;
+import emris.bctfccrossover.pipes.fluids.SteelPipeFluidsItem;
+import emris.bctfccrossover.pipes.fluids.TinPipeFluidsItem;
+import emris.bctfccrossover.pipes.fluids.WroughtIronPipeFluidsItem;
 import emris.bctfccrossover.pipes.power.BlackBronzePipePowerItem;
 import emris.bctfccrossover.pipes.power.CopperPipePowerItem;
 import emris.bctfccrossover.pipes.power.PlatinumPipePowerItem;
@@ -109,13 +120,33 @@ public class CommonProxy
 
 	public void registerPowerPipeCapacities()
 	{
-		PipeTransportPower.powerCapacities.put(CopperPipePowerItem.class, 8);
-		PipeTransportPower.powerCapacities.put(RoseGoldPipePowerItem.class, 16);
-		PipeTransportPower.powerCapacities.put(BlackBronzePipePowerItem.class, 32);
-		PipeTransportPower.powerCapacities.put(WroughtIronPipePowerItem.class, 64);
-		PipeTransportPower.powerCapacities.put(SteelPipePowerItem.class, 128);
-		PipeTransportPower.powerCapacities.put(PlatinumPipePowerItem.class, 256);
-		PipeTransportPower.powerCapacities.put(SilverPipePowerItem.class, 1024);
+		PipeTransportPower.powerCapacities.put(CopperPipePowerItem.class, TransportConstants.PIPE_POWER_BASE_CAP);
+		PipeTransportPower.powerCapacities.put(RoseGoldPipePowerItem.class, 2 * TransportConstants.PIPE_POWER_BASE_CAP);
+		PipeTransportPower.powerCapacities.put(BlackBronzePipePowerItem.class, 4 * TransportConstants.PIPE_POWER_BASE_CAP);
+		PipeTransportPower.powerCapacities.put(WroughtIronPipePowerItem.class, 8 * TransportConstants.PIPE_POWER_BASE_CAP);
+		PipeTransportPower.powerCapacities.put(SteelPipePowerItem.class, 16 * TransportConstants.PIPE_POWER_BASE_CAP);
+		PipeTransportPower.powerCapacities.put(PlatinumPipePowerItem.class, 32 * TransportConstants.PIPE_POWER_BASE_CAP);
+		PipeTransportPower.powerCapacities.put(SilverPipePowerItem.class, 128 * TransportConstants.PIPE_POWER_BASE_CAP);
+
+		PipeTransportPower.powerResistances.put(CopperPipePowerItem.class, 0.05F);
+		PipeTransportPower.powerResistances.put(RoseGoldPipePowerItem.class, 0.025F);
+		PipeTransportPower.powerResistances.put(BlackBronzePipePowerItem.class, 0.0F);
+		PipeTransportPower.powerResistances.put(WroughtIronPipePowerItem.class, 0.0125F);
+		PipeTransportPower.powerResistances.put(SteelPipePowerItem.class, 0.0125F);
+		PipeTransportPower.powerResistances.put(PlatinumPipePowerItem.class, 0.003125F);
+		PipeTransportPower.powerResistances.put(SilverPipePowerItem.class, 0.0F);
+	}
+
+	public void registerFluidPipeCapacities()
+	{
+		PipeTransportFluids.fluidCapacities.put(TinPipeFluidsItem.class, 1 * BuildCraftTransport.pipeFluidsBaseFlowRate);
+		PipeTransportFluids.fluidCapacities.put(LeadPipeFluidsItem.class, 1 * BuildCraftTransport.pipeFluidsBaseFlowRate);
+		PipeTransportFluids.fluidCapacities.put(BronzePipeFluidsItem.class, 2 * BuildCraftTransport.pipeFluidsBaseFlowRate);
+		PipeTransportFluids.fluidCapacities.put(WroughtIronPipeFluidsItem.class, 4 * BuildCraftTransport.pipeFluidsBaseFlowRate);
+		PipeTransportFluids.fluidCapacities.put(SteelPipeFluidsItem.class, 8 * BuildCraftTransport.pipeFluidsBaseFlowRate);
+		PipeTransportFluids.fluidCapacities.put(RedSteelPipeFluidsItem.class, 4 * BuildCraftTransport.pipeFluidsBaseFlowRate);
+		PipeTransportFluids.fluidCapacities.put(BlackBronzePipeFluidsItem.class, 1 * BuildCraftTransport.pipeFluidsBaseFlowRate);
+		PipeTransportFluids.fluidCapacities.put(RoseGoldPipeFluidsItem.class, 2 * BuildCraftTransport.pipeFluidsBaseFlowRate);
 	}
 
 	public void registerTileEntities(boolean b)
@@ -126,4 +157,6 @@ public class CommonProxy
 	//NOOP at Server
 	public void registerPipeRenderer() {}
 	public void registerFluidIcons(Fluid f) {}
+	public void hideCreativeTabItems() {}
+	public void hideNEIItems() {}
 }

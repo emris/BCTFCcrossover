@@ -19,7 +19,7 @@ package emris.bctfccrossover.items;
 
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
-import buildcraft.core.CreativeTabBuildCraft;
+import buildcraft.core.BCCreativeTab;
 
 import com.bioxx.tfc.Items.ItemTerra;
 
@@ -33,12 +33,12 @@ public class ItemTMP extends ItemTerra
 
 	public ItemTMP()
 	{
-		this(CreativeTabBuildCraft.ITEMS);
+		this("items");
 	}
-	public ItemTMP(CreativeTabBuildCraft creativeTab)
+	public ItemTMP(String tabName)
 	{
 		super();
-		setCreativeTab(creativeTab.get());
+		setCreativeTab(BCCreativeTab.get(tabName));
 	}
 
 	@Override

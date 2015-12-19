@@ -30,6 +30,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.FMLServerStartedEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import emris.bctfccrossover.core.CraftingHandler;
@@ -37,7 +38,6 @@ import emris.bctfccrossover.core.PipeIconProvider;
 import emris.bctfccrossover.core.Recipes;
 import emris.bctfccrossover.core.RegisterFluids;
 import emris.bctfccrossover.core.TreeManager;
-import emris.bctfccrossover.core.commands.CommandGenHevea;
 import emris.bctfccrossover.core.network.PacketPipeline;
 import emris.bctfccrossover.worldGen.WorldGenHevea;
 import emris.bctfccrossover.worldGen.WorldGenOil;
@@ -70,6 +70,7 @@ public class BCTFCcrossover
 		RegisterFluids.register();
 		BCTFCBlocks.setup();
 		proxy.registerPowerPipeCapacities();
+		proxy.registerFluidPipeCapacities();
 		BCTFCItems.setup();
 		TreeManager.setupTrees();
 		proxy.registerTileEntities(true);
@@ -94,6 +95,9 @@ public class BCTFCcrossover
 		Recipes.loadRecipes();
 		proxy.registerPipeRenderer();
 
+		proxy.hideCreativeTabItems();
+		proxy.hideNEIItems();
+
 		RegisterFluids.registerFluidContainers();
 		RegisterFluids.registerFluidIcons();
 
@@ -110,5 +114,11 @@ public class BCTFCcrossover
 	public void serverStarting(FMLServerStartingEvent evt)
 	{
 		//evt.registerServerCommand(new CommandGenHevea());
+	}
+
+	@EventHandler
+	public void serverStarted(FMLServerStartedEvent e)
+	{
+		Recipes.loadAnvilRecipes();
 	}
 }

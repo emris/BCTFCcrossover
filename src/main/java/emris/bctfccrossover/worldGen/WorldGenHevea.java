@@ -72,7 +72,7 @@ public class WorldGenHevea implements IWorldGenerator
 			if(schem == null) return;
 
 			TFCBiome biome = (TFCBiome) world.getBiomeGenForCoords(chunkX, chunkZ);
-			if(biome == TFCBiome.ocean || biome == TFCBiome.DeepOcean || biome == TFCBiome.swampland) return;
+			if(biome == TFCBiome.ocean || biome == TFCBiome.deepOcean || biome == TFCBiome.swampland) return;
 
 			rainfall = TFC_Climate.getRainfall(world, chunkX, 0, chunkZ);
 			evt = TFC_Climate.getCacheManager(world).getEVTLayerAt(chunkX + 8, chunkZ + 8).floatdata1;
@@ -87,7 +87,7 @@ public class WorldGenHevea implements IWorldGenerator
 				xCoord = chunkX + random.nextInt(16);
 				zCoord = chunkZ + random.nextInt(16);
 				yCoord = world.getHeightValue(xCoord, zCoord);
-				temp = TFC_Climate.getBioTemperatureHeight(world, xCoord, world.getHeightValue(xCoord, zCoord), zCoord);
+				temp = TFC_Climate.getBioTemperatureHeight(world, xCoord, yCoord, zCoord);
 				Block b = world.getBlock(xCoord, yCoord - 1, zCoord);
 				isAirAbove = world.isAirBlock(xCoord, yCoord, zCoord);
 

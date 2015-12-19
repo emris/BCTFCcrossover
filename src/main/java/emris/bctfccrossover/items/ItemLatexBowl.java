@@ -24,7 +24,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import buildcraft.core.CreativeTabBuildCraft;
+import buildcraft.core.BCCreativeTab;
 
 import com.bioxx.tfc.Items.ItemTerra;
 import com.bioxx.tfc.api.Enums.EnumSize;
@@ -41,15 +41,15 @@ public class ItemLatexBowl extends ItemTerra implements ISize
 
 	public ItemLatexBowl()
 	{
-		this(CreativeTabBuildCraft.ITEMS);
+		this("items");
 	}
 
-	public ItemLatexBowl(CreativeTabBuildCraft creativeTab)
+	public ItemLatexBowl(String tabName)
 	{
 		super();
 		setUnlocalizedName("LatexBowl");
 		setContainerItem(Items.bowl);
-		setCreativeTab(creativeTab.get());
+		setCreativeTab(BCCreativeTab.get(tabName));
 	}
 	
 	@Override

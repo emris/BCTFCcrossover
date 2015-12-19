@@ -24,7 +24,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.fluids.Fluid;
+import buildcraft.BuildCraftCore;
+import buildcraft.BuildCraftEnergy;
+import buildcraft.BuildCraftTransport;
 import buildcraft.transport.TransportProxyClient;
+import codechicken.nei.api.API;
+import cpw.mods.fml.common.Loader;
 
 public class ClientProxy extends CommonProxy
 {
@@ -58,7 +63,6 @@ public class ClientProxy extends CommonProxy
 	@Override
 	public void registerPipeRenderer()
 	{
-		super.registerPipeRenderer();
 		// Transport Pipes
 		MinecraftForgeClient.registerItemRenderer(BCTFCItems.TinPipeItem, TransportProxyClient.pipeItemRenderer);
 		MinecraftForgeClient.registerItemRenderer(BCTFCItems.LeadPipeItem, TransportProxyClient.pipeItemRenderer);
@@ -96,7 +100,6 @@ public class ClientProxy extends CommonProxy
 	@Override
 	public void registerFluidIcons(Fluid f)
 	{
-		super.registerFluidIcons(f);
 		f.setIcons(BCTFCBlocks.blockLatex.getIcon(0, 0), BCTFCBlocks.blockLatex.getIcon(1, 0));
 	}
 
@@ -104,5 +107,133 @@ public class ClientProxy extends CommonProxy
 	public void registerTileEntities(boolean b)
 	{
 		super.registerTileEntities(false);
+	}
+
+	@Override
+	public void hideCreativeTabItems()
+	{
+		// Remove BC gears
+		BuildCraftCore.woodenGearItem.setCreativeTab(null);
+		BuildCraftCore.stoneGearItem.setCreativeTab(null);
+		BuildCraftCore.ironGearItem.setCreativeTab(null);
+		BuildCraftCore.goldGearItem.setCreativeTab(null);
+		BuildCraftCore.diamondGearItem.setCreativeTab(null);
+
+		// Remove BC buckets
+		BuildCraftEnergy.bucketFuel.setCreativeTab(null);
+		BuildCraftEnergy.bucketOil.setCreativeTab(null);
+
+		// Remove BC transport pipes
+		BuildCraftTransport.pipeItemsWood.setCreativeTab(null);
+		BuildCraftTransport.pipeItemsCobblestone.setCreativeTab(null);
+		BuildCraftTransport.pipeItemsStone.setCreativeTab(null);
+		BuildCraftTransport.pipeItemsIron.setCreativeTab(null);
+		BuildCraftTransport.pipeItemsGold.setCreativeTab(null);
+		BuildCraftTransport.pipeItemsDiamond.setCreativeTab(null);
+		BuildCraftTransport.pipeItemsEmerald.setCreativeTab(null);
+		BuildCraftTransport.pipeItemsVoid.setCreativeTab(null);
+		BuildCraftTransport.pipeItemsSandstone.setCreativeTab(null);
+		BuildCraftTransport.pipeItemsObsidian.setCreativeTab(null);
+		BuildCraftTransport.pipeItemsDaizuli.setCreativeTab(null);
+		BuildCraftTransport.pipeItemsLapis.setCreativeTab(null);
+		BuildCraftTransport.pipeItemsQuartz.setCreativeTab(null);
+		BuildCraftTransport.pipeItemsEmzuli.setCreativeTab(null);
+
+		// Remove BC fluid pipes
+		BuildCraftTransport.pipeFluidsWood.setCreativeTab(null);
+		BuildCraftTransport.pipeFluidsCobblestone.setCreativeTab(null);
+		BuildCraftTransport.pipeFluidsStone.setCreativeTab(null);
+		BuildCraftTransport.pipeFluidsIron.setCreativeTab(null);
+		BuildCraftTransport.pipeFluidsGold.setCreativeTab(null);
+		BuildCraftTransport.pipeFluidsEmerald.setCreativeTab(null);
+		BuildCraftTransport.pipeFluidsVoid.setCreativeTab(null);
+		BuildCraftTransport.pipeFluidsSandstone.setCreativeTab(null);
+
+		// Remove BC kinesis pipes
+		BuildCraftTransport.pipePowerCobblestone.setCreativeTab(null);
+		BuildCraftTransport.pipePowerStone.setCreativeTab(null);
+		BuildCraftTransport.pipePowerWood.setCreativeTab(null);
+		BuildCraftTransport.pipePowerQuartz.setCreativeTab(null);
+		BuildCraftTransport.pipePowerIron.setCreativeTab(null);
+		BuildCraftTransport.pipePowerGold.setCreativeTab(null);
+		BuildCraftTransport.pipePowerDiamond.setCreativeTab(null);
+
+		// Remove BC structure pipe
+		BuildCraftTransport.pipeStructureCobblestone.setCreativeTab(null);
+
+		// Remove BC wranch item
+		BuildCraftCore.wrenchItem.setCreativeTab(null);
+
+		// Remove BC pipe sealant item
+		BuildCraftTransport.pipeWaterproof.setCreativeTab(null);
+
+		// Remove BC water and oil spring blocks
+		BuildCraftCore.springBlock.setCreativeTab(null);
+	}
+
+	@Override
+	public void hideNEIItems()
+	{
+		if (Loader.isModLoaded("NotEnoughItems"))
+		{
+			// Remove BC gears
+			API.hideItem(new ItemStack(BuildCraftCore.woodenGearItem));
+			API.hideItem(new ItemStack(BuildCraftCore.stoneGearItem));
+			API.hideItem(new ItemStack(BuildCraftCore.ironGearItem));
+			API.hideItem(new ItemStack(BuildCraftCore.goldGearItem));
+			API.hideItem(new ItemStack(BuildCraftCore.diamondGearItem));
+
+			// Remove BC buckets
+			API.hideItem(new ItemStack(BuildCraftEnergy.bucketFuel));
+			API.hideItem(new ItemStack(BuildCraftEnergy.bucketOil));
+			//API.hideItem(new ItemStack(BuildCraftEnergy.bucketRedPlasma));
+
+			// Remove BC transport pipes
+			API.hideItem(new ItemStack(BuildCraftTransport.pipeItemsWood));
+			API.hideItem(new ItemStack(BuildCraftTransport.pipeItemsCobblestone));
+			API.hideItem(new ItemStack(BuildCraftTransport.pipeItemsStone));
+			API.hideItem(new ItemStack(BuildCraftTransport.pipeItemsIron));
+			API.hideItem(new ItemStack(BuildCraftTransport.pipeItemsGold));
+			API.hideItem(new ItemStack(BuildCraftTransport.pipeItemsDiamond));
+			API.hideItem(new ItemStack(BuildCraftTransport.pipeItemsEmerald));
+			API.hideItem(new ItemStack(BuildCraftTransport.pipeItemsVoid));
+			API.hideItem(new ItemStack(BuildCraftTransport.pipeItemsSandstone));
+			API.hideItem(new ItemStack(BuildCraftTransport.pipeItemsObsidian));
+			API.hideItem(new ItemStack(BuildCraftTransport.pipeItemsDaizuli));
+			API.hideItem(new ItemStack(BuildCraftTransport.pipeItemsLapis));
+			API.hideItem(new ItemStack(BuildCraftTransport.pipeItemsQuartz));
+			API.hideItem(new ItemStack(BuildCraftTransport.pipeItemsEmzuli));
+
+			// Remove BC fluid pipes
+			API.hideItem(new ItemStack(BuildCraftTransport.pipeFluidsWood));
+			API.hideItem(new ItemStack(BuildCraftTransport.pipeFluidsCobblestone));
+			API.hideItem(new ItemStack(BuildCraftTransport.pipeFluidsStone));
+			API.hideItem(new ItemStack(BuildCraftTransport.pipeFluidsIron));
+			API.hideItem(new ItemStack(BuildCraftTransport.pipeFluidsGold));
+			API.hideItem(new ItemStack(BuildCraftTransport.pipeFluidsEmerald));
+			API.hideItem(new ItemStack(BuildCraftTransport.pipeFluidsVoid));
+			API.hideItem(new ItemStack(BuildCraftTransport.pipeFluidsSandstone));
+
+			// Remove BC kinesis pipes
+			API.hideItem(new ItemStack(BuildCraftTransport.pipePowerCobblestone));
+			API.hideItem(new ItemStack(BuildCraftTransport.pipePowerStone));
+			API.hideItem(new ItemStack(BuildCraftTransport.pipePowerWood));
+			API.hideItem(new ItemStack(BuildCraftTransport.pipePowerQuartz));
+			API.hideItem(new ItemStack(BuildCraftTransport.pipePowerIron));
+			API.hideItem(new ItemStack(BuildCraftTransport.pipePowerGold));
+			API.hideItem(new ItemStack(BuildCraftTransport.pipePowerDiamond));
+
+			// Remove BC structure pipe
+			API.hideItem(new ItemStack(BuildCraftTransport.pipeStructureCobblestone));
+
+			// Remove BC wranch item
+			API.hideItem(new ItemStack(BuildCraftTransport.pipeWaterproof));
+
+			// Remove BC pipe sealant item
+			API.hideItem(new ItemStack(BuildCraftCore.wrenchItem));
+
+			// Remove BC water and oil spring blocks
+			API.hideItem(new ItemStack(BuildCraftCore.springBlock));
+		}
 	}
 }

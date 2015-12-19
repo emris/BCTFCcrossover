@@ -22,12 +22,12 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.util.IIcon;
 import net.minecraftforge.fluids.Fluid;
-import buildcraft.energy.BlockBuildcraftFluid;
+import buildcraft.core.lib.block.BlockBuildCraftFluid;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import emris.bctfccrossover.Reference;
 
-public class BlockFluid extends BlockBuildcraftFluid
+public class BlockFluid extends BlockBuildCraftFluid
 {
 	public BlockFluid(Fluid fluid, Material material, MapColor iMapColor)
 	{

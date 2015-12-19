@@ -75,16 +75,16 @@ public class BlockLogHeveaV extends Block
 
 			if(isValidTool)
 			{
-				for(int cnt = 0; cnt < Recipes.Hammers.length; cnt++)
+				for(int cnt = 0; cnt < Recipes.hammers.length; cnt++)
 				{
-					if(equip.getItem() == Recipes.Hammers[cnt])
+					if(equip.getItem() == Recipes.hammers[cnt])
 						isHammer = true;
 				}
 			}
 		}
 
 		if(isHammer)
-			world.spawnEntityInWorld(new EntityItem(world, x + 0.5, y + 0.5, z + 0.5, new ItemStack(TFCItems.Stick, 1 + world.rand.nextInt(3))));
+			world.spawnEntityInWorld(new EntityItem(world, x + 0.5, y + 0.5, z + 0.5, new ItemStack(TFCItems.stick, 1 + world.rand.nextInt(3))));
 		else if(isValidTool)
 			super.harvestBlock(world, entityplayer, x, y, z, meta);
 		else

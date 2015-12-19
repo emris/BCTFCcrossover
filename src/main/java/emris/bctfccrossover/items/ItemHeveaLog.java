@@ -33,7 +33,7 @@ public class ItemHeveaLog extends ItemTerra
 		super();
 		this.setUnlocalizedName("Hevea Log");
 		this.setMaxDamage(0);
-		this.setCreativeTab(TFCTabs.TFCMaterials);
+		this.setCreativeTab(TFCTabs.TFC_MATERIALS);
 		this.setWeight(EnumWeight.MEDIUM);
 		this.setSize(EnumSize.MEDIUM);
 	}
@@ -62,7 +62,7 @@ public class ItemHeveaLog extends ItemTerra
 	{
 		if(!world.isRemote)
 		{
-			if(entityplayer.isSneaking() && (world.getBlock(x, y, z) != TFCBlocks.LogPile || (side != 1 && side != 0)))
+			if(entityplayer.isSneaking() && (world.getBlock(x, y, z) != TFCBlocks.logPile || (side != 1 && side != 0)))
 			{
 				int dir = MathHelper.floor_double(entityplayer.rotationYaw * 4F / 360F + 0.5D) & 3;
 				if (side == 0) --y;
@@ -72,7 +72,7 @@ public class ItemHeveaLog extends ItemTerra
 				else if (side == 4) --x;
 				else if (side == 5) ++x;
 
-				if(world.canPlaceEntityOnSide(TFCBlocks.LogPile, x, y, z, false, side, entityplayer, itemstack))
+				if(world.canPlaceEntityOnSide(TFCBlocks.logPile, x, y, z, false, side, entityplayer, itemstack))
 				{
 					if (CreatePile(itemstack, entityplayer, world, x, y, z, side, dir))
 					{
@@ -82,7 +82,7 @@ public class ItemHeveaLog extends ItemTerra
 				}
 				return true;
 			}
-			else if(world.getBlock(x, y, z) == TFCBlocks.LogPile)
+			else if(world.getBlock(x, y, z) == TFCBlocks.logPile)
 			{
 				TELogPile te = (TELogPile)world.getTileEntity(x, y, z);
 				if(te != null)
@@ -187,7 +187,7 @@ public class ItemHeveaLog extends ItemTerra
 		TELogPile te = null;
 		if(world.isAirBlock(x, y, z) && isValid(world, x, y, z))
 		{
-			world.setBlock(x, y, z, TFCBlocks.LogPile, l, 3);
+			world.setBlock(x, y, z, TFCBlocks.logPile, l, 3);
 			te = (TELogPile)world.getTileEntity(x, y, z);
 		}
 		else

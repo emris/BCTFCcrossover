@@ -159,7 +159,7 @@ public class BlockLeavesHevea extends BlockLeaves implements IShearable, ITileEn
 							entityplayer.addStat(StatList.mineBlockStatArray[getIdFromBlock(this)], 1);
 							entityplayer.addExhaustion(0.045F);
 							if(world.rand.nextInt(100) < 11)
-								dropBlockAsItem(world, i + x, j + y, k + z, new ItemStack(TFCItems.Stick, 1));
+								dropBlockAsItem(world, i + x, j + y, k + z, new ItemStack(TFCItems.stick, 1));
 							else if (world.rand.nextInt(100) < 4)
 								dropSapling(world, i + x, j + y, k + z, meta);
 							removeLeaves(world, i + x, j + y, k + z);
@@ -182,7 +182,7 @@ public class BlockLeavesHevea extends BlockLeaves implements IShearable, ITileEn
 			entityplayer.addStat(StatList.mineBlockStatArray[getIdFromBlock(this)], 1);
 			entityplayer.addExhaustion(0.025F);
 			if(world.rand.nextInt(100) < 28)
-				dropBlockAsItem(world, i, j, k, new ItemStack(TFCItems.Stick, 1));
+				dropBlockAsItem(world, i, j, k, new ItemStack(TFCItems.stick, 1));
 			else if (world.rand.nextInt(100) < 6)
 				dropSapling(world, i, j, k, meta);
 
@@ -249,7 +249,7 @@ public class BlockLeavesHevea extends BlockLeaves implements IShearable, ITileEn
 	{
 		dropBlockAsItem(world, x, y, z, world.getBlockMetadata(x, y, z), 0);
 		if(world.rand.nextInt(100) < 30)
-			dropBlockAsItem(world, x, y, z, new ItemStack(TFCItems.Stick, 1));
+			dropBlockAsItem(world, x, y, z, new ItemStack(TFCItems.stick, 1));
 		world.setBlockToAir(x, y, z);
 	}
 

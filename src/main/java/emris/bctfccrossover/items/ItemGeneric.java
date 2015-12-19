@@ -19,7 +19,7 @@ package emris.bctfccrossover.items;
 
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
-import buildcraft.core.CreativeTabBuildCraft;
+import buildcraft.core.BCCreativeTab;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import emris.bctfccrossover.Reference;
@@ -30,13 +30,13 @@ public class ItemGeneric extends Item
 
 	public ItemGeneric()
 	{
-		this(CreativeTabBuildCraft.ITEMS);
+		this("items");
 	}
 
-	public ItemGeneric(CreativeTabBuildCraft creativeTab)
+	public ItemGeneric(String tabName)
 	{
 		super();
-		setCreativeTab(creativeTab.get());
+		setCreativeTab(BCCreativeTab.get(tabName));
 	}
 
 	@Override

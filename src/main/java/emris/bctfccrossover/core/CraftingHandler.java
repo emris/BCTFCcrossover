@@ -45,7 +45,7 @@ public class CraftingHandler
 
 					if(e.craftMatrix.getStackInSlot(i).getItem() == BCTFCItems.Buckets && e.craftMatrix.getStackInSlot(i).getItemDamage() == 0)
 					{
-						ItemStack b = new ItemStack(TFCItems.WoodenBucketEmpty);
+						ItemStack b = new ItemStack(TFCItems.woodenBucketEmpty);
 						if(b != null)
 						{
 							e.craftMatrix.setInventorySlotContents(i, b);
